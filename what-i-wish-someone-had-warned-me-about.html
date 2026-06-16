@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What I Wish Someone Had Warned Me About — The Working Aspirant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --max: 1100px;
+      --prose: 680px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav {
+      padding: 36px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brass); }
+
+    .rule {
+      position: relative;
+      height: 1px;
+      background: var(--rule);
+      margin: 40px 0;
+    }
+
+    .rule::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brass);
+    }
+
+    .post-header { padding: 56px 0 48px; max-width: var(--prose); }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .post-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .post-date {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .post-intro {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.75;
+      border-left: 2px solid var(--brass);
+      padding-left: 20px;
+      font-style: italic;
+    }
+
+    .post-body {
+      max-width: var(--prose);
+      padding-bottom: 80px;
+    }
+
+    .post-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.6em;
+    }
+
+    .post-body p.closing {
+      font-style: italic;
+      color: var(--ink-muted);
+      border-left: 2px solid var(--brass);
+      padding-left: 20px;
+      margin-top: 2em;
+    }
+
+    .post-body .section-break {
+      height: 1px;
+      background: var(--rule);
+      margin: 2.4em 0;
+      border: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      margin-bottom: 48px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .back-link:hover { color: var(--brass); border-color: var(--brass); }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 18px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <a class="back-link" href="/notes.html">← All notes</a>
+
+    <div class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">The Journey</span>
+        <span class="post-date">June 2026</span>
+      </div>
+      <h1 class="post-title">What I Wish Someone Had Warned Me About</h1>
+      <p class="post-intro">The ones who offer help but come with a cost.</p>
+    </div>
+
+    <div class="post-body">
+
+      <p>
+        When I started preparing in 2018, I did what most aspirants do. I looked for guidance from people who had already made it. I reached out on Facebook to officers — IRS, IPS, IAS — people who had cleared the exam and were now in service. I messaged them genuinely, as a student who needed direction.
+      </p>
+
+      <p>
+        What I found was not what I expected.
+      </p>
+
+      <p>
+        A surprising number of them were not interested in my preparation. They were interested in me. Married men in service — some of them decade-deep into their careers — would respond warmly, offer to help, and then slowly reveal that the help came with an expectation. Not stated directly. Never stated directly. But present in every conversation, every suggestion to meet, every question that had nothing to do with the exam.
+      </p>
+
+      <p>
+        The guidance they offered, when they offered it at all, was the kind you can find in thirty seconds on Google. Surface-level. Generic. The kind that costs nothing to give because it solves nothing. The real questions — about consistency, about managing doubt, about what actually moves the needle — those were never answered. Because answering those questions would have required them to care about your outcome. And they did not care about your outcome.
+      </p>
+
+      <p>
+        They cared about their own.
+      </p>
+
+      <hr class="section-break" />
+
+      <p>
+        There is a particular kind of damage that comes from this dynamic that nobody talks about. A twenty-one or twenty-two year old woman, already carrying the weight of UPSC preparation, already doubting herself, reaches out to someone with authority and confidence. That person uses their confidence not to build hers, but to redirect her attention — toward them, toward their opinions, toward a dynamic where she is perpetually seeking approval from someone who will never fully give it.
+      </p>
+
+      <p>
+        An aspirant who might have cleared with a top hundred rank without interference finds herself, months later, confused about her strategy, dependent on someone else's judgment, and no closer to the list.
+      </p>
+
+      <p>
+        This is not an accident. Insecurity in aspirants is visible. And some people in positions of authority know exactly how to use it.
+      </p>
+
+      <hr class="section-break" />
+
+      <p>
+        I am not writing this with bitterness. I am writing this because I was that aspirant, and I wish someone had told me clearly: not everyone who offers help is offering help.
+      </p>
+
+      <p>
+        Some markers worth watching for. The advice they give can be found anywhere online. They are more interested in your personal life than your preparation. They find reasons to keep the conversation going without it ever becoming useful. They make you feel that you need them specifically — that without their guidance, you will not make it.
+      </p>
+
+      <p>
+        You will make it. Probably faster without them.
+      </p>
+
+      <hr class="section-break" />
+
+      <p>
+        Be ruthless about who gets access to your preparation headspace. A good mentor asks you questions that make you think harder. They point you toward resources and then step back. They have no stake in keeping you dependent. Their success metric is your clarity, not your continued presence in their inbox.
+      </p>
+
+      <p>
+        If someone's help makes you more confused, more dependent, or less yourself — that is not help. That is interference wearing the costume of guidance.
+      </p>
+
+      <p>
+        Choose your circle the way you choose your optional subject. Carefully. With full awareness that the wrong choice costs you a year.
+      </p>
+
+      <p class="closing">
+        This is why The Working Aspirant exists. A space with no agenda except your preparation. No expectations, no dependency, no cost except your time and your honesty with yourself.
+      </p>
+
+    </div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored.</span>
+    </footer>
+
+  </div>
+</body>
+</html>
