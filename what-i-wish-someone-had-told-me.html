@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What I Wish Someone Had Told Me — The Working Aspirant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --max: 900px;
+      --prose: 660px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { min-height: 100vh; padding: 0 24px; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav {
+      padding: 36px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brass); }
+
+    .rule {
+      position: relative;
+      height: 1px;
+      background: var(--rule);
+      margin: 40px 0;
+    }
+
+    .rule::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brass);
+    }
+
+    /* ── Post header ── */
+    .post-header { padding: 56px 0 48px; max-width: var(--prose); }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .post-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .post-date {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .post-intro {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-muted);
+      line-height: 1.75;
+      border-left: 2px solid var(--brass);
+      padding-left: 20px;
+    }
+
+    /* ── Post body ── */
+    .post-body {
+      max-width: var(--prose);
+      padding-bottom: 80px;
+    }
+
+    .post-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.6em;
+    }
+
+    .post-body p.closing {
+      font-style: italic;
+      color: var(--ink-muted);
+      border-left: 2px solid var(--brass);
+      padding-left: 20px;
+      margin-top: 2em;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      margin-bottom: 48px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .back-link:hover { color: var(--brass); border-color: var(--brass); }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 18px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <a class="back-link" href="/notes.html">← All notes</a>
+
+    <div class="post-header">
+      <div class="post-meta">
+        <span class="post-tag">The Journey</span>
+        <span class="post-date">June 2026</span>
+      </div>
+      <h1 class="post-title">What I Wish Someone Had Told Me</h1>
+      <p class="post-intro">
+        Nobody tells you that this exam is as much about who is in your corner as it is about what is in your notes.
+      </p>
+    </div>
+
+    <div class="post-body">
+
+      <p>
+        I spent years trying to do this alone — and alone is the wrong way to do it. Not because you need a classroom or a mentor with credentials. But because there are days when the ground disappears under you, and you need someone to simply hold that weight with you for a moment. Without judgment. Without advice. Just presence.
+      </p>
+
+      <p>
+        The second thing nobody tells you: protect your energy like it is your most limited resource. Because it is. Energy suckers — people who drain you, doubt you, or casually remind you of the odds — are not neutral. They are actively costing you. Distance is not rudeness. It is strategy.
+      </p>
+
+      <p>
+        Keep this private. Share it only with those who help you build, not those who make you explain yourself.
+      </p>
+
+      <p>
+        And please — do less. Seriously. Doing too much is not dedication. It is a warning sign. This exam has a way of punishing overreach and rewarding the person who does the right things consistently, quietly, without burning out by March.
+      </p>
+
+      <p>
+        Sixteen hours from day one is not preparation. It is how you learn to hate preparation. Start organic. Start human. Start with the hours you actually have.
+      </p>
+
+      <p>
+        Simplicity is not a consolation prize for those who can't handle complexity. In UPSC, simplicity is the strategy.
+      </p>
+
+      <p class="closing">
+        This is why I built The Working Aspirant. Not to add to the noise. But to be that someone.
+      </p>
+
+    </div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored.</span>
+    </footer>
+
+  </div>
+</body>
+</html>
