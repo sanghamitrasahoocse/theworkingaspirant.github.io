@@ -17,7 +17,7 @@
       --ink-muted: #5A5750;
       --brass: #B8960C;
       --rule: #DDD8D0;
-      --max: 900px;
+      --max: 1100px;
     }
 
     html {
@@ -30,7 +30,6 @@
     }
 
     body { min-height: 100vh; padding: 0 24px; }
-
     .wrap { max-width: var(--max); margin: 0 auto; }
 
     nav {
@@ -61,7 +60,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--brass); }
+    .nav-links a:hover,
     .nav-links a.active { color: var(--brass); }
 
     .rule {
@@ -102,13 +101,21 @@
       line-height: 1.2;
     }
 
-    /* ── Filters ── */
-    .filters {
+    /* ── Filter rows ── */
+    .filter-row {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
+      margin-bottom: 12px;
     }
+
+    .filter-row.sub-row {
+      padding-left: 4px;
+      margin-bottom: 40px;
+      display: none;
+    }
+
+    .filter-row.sub-row.visible { display: flex; }
 
     .filter-btn {
       font-family: 'Inter', sans-serif;
@@ -128,6 +135,12 @@
     .filter-btn.active {
       border-color: var(--brass);
       color: var(--brass);
+    }
+
+    .filter-btn.main-btn.active {
+      background: var(--brass);
+      color: #fff;
+      border-color: var(--brass);
     }
 
     /* ── Post list ── */
@@ -249,13 +262,39 @@
       <h1 class="page-title">Notes from the long attempt.</h1>
     </div>
 
-    <!-- Filters -->
-    <div class="filters">
-      <button class="filter-btn active" onclick="filterPosts('all', this)">All</button>
-      <button class="filter-btn" onclick="filterPosts('the-journey', this)">The Journey</button>
-      <button class="filter-btn" onclick="filterPosts('prelims', this)">Prelims</button>
-      <button class="filter-btn" onclick="filterPosts('mains', this)">Mains</button>
-      <button class="filter-btn" onclick="filterPosts('interview', this)">Interview</button>
+    <!-- Main filters -->
+    <div class="filter-row" id="mainFilters">
+      <button class="filter-btn main-btn active" onclick="setMain('all', this)">All</button>
+      <button class="filter-btn main-btn" onclick="setMain('the-journey', this)">The Journey</button>
+      <button class="filter-btn main-btn" onclick="setMain('prelims', this)">Prelims</button>
+      <button class="filter-btn main-btn" onclick="setMain('mains', this)">Mains</button>
+      <button class="filter-btn main-btn" onclick="setMain('interview', this)">Interview</button>
+    </div>
+
+    <!-- Prelims sub-filters -->
+    <div class="filter-row sub-row" id="prelimsSub">
+      <button class="filter-btn active" onclick="setSub('prelims', this)">All Prelims</button>
+      <button class="filter-btn" onclick="setSub('prelims-economy', this)">Economy</button>
+      <button class="filter-btn" onclick="setSub('prelims-geography', this)">Geography</button>
+      <button class="filter-btn" onclick="setSub('prelims-environment', this)">Environment</button>
+      <button class="filter-btn" onclick="setSub('prelims-ancient', this)">Ancient History</button>
+      <button class="filter-btn" onclick="setSub('prelims-medieval', this)">Medieval History</button>
+      <button class="filter-btn" onclick="setSub('prelims-modern', this)">Modern History</button>
+      <button class="filter-btn" onclick="setSub('prelims-polity', this)">Polity</button>
+      <button class="filter-btn" onclick="setSub('prelims-csat', this)">CSAT</button>
+      <button class="filter-btn" onclick="setSub('prelims-sports', this)">Sports</button>
+      <button class="filter-btn" onclick="setSub('prelims-misc', this)">Miscellaneous</button>
+    </div>
+
+    <!-- Mains sub-filters -->
+    <div class="filter-row sub-row" id="mainsSub">
+      <button class="filter-btn active" onclick="setSub('mains', this)">All Mains</button>
+      <button class="filter-btn" onclick="setSub('mains-gs1', this)">GS 1</button>
+      <button class="filter-btn" onclick="setSub('mains-gs2', this)">GS 2</button>
+      <button class="filter-btn" onclick="setSub('mains-gs3', this)">GS 3</button>
+      <button class="filter-btn" onclick="setSub('mains-gs4', this)">GS 4</button>
+      <button class="filter-btn" onclick="setSub('mains-english', this)">English</button>
+      <button class="filter-btn" onclick="setSub('mains-hindi', this)">Hindi</button>
     </div>
 
     <!-- Post list -->
@@ -285,16 +324,41 @@
   </div>
 
   <script>
-    function filterPosts(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    let currentMain = 'all';
+
+    function setMain(category, btn) {
+      currentMain = category;
+
+      document.querySelectorAll('.main-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
+      // Show/hide sub-filters
+      document.getElementById('prelimsSub').classList.toggle('visible', category === 'prelims');
+      document.getElementById('mainsSub').classList.toggle('visible', category === 'mains');
+
+      // Reset sub-filter active state
+      document.querySelectorAll('.sub-row .filter-btn').forEach(b => b.classList.remove('active'));
+      if (category === 'prelims') document.querySelector('#prelimsSub .filter-btn').classList.add('active');
+      if (category === 'mains') document.querySelector('#mainsSub .filter-btn').classList.add('active');
+
+      // Filter posts
+      filterByCategory(category);
+    }
+
+    function setSub(category, btn) {
+      document.querySelectorAll('.sub-row .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterByCategory(category);
+    }
+
+    function filterByCategory(category) {
       document.querySelectorAll('.post-item').forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        const cat = item.dataset.category;
+        const show = category === 'all'
+          || cat === category
+          || (category === 'prelims' && cat.startsWith('prelims'))
+          || (category === 'mains' && cat.startsWith('mains'));
+        item.style.display = show ? 'block' : 'none';
       });
     }
   </script>
