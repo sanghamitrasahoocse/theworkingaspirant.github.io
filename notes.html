@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notes — The Working Aspirant</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%23FAF7F2"/><circle cx="16" cy="16" r="6" fill="%23B8960C"/></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%23FAF7F2"/><circle cx="16" cy="16" r="6" fill="%23B8960C"/></svg>" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%23FAF7F2"/><circle cx="16" cy="16" r="6" fill="%23B8960C"/></svg>" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
@@ -45,7 +43,7 @@
     .wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 500;
-      font-size: 1.05rem;
+      font-size: 1.8rem;
       letter-spacing: 0.04em;
       color: var(--ink);
       text-decoration: none;
@@ -54,7 +52,7 @@
     .nav-links { display: flex; gap: 28px; list-style: none; }
 
     .nav-links a {
-      font-size: 0.78rem;
+      font-size: 0.92rem;
       font-weight: 400;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -104,7 +102,6 @@
       line-height: 1.2;
     }
 
-    /* ── Filter rows ── */
     .filter-row {
       display: flex;
       gap: 10px;
@@ -146,7 +143,6 @@
       border-color: var(--brass);
     }
 
-    /* ── Post list ── */
     .post-list { list-style: none; }
 
     .post-item {
@@ -250,10 +246,10 @@
   <div class="wrap">
 
     <nav>
-      <a class="wordmark" href="/"><img src="/logo.svg" alt="The Working Aspirant" style="height:40px; width:auto; display:block;" /></a>
+      <a class="wordmark" href="/">The Working Aspirant</a>
       <ul class="nav-links">
-        <li><a href="/notes.html" class="active">Notes</a></li>
         <li><a href="/#about">About</a></li>
+        <li><a href="/notes.html" class="active">Notes</a></li>
         <li><a href="/#subscribe">Subscribe</a></li>
       </ul>
     </nav>
@@ -265,7 +261,6 @@
       <h1 class="page-title">Notes from the long attempt.</h1>
     </div>
 
-    <!-- Main filters -->
     <div class="filter-row" id="mainFilters">
       <button class="filter-btn main-btn active" onclick="setMain('all', this)">All</button>
       <button class="filter-btn main-btn" onclick="setMain('the-journey', this)">The Journey</button>
@@ -274,7 +269,6 @@
       <button class="filter-btn main-btn" onclick="setMain('interview', this)">Interview</button>
     </div>
 
-    <!-- Prelims sub-filters -->
     <div class="filter-row sub-row" id="prelimsSub">
       <button class="filter-btn active" onclick="setSub('prelims', this)">All Prelims</button>
       <button class="filter-btn" onclick="setSub('prelims-economy', this)">Economy</button>
@@ -289,7 +283,6 @@
       <button class="filter-btn" onclick="setSub('prelims-misc', this)">Miscellaneous</button>
     </div>
 
-    <!-- Mains sub-filters -->
     <div class="filter-row sub-row" id="mainsSub">
       <button class="filter-btn active" onclick="setSub('mains', this)">All Mains</button>
       <button class="filter-btn" onclick="setSub('mains-gs1', this)">GS 1</button>
@@ -300,10 +293,23 @@
       <button class="filter-btn" onclick="setSub('mains-hindi', this)">Hindi</button>
     </div>
 
-    <!-- Post list -->
     <ul class="post-list" id="postList">
 
-      <li class="post-item new-post" data-category="the-journey">
+      <li class="post-item" data-category="the-journey">
+        <div class="post-meta">
+          <span class="post-tag">The Journey</span>
+          <span class="post-date">June 2026</span>
+        </div>
+        <a class="post-title" href="/the-16-hour-myth.html">
+          The 16-Hour Myth
+        </a>
+        <p class="post-excerpt">
+          The coaching market sells sixteen hours as dedication. It is not dedication. It is majdoori — and the science of what it does to the body and the brain is something nobody is telling you.
+        </p>
+        <a class="post-read" href="/the-16-hour-myth.html">Read →</a>
+      </li>
+
+      <li class="post-item" data-category="the-journey">
         <div class="post-meta">
           <span class="post-tag">The Journey</span>
           <span class="post-date">June 2026</span>
@@ -312,7 +318,7 @@
           What I Wish Someone Had Warned Aspirants About
         </a>
         <p class="post-excerpt">
-          Not everyone who offers help is offering help. Some markers worth watching for — and why the wrong mentor costs you more than a year. By Sanghamitra.
+          Not everyone who offers help is offering help. Some markers worth watching for — and why the wrong mentor costs you more than a year.
         </p>
         <a class="post-read" href="/what-i-wish-someone-had-warned-me-about.html">Read →</a>
       </li>
@@ -326,7 +332,7 @@
           What I Wish Someone Had Told Every Aspirant
         </a>
         <p class="post-excerpt">
-          This examination is as much about who is in your corner as it is about what is in your notes. By Sanghamitra.
+          This examination is as much about who is in your corner as it is about what is in your notes.
         </p>
         <a class="post-read" href="/what-i-wish-someone-had-told-me.html">Read →</a>
       </li>
@@ -345,20 +351,13 @@
 
     function setMain(category, btn) {
       currentMain = category;
-
       document.querySelectorAll('.main-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      // Show/hide sub-filters
       document.getElementById('prelimsSub').classList.toggle('visible', category === 'prelims');
       document.getElementById('mainsSub').classList.toggle('visible', category === 'mains');
-
-      // Reset sub-filter active state
       document.querySelectorAll('.sub-row .filter-btn').forEach(b => b.classList.remove('active'));
       if (category === 'prelims') document.querySelector('#prelimsSub .filter-btn').classList.add('active');
       if (category === 'mains') document.querySelector('#mainsSub .filter-btn').classList.add('active');
-
-      // Filter posts
       filterByCategory(category);
     }
 
