@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch. 1 Historical Background — Overview · The Working Aspirant</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --max: 1100px;
+      --prose: 720px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav {
+      padding: 36px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--brass); }
+
+    .rule {
+      position: relative;
+      height: 1px;
+      background: var(--rule);
+      margin: 40px 0;
+    }
+
+    .rule::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brass);
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      letter-spacing: 0.04em;
+    }
+
+    .breadcrumb a {
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: var(--brass); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+    /* ── Page header ── */
+    .page-header { padding: 16px 0 40px; max-width: var(--prose); }
+
+    .chapter-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 12px;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-subtitle {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    /* ── Format tabs ── */
+    .format-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .tab {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border: 1px solid var(--rule);
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .tab:hover { border-color: var(--brass); color: var(--brass); }
+    .tab.active { background: var(--brass); color: #fff; border-color: var(--brass); }
+
+    /* ── Content ── */
+    .content { max-width: var(--prose); padding-bottom: 80px; }
+
+    .content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin: 2.4em 0 0.6em;
+      line-height: 1.2;
+    }
+
+    .content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--brass);
+      margin: 1.8em 0 0.4em;
+      letter-spacing: 0.02em;
+    }
+
+    .content p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.2em;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      border-left: 2px solid var(--rule);
+      padding-left: 28px;
+      margin: 2em 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2em;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -35px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brass);
+      border: 2px solid var(--bg);
+      outline: 1px solid var(--brass);
+    }
+
+    .timeline-year {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── Key box ── */
+    .key-box {
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--brass);
+      padding: 20px 24px;
+      margin: 2em 0;
+      background: rgba(184, 150, 12, 0.03);
+    }
+
+    .key-box-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 10px;
+    }
+
+    .key-box p {
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+
+    .key-box p:last-child { margin-bottom: 0; }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 28px 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      opacity: 0.6;
+    }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 14px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/mindmaps.html">Mind Maps</a></li>
+        <li><a href="/vault.html" class="active">The Vault</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <p class="breadcrumb">
+      <a href="/vault.html">The Vault</a>
+      <span>·</span>
+      <a href="/vault.html#polity">Polity</a>
+      <span>·</span>
+      Chapter 1
+    </p>
+
+    <div class="page-header">
+      <p class="chapter-label">Polity · Laxmikanth Ch. 1</p>
+      <h1 class="page-title">Historical Background of the Indian Constitution</h1>
+      <p class="page-subtitle">From trading company to constitutional republic — the 350-year journey that shaped India's governance.</p>
+    </div>
+
+    <!-- Format tabs -->
+    <div class="format-tabs">
+      <a class="tab active" href="/ch1-overview.html">Overview</a>
+      <a class="tab" href="/ch1-mindmaps.html">Mind Maps</a>
+      <a class="tab" href="/ch1-prelims.html">Prelims Edition</a>
+      <a class="tab" href="/ch1-mains.html">Mains Edition</a>
+    </div>
+
+    <div class="content">
+
+      <div class="key-box">
+        <p class="key-box-label">Why this chapter matters</p>
+        <p>Every constitutional provision India has today — federal structure, legislative councils, civil services, fundamental rights — has a root in the acts covered in this chapter. Understanding these acts is not history. It is the foundation of everything else in Polity.</p>
+        <p>Prelims: 2–4 questions per year directly from this chapter. Mains: essential context for GS2 questions on constitutional evolution and federal structure.</p>
+      </div>
+
+      <h2>The Big Picture</h2>
+
+      <p>The British came to India in 1608 as traders under the East India Company, which held an exclusive trading charter from Queen Elizabeth I since 1600. For over 150 years they remained primarily a commercial enterprise. The shift began in 1765 when the Company obtained the 'Diwani' — rights over revenue and civil justice — of Bengal, Bihar and Orissa. This was the moment a trading company became a territorial power.</p>
+
+      <p>From 1765 to 1947, India's governance evolved through two broad phases — Company Rule and Crown Rule — each marked by a series of Acts of the British Parliament that progressively shaped the structure of administration, legislation, and eventually the Constitution itself.</p>
+
+      <div class="key-box">
+        <p class="key-box-label">Two phases at a glance</p>
+        <p>🏢 <strong>Company Rule (1773–1858)</strong> — East India Company governed India under increasing British Parliamentary oversight</p>
+        <p>👑 <strong>Crown Rule (1858–1947)</strong> — British Crown governed India directly after the Sepoy Mutiny of 1857</p>
+      </div>
+
+      <h2>Phase 1 — Company Rule (1773–1858)</h2>
+
+      <p>The Company Rule phase produced seven landmark Acts. Each Act responded to the failures of the previous one — collectively building, piece by piece, the architecture of centralised governance that the Indian Constitution would eventually inherit.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <p class="timeline-year">1773</p>
+          <p class="timeline-title">Regulating Act of 1773</p>
+          <p class="timeline-desc">First British attempt to control the Company. Created the Governor-General of Bengal (Warren Hastings — first holder), made Bombay and Madras subordinate to Bengal, established the Supreme Court at Calcutta. Foundation of central administration in India.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1781</p>
+          <p class="timeline-title">Amending Act of 1781 (Act of Settlement)</p>
+          <p class="timeline-desc">Fixed defects of the Regulating Act. Exempted Governor-General and Company servants from Supreme Court jurisdiction for official acts. Excluded revenue matters from Supreme Court. Appeals from Provincial Courts to go to Governor-General-in-Council, not Supreme Court.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1784</p>
+          <p class="timeline-title">Pitt's India Act of 1784</p>
+          <p class="timeline-desc">Distinguished commercial and political functions of the Company. Created Board of Control for political affairs alongside existing Court of Directors (commercial). Established double government. First time Company's territories called 'British possessions in India'.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1786</p>
+          <p class="timeline-title">Act of 1786</p>
+          <p class="timeline-desc">Enacted specifically for Lord Cornwallis — gave Governor-General power to override Council decisions in special cases, and allowed him to also serve as Commander-in-Chief simultaneously.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1793</p>
+          <p class="timeline-title">Charter Act of 1793</p>
+          <p class="timeline-desc">Extended overriding powers to all future Governor-Generals. Extended Company's trade monopoly for 20 more years. Board of Control members to be paid from Indian revenues.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1813</p>
+          <p class="timeline-title">Charter Act of 1813</p>
+          <p class="timeline-desc">Abolished Company's trade monopoly (except tea and China trade). Asserted British Crown's sovereignty over Company territories. Allowed Christian missionaries and western education. Local governments empowered to impose taxes.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1833</p>
+          <p class="timeline-title">Charter Act of 1833</p>
+          <p class="timeline-desc">Final step in centralisation. Governor-General of Bengal became Governor-General of India (Lord William Bentick — first). Governors of Bombay and Madras lost legislative powers. Company ended as commercial body — became purely administrative. First attempt at open competition for civil servants (blocked by Court of Directors).</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1853</p>
+          <p class="timeline-title">Charter Act of 1853</p>
+          <p class="timeline-desc">Last Charter Act. Separated legislative and executive functions for the first time — created Indian (Central) Legislative Council (mini-Parliament). Introduced open competition for civil services (Macaulay Committee appointed 1854). First local representation in Central Legislative Council. Did not fix a period for Company's rule — signal that it could end any time.</p>
+        </div>
+
+      </div>
+
+      <div class="key-box">
+        <p class="key-box-label">The thread running through Company Rule</p>
+        <p>Each Act progressively centralised power — from three independent presidencies to one Governor-General of India. Each Act also progressively increased British Parliamentary oversight over the Company. By 1853, the Company was already a hollow administrative shell. 1857 simply ended it.</p>
+      </div>
+
+
+      <h2>Phase 2 — Crown Rule (1858–1947)</h2>
+
+      <p>The Sepoy Mutiny of 1857 ended Company Rule entirely. In 1858, the British Crown assumed direct responsibility for governing India — beginning the Crown Rule phase that produced a series of Government of India Acts, each expanding Indian participation in governance, until Independence in 1947.</p>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <p class="timeline-year">1858</p>
+          <p class="timeline-title">Government of India Act of 1858</p>
+          <p class="timeline-desc">Abolished the East India Company. India now governed in the name of the Crown. Governor-General renamed Viceroy — Lord Canning was first. Ended double government (abolished Board of Control and Court of Directors). Created Secretary of State for India (Cabinet member) with a 15-member advisory Council of India. The Act changed the machinery of control in England but did not substantially alter governance in India.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1861</p>
+          <p class="timeline-title">Indian Councils Act of 1861</p>
+          <p class="timeline-desc">First step toward representative institutions — Indians nominated to Viceroy's legislative council (Raja of Benaras, Maharaja of Patiala, Sir Dinkar Rao in 1862). Reversed centralisation — restored legislative powers to Bombay and Madras. Established new legislative councils for Bengal, North-Western Provinces and Punjab. Recognised portfolio system (introduced by Canning in 1859). Viceroy empowered to issue ordinances during emergencies (6-month validity).</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1892</p>
+          <p class="timeline-title">Indian Councils Act of 1892</p>
+          <p class="timeline-desc">Increased non-official members in Central and provincial legislative councils. Gave councils power to discuss budget and ask questions to executive. Introduced indirect elections (called "nomination on recommendation") — word 'election' not used. Limited but significant step toward representative government.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1909</p>
+          <p class="timeline-title">Indian Councils Act of 1909 (Morley-Minto Reforms)</p>
+          <p class="timeline-desc">Increased Central legislative council from 16 to 60 members. First Indian in Viceroy's Executive Council — Satyendra Prasad Sinha as Law Member. Introduced communal representation for Muslims via separate electorate — Lord Minto became 'Father of Communal Electorate'. Extended separate representation to presidency corporations, chambers of commerce, universities and zamindars.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1919</p>
+          <p class="timeline-title">Government of India Act of 1919 (Montagu-Chelmsford Reforms)</p>
+          <p class="timeline-desc">First declaration of objective — responsible government in India (August 1917). Introduced dyarchy in provinces — subjects divided into transferred (Ministers responsible to legislature) and reserved (Governor and Executive Council, not responsible to legislature). Introduced bicameralism — Upper House (Council of State) and Lower House (Legislative Assembly). First direct elections. Extended communal electorates to Sikhs, Indian Christians, Anglo-Indians, Europeans. Set up Central Public Service Commission (1926). Simon Commission appointed 1927 — all British members, boycotted by all parties.</p>
+        </div>
+
+
+        <div class="timeline-item">
+          <p class="timeline-year">1935</p>
+          <p class="timeline-title">Government of India Act of 1935</p>
+          <p class="timeline-desc">Longest Act — 321 Sections, 10 Schedules. Proposed All-India Federation (never came into being — princely states refused to join). Three lists: Federal (59 items), Provincial (54 items), Concurrent (36 items) — residuary powers with Viceroy. Abolished dyarchy in provinces, introduced provincial autonomy. Introduced dyarchy at Centre (never implemented). Bicameralism in 6 provinces. Extended franchise to 14% of population. Established Reserve Bank of India (1935), Federal Court (1937), Federal Public Service Commission. Abolished Council of India. Separated Burma from India. Created Orissa and Sind as new provinces.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">1947</p>
+          <p class="timeline-title">Indian Independence Act of 1947</p>
+          <p class="timeline-desc">Clement Attlee declared end of British rule (February 20, 1947). Mountbatten Plan accepted by Congress and Muslim League. Act ended British rule from August 15, 1947. Partitioned India into two dominions — India and Pakistan. Abolished office of Viceroy — replaced by Governor-General for each dominion. Empowered Constituent Assemblies to frame constitutions and repeal any British Act. Abolished Secretary of State for India. Proclaimed lapse of British paramountcy over princely states. Constituent Assembly of India (1946) became Parliament of Indian Dominion. Lord Mountbatten — first Governor-General of India. Jawaharlal Nehru — first Prime Minister.</p>
+        </div>
+
+      </div>
+
+      <div class="key-box">
+        <p class="key-box-label">The thread running through Crown Rule (complete)</p>
+        <p>1858 — Changed machinery, not governance. 1861 — First Indians in legislature. 1892 — First indirect elections. 1909 — Communal electorates introduced. 1919 — Dyarchy, direct elections, bicameralism. 1935 — Provincial autonomy, federal structure blueprint. 1947 — Independence.</p>
+        <p>The 1935 Act is especially significant — its federal structure, three lists, and provincial autonomy directly shaped the Indian Constitution of 1950.</p>
+      </div>
+
+      <div class="key-box">
+        <p class="key-box-label">Legacy — what the Constitution inherited</p>
+        <p>Federal structure with three lists → from GoI Act 1935</p>
+        <p>Bicameralism at Centre → from GoI Act 1919</p>
+        <p>Civil services structure → from Charter Act 1853 and 1919</p>
+        <p>Emergency powers of the President → from GoI Act 1935</p>
+        <p>Office of CAG → from GoI Act 1935</p>
+        <p>Writ jurisdiction of courts → from GoI Act 1935</p>
+      </div>
+
+      <div class="key-box" style="display:none">
+        <p class="key-box-label">The thread running through Crown Rule (so far)</p>
+        <p>Each Act progressively expanded Indian participation — from nominated Indians (1861) to indirect elections (1892) to communal electorates (1909) to direct elections and dyarchy (1919). The direction was always toward responsible government, but always with the British retaining ultimate control.</p>
+      </div>
+
+
+
+    </div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+    </footer>
+
+  </div>
+</body>
+</html>

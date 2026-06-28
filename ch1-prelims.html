@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch. 1 Historical Background — Prelims Edition · The Working Aspirant</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --green: #2D6A4F;
+      --green-light: #D8F3DC;
+      --max: 1100px;
+      --prose: 860px;
+    }
+
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+
+    .breadcrumb { font-size: 0.72rem; color: var(--ink-muted); margin-bottom: 32px; letter-spacing: 0.04em; }
+    .breadcrumb a { color: var(--ink-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brass); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+    .page-header { padding: 16px 0 40px; max-width: var(--prose); }
+    .chapter-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 5vw, 3rem); color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .page-subtitle { font-size: 0.88rem; color: var(--ink-muted); font-weight: 300; margin-bottom: 24px; }
+
+    .format-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .tab { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 16px; border: 1px solid var(--rule); color: var(--ink-muted); text-decoration: none; transition: all 0.2s; }
+    .tab:hover { border-color: var(--brass); color: var(--brass); }
+    .tab.active { background: var(--brass); color: #fff; border-color: var(--brass); }
+
+    .content { max-width: var(--prose); padding-bottom: 80px; }
+
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin: 2.4em 0 1.2em; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+
+    /* ── Act block ── */
+    .act-block { margin-bottom: 40px; }
+
+    .act-header { background: var(--ink); color: #FAF7F2; padding: 12px 20px; display: flex; align-items: baseline; gap: 16px; }
+    .act-year { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); }
+    .act-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: #FAF7F2; }
+    .act-aka { font-size: 0.72rem; color: rgba(255,255,255,0.5); font-style: italic; margin-left: auto; }
+
+    .act-map { width: 100%; display: block; border: 1px solid var(--rule); cursor: pointer; transition: opacity 0.2s; }
+    .act-map:hover { opacity: 0.92; }
+
+    /* ── Memory aid ── */
+    .memory-aid { background: var(--green-light); border-left: 3px solid var(--green); padding: 14px 18px; }
+    .memory-aid-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+    .memory-aid p { font-size: 0.85rem; color: #1B4332; font-weight: 400; line-height: 1.55; margin-bottom: 4px; }
+    .memory-aid p:last-child { margin-bottom: 0; }
+
+    /* ── Numbers grid ── */
+    .numbers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 0 0 2em; }
+    .number-cell { background: var(--bg); padding: 16px; text-align: center; }
+    .number-cell .num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--brass); line-height: 1; display: block; }
+    .number-cell .num-label { font-size: 0.72rem; color: var(--ink-muted); font-weight: 300; margin-top: 4px; line-height: 1.3; }
+
+    /* ── Firsts box ── */
+    .firsts-box { border: 1px solid var(--rule); border-left: 3px solid var(--brass); padding: 20px 24px; margin: 2em 0; background: rgba(184, 150, 12, 0.03); }
+    .firsts-box-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+    .firsts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .firsts-item { font-size: 0.82rem; color: var(--ink); font-weight: 300; padding: 4px 0; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+    .firsts-item strong { font-weight: 500; color: var(--ink); display: block; font-size: 0.78rem; }
+
+    /* ── Lightbox ── */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); z-index: 1000; justify-content: center; align-items: center; padding: 24px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
+    .lightbox-close { position: fixed; top: 20px; right: 24px; color: #fff; font-size: 1.5rem; cursor: pointer; background: none; border: none; opacity: 0.8; }
+    .lightbox-close:hover { opacity: 1; }
+
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 640px) {
+      .firsts-grid { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { gap: 14px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/vault.html" class="active">The Vault</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <p class="breadcrumb">
+      <a href="/vault.html">The Vault</a>
+      <span>·</span>
+      <a href="/vault.html#polity">Polity</a>
+      <span>·</span>
+      <a href="/ch1-overview.html">Chapter 1</a>
+      <span>·</span>
+      Prelims Edition
+    </p>
+
+    <div class="page-header">
+      <p class="chapter-label">Polity · Laxmikanth Ch. 1 · Prelims Edition</p>
+      <h1 class="page-title">Historical Background — Prelims Edition</h1>
+      <p class="page-subtitle">Mind maps + memory aids. Click any map to enlarge.</p>
+    </div>
+
+    <div class="format-tabs">
+      <a class="tab" href="/ch1-overview.html">Overview</a>
+      <a class="tab active" href="/ch1-prelims.html">Prelims Edition</a>
+      <a class="tab" href="/ch1-mains.html">Mains Edition</a>
+    </div>
+
+    <div class="content">
+
+      <!-- Key numbers -->
+      <div class="numbers-grid">
+        <div class="number-cell"><span class="num">1600</span><span class="num-label">EIC Charter — Queen Elizabeth I</span></div>
+        <div class="number-cell"><span class="num">1608</span><span class="num-label">British arrive in India as traders</span></div>
+        <div class="number-cell"><span class="num">1765</span><span class="num-label">EIC obtains Diwani — Bengal, Bihar, Orissa</span></div>
+        <div class="number-cell"><span class="num">1858</span><span class="num-label">Crown assumes direct rule after Sepoy Mutiny</span></div>
+        <div class="number-cell"><span class="num">1947</span><span class="num-label">Independence — August 15</span></div>
+        <div class="number-cell"><span class="num">1950</span><span class="num-label">Constitution in force — January 26</span></div>
+      </div>
+
+      <!-- COMPANY RULE -->
+      <h2 class="section-title">Company Rule (1773–1858)</h2>
+
+      <!-- 1773 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1773</span>
+          <span class="act-title">Regulating Act of 1773</span>
+        </div>
+        <img src="/mm-1773.png" alt="Regulating Act 1773 Mind Map" class="act-map" onclick="openLightbox('/mm-1773.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>FRSC</strong> — First step, Recognised political functions, Supreme Court (Calcutta 1774), Central administration foundation</p>
+          <p><strong>Warren Hastings</strong> = First GGoB. <em>Hastings was in haste to govern Bengal first.</em></p>
+        </div>
+      </div>
+
+      <!-- 1781 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1781</span>
+          <span class="act-title">Amending Act of 1781</span>
+          <span class="act-aka">Act of Settlement</span>
+        </div>
+        <img src="/mm-1781.png" alt="Amending Act 1781 Mind Map" class="act-map" onclick="openLightbox('/mm-1781.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>REAP</strong> — Revenue excluded, Exempted GG, Appeals to GG-in-Council, Personal law applied</p>
+          <p><em>The Act that clipped the Supreme Court's wings.</em></p>
+        </div>
+      </div>
+
+      <!-- 1784 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1784</span>
+          <span class="act-title">Pitt's India Act of 1784</span>
+          <span class="act-aka">East India Act 1784</span>
+        </div>
+        <img src="/mm-1784.png" alt="Pitt's India Act 1784 Mind Map" class="act-map" onclick="openLightbox('/mm-1784.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Double Pitt</strong> — Pitt's Act = Double Government (Board of Control + Court of Directors)</p>
+          <p><strong>B</strong>oC = <strong>P</strong>olitical. <strong>C</strong>oD = <strong>C</strong>ommercial. CoD and BoC both abolished by GoI Act 1858.</p>
+        </div>
+      </div>
+
+      <!-- 1786 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1786</span>
+          <span class="act-title">Act of 1786</span>
+        </div>
+        <img src="/mm-1786.png" alt="Act of 1786 Mind Map" class="act-map" onclick="openLightbox('/mm-1786.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Cornwallis wanted 2 things</strong> — Override Council + Commander-in-Chief. <em>Corn needs two cobs.</em></p>
+        </div>
+      </div>
+
+      <!-- 1793 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1793</span>
+          <span class="act-title">Charter Act of 1793</span>
+        </div>
+        <img src="/mm-1793.png" alt="Charter Act 1793 Mind Map" class="act-map" onclick="openLightbox('/mm-1793.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1793 = Extended everything</strong> — Extended overriding powers, extended trade monopoly (20 years), extended GG's control over presidencies.</p>
+        </div>
+      </div>
+
+      <!-- 1813 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1813</span>
+          <span class="act-title">Charter Act of 1813</span>
+        </div>
+        <img src="/mm-1813.png" alt="Charter Act 1813 Mind Map" class="act-map" onclick="openLightbox('/mm-1813.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1813 = Opened India</strong> — Opened trade, missionaries, western education. Called "Foundation Stone of English Education in India."</p>
+          <p>Exception: <em>Tea and China trade monopoly continued. Tea is too precious to share yet.</em></p>
+        </div>
+      </div>
+
+      <!-- 1833 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1833</span>
+          <span class="act-title">Charter Act of 1833</span>
+          <span class="act-aka">Saint Helena Act</span>
+        </div>
+        <img src="/mm-1833.png" alt="Charter Act 1833 Mind Map" class="act-map" onclick="openLightbox('/mm-1833.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1833 = Bengal to India</strong> — GGoB became GGoI. Bentick was first. <em>Bentick bent the title from Bengal to India.</em></p>
+          <p><strong>Regulations → Acts</strong> — Before 1833 = Regulations. After 1833 = Acts.</p>
+          <p>Bonus: Abolished slavery 40 years before the US. Seed for Article 15 (no discrimination).</p>
+        </div>
+      </div>
+
+      <!-- 1853 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1853</span>
+          <span class="act-title">Charter Act of 1853</span>
+          <span class="act-aka">Final Charter Act</span>
+        </div>
+        <img src="/mm-1853.png" alt="Charter Act 1853 Mind Map" class="act-map" onclick="openLightbox('/mm-1853.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1853 = Three Firsts</strong> — First separation of legislative/executive, First open competition for civil services, First local representation in Central Legislature.</p>
+          <p><strong>Macaulay 1854</strong> — Committee came one year after the Act. <em>Mac came after the Act.</em></p>
+          <p>Cornwallis = Father of Indian Civil Service (not Macaulay). Macaulay introduced reforms.</p>
+        </div>
+      </div>
+
+      <!-- CROWN RULE -->
+      <h2 class="section-title">Crown Rule (1858–1947)</h2>
+
+      <!-- 1858 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1858</span>
+          <span class="act-title">Government of India Act of 1858</span>
+          <span class="act-aka">Act for Good Governance of India</span>
+        </div>
+        <img src="/mm-1858.png" alt="GoI Act 1858 Mind Map (updated)" class="act-map" onclick="openLightbox('/mm-1858.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1858 = Crown takes over</strong> — Company abolished, GGoI becomes Viceroy, Double Govt ended, Secretary of State created.</p>
+          <p><strong>Canning</strong> = First Viceroy. <em>Canning canned the Company.</em></p>
+          <p><strong>15-member Council of India</strong> — abolished by GoI Act 1935.</p>
+        </div>
+      </div>
+
+      <!-- 1861 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1861</span>
+          <span class="act-title">Indian Councils Act of 1861</span>
+        </div>
+        <img src="/mm-1861.png" alt="Indian Councils Act 1861 Mind Map" class="act-map" onclick="openLightbox('/mm-1861.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>3 Indians in 1862</strong> — <strong>BPD</strong>: Benaras, Patiala, Dinkar Rao. <em>BPD = British-Period Delegates.</em></p>
+          <p><strong>Ordinance = 6 months</strong> — Still 6 months today under Article 123.</p>
+          <p>1863: Satyendranath Tagore — First Indian ICS officer.</p>
+        </div>
+      </div>
+
+      <!-- 1892 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1892</span>
+          <span class="act-title">Indian Councils Act of 1892</span>
+        </div>
+        <img src="/mm-1892.png" alt="Indian Councils Act 1892 Mind Map" class="act-map" onclick="openLightbox('/mm-1892.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1892 = Almost elections</strong> — Introduced indirect elections but never used the word 'election'. Called it "nomination on recommendation."</p>
+          <p><em>1892 was too shy to say election.</em></p>
+        </div>
+      </div>
+
+      <!-- 1909 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1909</span>
+          <span class="act-title">Indian Councils Act of 1909</span>
+          <span class="act-aka">Morley-Minto Reforms</span>
+        </div>
+        <img src="/mm-1909.png" alt="Indian Councils Act 1909 Mind Map" class="act-map" onclick="openLightbox('/mm-1909.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Morley-Minto = More + Communal</strong> — More members (16→60), More Indians (Sinha first), More division (communal electorates).</p>
+          <p><strong>Sinha</strong> = First Indian in Viceroy's Executive Council. <em>Sinha shone first.</em></p>
+          <p><strong>Minto = Father of Communal Electorate.</strong> Minto minced the electorate into communities.</p>
+        </div>
+      </div>
+
+      <!-- 1919 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1919</span>
+          <span class="act-title">Government of India Act of 1919</span>
+          <span class="act-aka">Montagu-Chelmsford Reforms</span>
+        </div>
+        <img src="/mm-1919.png" alt="GoI Act 1919 Mind Map" class="act-map" onclick="openLightbox('/mm-1919.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Montagu-Chelmsford = DEBT</strong> — Dyarchy, Elections (direct, first time), Bicameralism (first time), Transferred/Reserved subjects</p>
+          <p><strong>Dyarchy</strong> — Transferred = Ministers responsible to legislature. Reserved = Governor NOT responsible. <em>Reserved = Restricted democracy.</em></p>
+          <p><strong>Council of State = Upper House.</strong> State is above Assembly.</p>
+          <p>Simon Commission 1927 — All 7 British → All parties boycotted → "Simon Go Back"</p>
+        </div>
+      </div>
+
+
+      <!-- Simon Commission 1927 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1927</span>
+          <span class="act-title">Simon Commission</span>
+          <span class="act-aka">Indian Statutory Commission</span>
+        </div>
+        <img src="/mm-simon.png" alt="Simon Commission 1927 Mind Map" class="act-map" onclick="openLightbox('/mm-simon.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Simon = All British, All Boycotted</strong> — 7 members, all British, chaired by Sir John Simon. No Indian members → nationwide boycott → "Simon Go Back."</p>
+          <p>Formed 2 years early (1927 instead of 1929). Report submitted 1930. Led to 3 Round Table Conferences → White Paper → Joint Committee → GoI Act 1935.</p>
+        </div>
+      </div>
+
+      <!-- Communal Award 1932 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1932</span>
+          <span class="act-title">Communal Award</span>
+          <span class="act-aka">Ramsay MacDonald Award</span>
+        </div>
+        <img src="/mm-communal.png" alt="Communal Award 1932 Mind Map" class="act-map" onclick="openLightbox('/mm-communal.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Communal Award → Poona Pact</strong> — MacDonald extended separate electorates to Depressed Classes → Gandhi fasted unto death at Yeravada Jail → Poona Pact between Gandhi and Ambedkar → No separate electorate but reserved seats in Hindu joint electorate.</p>
+          <p><em>MacDonald divided, Gandhi united through Poona Pact.</em></p>
+        </div>
+      </div>
+
+      <!-- 1935 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1935</span>
+          <span class="act-title">Government of India Act of 1935</span>
+        </div>
+        <img src="/mm-1935.png" alt="GoI Act 1935 Mind Map" class="act-map" onclick="openLightbox('/mm-1935.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>321 Sections, 10 Schedules</strong> — <em>3-2-1 countdown to Independence.</em></p>
+          <p><strong>Three lists</strong> — Federal 59, Provincial 54, Concurrent 36. <strong>F-P-C = 59-54-36.</strong> Descending order.</p>
+          <p><strong>6 bicameral provinces — BB MABU</strong>: Bengal, Bombay, Madras, Assam, Bihar, United Provinces</p>
+          <p>RBI + Federal Court both established by 1935 Act. Both set up in 1937.</p>
+          <p>Note: Mindmap says 10% population franchise — Laxmikanth says 14%. Use 14% for exam.</p>
+        </div>
+      </div>
+
+      <!-- 1947 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1947</span>
+          <span class="act-title">Indian Independence Act of 1947</span>
+        </div>
+        <img src="/mm-1947.png" alt="Indian Independence Act 1947 Mind Map" class="act-map" onclick="openLightbox('/mm-1947.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Key dates</strong> — Feb 20 (Attlee announces) → June 3 (Mountbatten Plan) → Aug 15 (Independence)</p>
+          <p><strong>Mountbatten</strong> = Last Viceroy + First Governor-General of India. <em>He stayed to see it through.</em></p>
+          <p><strong>Pakistan included</strong> — West Punjab, Sindh, Baluchistan, East Bengal, NWFP, Sylhet (Assam)</p>
+          <p>GoI Act 1935 governed India till Jan 26, 1950 when Constitution came into force.</p>
+        </div>
+      </div>
+
+
+      <!-- Interim Government 1946 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1946</span>
+          <span class="act-title">Interim Government of India (1946)</span>
+        </div>
+        <img src="/mm-interim-1946.png" alt="Interim Government 1946 Mind Map" class="act-map" onclick="openLightbox('/mm-interim-1946.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Nehru = Vice-President of Council</strong> — Viceroy remained head. Members were part of Viceroy's Executive Council.</p>
+          <p><strong>Members who chose Pakistan</strong> — I.I. Chundrigar, Liaquat Ali Khan, Asaf Ali, Abdur Rab Nishtar, Ghaznafar Ali Khan.</p>
+          <p><em>Remember: Ambedkar was NOT in Interim Government — he joined only after Independence in the first cabinet.</em></p>
+        </div>
+      </div>
+
+      <!-- First Cabinet 1947 -->
+      <div class="act-block">
+        <div class="act-header">
+          <span class="act-year">1947</span>
+          <span class="act-title">First Cabinet of Independent India (1947)</span>
+        </div>
+        <img src="/mm-cabinet-1947.png" alt="First Cabinet of Independent India 1947 Mind Map" class="act-map" onclick="openLightbox('/mm-cabinet-1947.png')" />
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Nehru = PM. Patel = States + Retained portfolios.</strong> Ambedkar joined here as Law Minister — not in Interim Government.</p>
+          <p><strong>Shanmugham Chetty = First Finance Minister</strong> of independent India.</p>
+          <p><em>Rajkumari Amrit Kaur = First woman cabinet minister (Health).</em></p>
+        </div>
+      </div>
+
+      <!-- FIRSTS AND ONLYS -->
+      <div class="firsts-box">
+        <p class="firsts-box-label">⭐ High-Value Firsts & Onlys — Most Likely MCQ Targets</p>
+        <div class="firsts-grid">
+          <div class="firsts-item"><strong>First GG of Bengal</strong>Lord Warren Hastings (1773)</div>
+          <div class="firsts-item"><strong>First GG of India</strong>Lord William Bentick (1833)</div>
+          <div class="firsts-item"><strong>First Viceroy of India</strong>Lord Canning (1858)</div>
+          <div class="firsts-item"><strong>First Indian in Viceroy's Council</strong>Satyendra Prasad Sinha (1909)</div>
+          <div class="firsts-item"><strong>First GG of independent India</strong>Lord Mountbatten (1947)</div>
+          <div class="firsts-item"><strong>First PM of India</strong>Jawaharlal Nehru (1947)</div>
+          <div class="firsts-item"><strong>First Indian ICS officer</strong>Satyendranath Tagore (1863)</div>
+          <div class="firsts-item"><strong>First Supreme Court</strong>Calcutta, 1774 (Regulating Act 1773)</div>
+          <div class="firsts-item"><strong>First separation of legislative/executive</strong>Charter Act 1853</div>
+          <div class="firsts-item"><strong>First direct elections</strong>GoI Act 1919</div>
+          <div class="firsts-item"><strong>First bicameralism (Centre)</strong>GoI Act 1919</div>
+          <div class="firsts-item"><strong>First open competition for civil services</strong>Charter Act 1853</div>
+          <div class="firsts-item"><strong>First communal electorate</strong>Indian Councils Act 1909</div>
+          <div class="firsts-item"><strong>First declaration of responsible govt</strong>August 20, 1917</div>
+          <div class="firsts-item"><strong>Father of Communal Electorate</strong>Lord Minto</div>
+          <div class="firsts-item"><strong>Father of Indian Civil Service</strong>Lord Cornwallis</div>
+          <div class="firsts-item"><strong>Double Govt introduced</strong>Pitt's India Act 1784</div>
+          <div class="firsts-item"><strong>Double Govt abolished</strong>GoI Act 1858</div>
+          <div class="firsts-item"><strong>Dyarchy introduced</strong>GoI Act 1919</div>
+          <div class="firsts-item"><strong>Dyarchy abolished (provinces)</strong>GoI Act 1935</div>
+          <div class="firsts-item"><strong>RBI established by</strong>GoI Act 1935 (set up 1935)</div>
+          <div class="firsts-item"><strong>Federal Court established by</strong>GoI Act 1935 (set up 1937)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
