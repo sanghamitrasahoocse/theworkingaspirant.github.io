@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vault — The Working Aspirant</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --max: 1100px;
+    }
+
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.92rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+
+    /* Page header */
+    .page-header { padding: 56px 0 48px; }
+    .page-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .page-desc { font-size: 0.92rem; color: var(--ink-muted); font-weight: 300; max-width: 560px; border-left: 2px solid var(--brass); padding-left: 20px; line-height: 1.75; }
+
+    /* Subject section */
+    .subject-section { margin-bottom: 56px; }
+
+    .subject-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+    .subject-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--ink); }
+    .subject-count { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+    .subject-coming { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rule); }
+
+    /* Chapter grid */
+    .chapter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+
+    /* Chapter card */
+    .chapter-card { background: var(--bg); padding: 24px; transition: background 0.2s; }
+    .chapter-card:hover { background: rgba(184,150,12,0.03); }
+    .chapter-card.coming { opacity: 0.45; pointer-events: none; }
+
+    .chapter-number { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; }
+    .chapter-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 16px; }
+
+    /* Format links */
+    .format-links { display: flex; gap: 6px; flex-wrap: wrap; }
+    .format-link { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--rule); color: var(--ink-muted); text-decoration: none; transition: all 0.2s; }
+    .format-link:hover { border-color: var(--brass); color: var(--brass); }
+    .format-link.active-link { background: var(--ink); color: #FAF7F2; border-color: var(--ink); }
+    .format-link.coming-soon { opacity: 0.35; pointer-events: none; border-style: dashed; }
+
+    /* Coming soon placeholder */
+    .coming-placeholder { background: var(--bg); padding: 24px; border: 1px dashed var(--rule); text-align: center; }
+    .coming-placeholder p { font-size: 0.78rem; color: var(--ink-muted); font-weight: 300; }
+
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; margin-top: 40px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 14px; }
+      .chapter-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/vault.html" class="active">The Vault</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <div class="page-header">
+      <p class="page-label">Study Material</p>
+      <h1 class="page-title">The Vault</h1>
+      <p class="page-desc">Structured study material for working aspirants. Each chapter in four formats — Overview, Prelims Edition, and Mains Edition. Built for clarity, not volume.</p>
+    </div>
+
+    <!-- POLITY -->
+    <div class="subject-section" id="polity">
+      <div class="subject-header">
+        <h2 class="subject-name">Polity</h2>
+        <span class="subject-count">1 of 30 chapters live</span>
+      </div>
+
+      <div class="chapter-grid">
+
+        <!-- Chapter 1 — LIVE -->
+        <div class="chapter-card">
+          <p class="chapter-number">Chapter 1</p>
+          <p class="chapter-title">Historical Background of the Indian Constitution</p>
+          <div class="format-links">
+            <a class="format-link active-link" href="/ch1-overview.html">Overview</a>
+            <a class="format-link active-link" href="/ch1-prelims.html">Prelims</a>
+            <a class="format-link active-link" href="/ch1-mains.html">Mains</a>
+          </div>
+        </div>
+
+        <!-- Chapter 2 — Coming -->
+        <div class="chapter-card coming">
+          <p class="chapter-number">Chapter 2</p>
+          <p class="chapter-title">Making of the Constitution</p>
+          <div class="format-links">
+            <a class="format-link coming-soon" href="#">Overview</a>
+            <a class="format-link coming-soon" href="#">Prelims</a>
+            <a class="format-link coming-soon" href="#">Mains</a>
+          </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="chapter-card coming">
+          <p class="chapter-number">Chapter 3</p>
+          <p class="chapter-title">Salient Features of the Constitution</p>
+          <div class="format-links">
+            <a class="format-link coming-soon" href="#">Overview</a>
+            <a class="format-link coming-soon" href="#">Prelims</a>
+            <a class="format-link coming-soon" href="#">Mains</a>
+          </div>
+        </div>
+
+        <!-- Chapter 4 -->
+        <div class="chapter-card coming">
+          <p class="chapter-number">Chapter 4</p>
+          <p class="chapter-title">Preamble of the Constitution</p>
+          <div class="format-links">
+            <a class="format-link coming-soon" href="#">Overview</a>
+            <a class="format-link coming-soon" href="#">Prelims</a>
+            <a class="format-link coming-soon" href="#">Mains</a>
+          </div>
+        </div>
+
+        <!-- Chapter 5 -->
+        <div class="chapter-card coming">
+          <p class="chapter-number">Chapter 5</p>
+          <p class="chapter-title">Union and Its Territory</p>
+          <div class="format-links">
+            <a class="format-link coming-soon" href="#">Overview</a>
+            <a class="format-link coming-soon" href="#">Prelims</a>
+            <a class="format-link coming-soon" href="#">Mains</a>
+          </div>
+        </div>
+
+        <!-- Chapter 6 -->
+        <div class="chapter-card coming">
+          <p class="chapter-number">Chapter 6</p>
+          <p class="chapter-title">Citizenship</p>
+          <div class="format-links">
+            <a class="format-link coming-soon" href="#">Overview</a>
+            <a class="format-link coming-soon" href="#">Prelims</a>
+            <a class="format-link coming-soon" href="#">Mains</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="subject-section" id="history">
+      <div class="subject-header">
+        <h2 class="subject-name">History</h2>
+        <span class="subject-coming">Coming soon</span>
+      </div>
+      <div class="coming-placeholder">
+        <p>Ancient, Medieval and Modern History chapters will be added here.</p>
+      </div>
+    </div>
+
+    <!-- GEOGRAPHY -->
+    <div class="subject-section" id="geography">
+      <div class="subject-header">
+        <h2 class="subject-name">Geography</h2>
+        <span class="subject-coming">Coming soon</span>
+      </div>
+      <div class="coming-placeholder">
+        <p>Physical, Indian and World Geography chapters will be added here.</p>
+      </div>
+    </div>
+
+    <!-- ECONOMY -->
+    <div class="subject-section" id="economy">
+      <div class="subject-header">
+        <h2 class="subject-name">Economy</h2>
+        <span class="subject-coming">Coming soon</span>
+      </div>
+      <div class="coming-placeholder">
+        <p>Indian Economy chapters will be added here.</p>
+      </div>
+    </div>
+
+    <!-- ENVIRONMENT -->
+    <div class="subject-section" id="environment">
+      <div class="subject-header">
+        <h2 class="subject-name">Environment & Ecology</h2>
+        <span class="subject-coming">Coming soon</span>
+      </div>
+      <div class="coming-placeholder">
+        <p>Environment and Ecology chapters will be added here.</p>
+      </div>
+    </div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+    </footer>
+
+  </div>
+</body>
+</html>
