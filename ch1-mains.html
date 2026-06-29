@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ch. 1 Historical Background — Mains Edition · The Working Aspirant</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAF7F2; --ink: #1C1C1C; --ink-muted: #5A5750;
+      --brass: #B8960C; --rule: #DDD8D0;
+      --green: #2D6A4F; --green-light: #D8F3DC;
+      --blue: #1B4F72; --blue-light: #D6EAF8;
+      --red: #7B241C; --red-light: #FADBD8;
+      --max: 1100px; --prose: 800px;
+    }
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+    .breadcrumb { font-size: 0.72rem; color: var(--ink-muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--ink-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brass); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+    .page-header { padding: 16px 0 40px; max-width: var(--prose); }
+    .chapter-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 5vw, 3rem); color: var(--ink); line-height: 1.2; margin-bottom: 16px; }
+    .page-subtitle { font-size: 0.88rem; color: var(--ink-muted); font-weight: 300; margin-bottom: 24px; }
+    .format-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+    .tab { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 16px; border: 1px solid var(--rule); color: var(--ink-muted); text-decoration: none; transition: all 0.2s; }
+    .tab:hover { border-color: var(--brass); color: var(--brass); }
+    .tab.active { background: var(--brass); color: #fff; border-color: var(--brass); }
+    .content { max-width: var(--prose); padding-bottom: 80px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin: 2.4em 0 1.2em; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+
+    /* AIR10 banner */
+    .air10-banner { border: 1px solid var(--brass); border-left: 4px solid var(--brass); padding: 16px 20px; margin-bottom: 40px; background: rgba(184,150,12,0.04); }
+    .air10-banner-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; }
+    .air10-banner p { font-size: 0.85rem; color: var(--ink); font-weight: 300; line-height: 1.6; margin-bottom: 4px; }
+
+    /* Q&A */
+    .qa-block { margin-bottom: 32px; border: 1px solid var(--rule); overflow: hidden; }
+    .qa-question { background: var(--ink); color: #FAF7F2; padding: 16px 20px; cursor: pointer; display: flex; align-items: flex-start; gap: 16px; }
+    .qa-meta { display: flex; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+    .qa-marks { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); }
+    .qa-type { font-size: 0.62rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; text-transform: uppercase; }
+    .qa-wc { font-size: 0.62rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+    .qa-question-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: #FAF7F2; line-height: 1.4; flex: 1; }
+    .qa-toggle { color: rgba(255,255,255,0.5); font-size: 1.2rem; line-height: 1; transition: transform 0.2s; flex-shrink: 0; margin-top: 8px; }
+    .qa-block.open .qa-toggle { transform: rotate(45deg); }
+    .qa-answer { display: none; padding: 28px; }
+    .qa-block.open .qa-answer { display: block; }
+
+    /* Controlling idea */
+    .ci { border-left: 3px solid var(--brass); padding: 12px 20px; margin-bottom: 24px; background: rgba(184,150,12,0.04); }
+    .ci-label { font-size: 0.60rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 6px; }
+    .ci p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); line-height: 1.6; font-weight: 400; margin: 0; }
+
+    /* Answer typography */
+    .qa-answer h4 { font-size: 0.70rem; font-weight: 600; color: var(--brass); margin: 1.4em 0 0.5em; text-transform: uppercase; letter-spacing: 0.06em; }
+    .qa-answer p { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; font-weight: 400; line-height: 1.82; color: var(--ink); margin-bottom: 0.9em; }
+    .qa-answer ul { list-style: none; margin-bottom: 1em; }
+    .qa-answer ul li { font-size: 0.88rem; color: var(--ink); font-weight: 300; padding: 5px 0 5px 20px; border-bottom: 1px solid var(--rule); position: relative; line-height: 1.5; }
+    .qa-answer ul li:last-child { border-bottom: none; }
+    .qa-answer ul li::before { content: '→'; position: absolute; left: 0; color: var(--brass); font-size: 0.75rem; }
+    .qa-answer ul li strong { font-weight: 500; }
+
+    /* Quote */
+    .quote-block { border-left: 2px solid var(--ink); padding: 10px 20px; margin: 1em 0; }
+    .quote-block p { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--ink-muted); margin: 0; }
+    .quote-block cite { font-size: 0.70rem; color: var(--ink-muted); font-style: normal; display: block; margin-top: 4px; }
+
+    /* ── DIAGRAMS ── */
+    .diagram { border: 1px solid var(--rule); padding: 20px; margin: 1.4em 0; background: rgba(184,150,12,0.02); }
+    .diagram-title { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; text-align: center; }
+
+    /* Timeline */
+    .timeline-h { display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding-bottom: 8px; }
+    .tl-item { display: flex; flex-direction: column; align-items: center; min-width: 110px; }
+    .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brass); margin: 0 auto; flex-shrink: 0; }
+    .tl-line { height: 2px; background: var(--rule); flex: 1; margin-top: 4px; }
+    .tl-connector { display: flex; align-items: center; width: 100%; }
+    .tl-year { font-size: 0.65rem; font-weight: 600; color: var(--brass); margin-bottom: 4px; text-align: center; }
+    .tl-label { font-size: 0.68rem; color: var(--ink); font-weight: 400; text-align: center; line-height: 1.3; padding: 0 4px; }
+    .tl-sub { font-size: 0.60rem; color: var(--ink-muted); text-align: center; margin-top: 3px; padding: 0 4px; line-height: 1.3; }
+    .tl-arrow { font-size: 1rem; color: var(--rule); margin-top: 3px; }
+
+    /* Flow boxes */
+    .flow-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .fbox { background: var(--ink); color: #FAF7F2; padding: 7px 14px; font-size: 0.75rem; font-weight: 400; line-height: 1.3; text-align: center; border-radius: 2px; }
+    .fbox.brass { background: var(--brass); }
+    .fbox.light { background: var(--bg); color: var(--ink); border: 1px solid var(--rule); }
+    .fbox.green { background: var(--green); }
+    .farrow { color: var(--brass); font-size: 1.1rem; }
+
+    /* Two-col diagram */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1em 0; }
+    .col-box { border: 1px solid var(--rule); padding: 12px; }
+    .col-box-title { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; }
+    .col-box ul { list-style: none; }
+    .col-box ul li { font-size: 0.78rem; color: var(--ink); font-weight: 300; padding: 3px 0 3px 14px; position: relative; border-bottom: 1px solid var(--rule); line-height: 1.4; }
+    .col-box ul li:last-child { border-bottom: none; }
+    .col-box ul li::before { content: '·'; position: absolute; left: 0; color: var(--brass); font-weight: bold; }
+
+    /* Mapping table */
+    .map-table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.82rem; }
+    .map-table th { background: var(--ink); color: #FAF7F2; padding: 8px 12px; text-align: left; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.04em; }
+    .map-table td { padding: 8px 12px; border-bottom: 1px solid var(--rule); color: var(--ink); font-weight: 300; vertical-align: top; line-height: 1.45; }
+    .map-table tr:nth-child(even) td { background: rgba(184,150,12,0.03); }
+    .map-table td:first-child { font-weight: 500; color: var(--brass); font-size: 0.78rem; }
+
+    /* Compare table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.80rem; }
+    .compare-table th { background: var(--ink); color: #FAF7F2; padding: 8px 10px; text-align: left; font-weight: 500; font-size: 0.70rem; letter-spacing: 0.04em; }
+    .compare-table td { padding: 8px 10px; border-bottom: 1px solid var(--rule); color: var(--ink); font-weight: 300; vertical-align: top; line-height: 1.45; }
+    .compare-table tr:nth-child(even) td { background: rgba(184,150,12,0.03); }
+    .compare-table td:first-child { font-weight: 500; font-size: 0.75rem; }
+
+    /* Boxes */
+    .memory-aid { background: var(--green-light); border-left: 3px solid var(--green); padding: 12px 16px; margin-top: 14px; }
+    .memory-aid-label { font-size: 0.60rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 5px; }
+    .memory-aid p { font-size: 0.83rem; color: #1B4332; font-weight: 400; line-height: 1.5; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+    .answer-tip { background: var(--blue-light); border-left: 3px solid var(--blue); padding: 12px 16px; margin-top: 14px; }
+    .answer-tip-label { font-size: 0.60rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
+    .answer-tip p { font-size: 0.83rem; color: var(--blue); font-weight: 400; line-height: 1.5; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+    .anthro-link { background: var(--red-light); border-left: 3px solid var(--red); padding: 12px 16px; margin-top: 14px; }
+    .anthro-link-label { font-size: 0.60rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); margin-bottom: 5px; }
+    .anthro-link p { font-size: 0.83rem; color: var(--red); font-weight: 400; line-height: 1.5; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 14px; }
+      .two-col { grid-template-columns: 1fr; }
+      .compare-table { font-size: 0.72rem; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="wordmark" href="/">The Working Aspirant</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/notes.html">Notes</a></li>
+      <li><a href="/vault.html" class="active">The Vault</a></li>
+      <li><a href="/#subscribe">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <div class="rule"></div>
+
+  <p class="breadcrumb">
+    <a href="/vault.html">The Vault</a><span>·</span>
+    <a href="/vault.html#polity">Polity</a><span>·</span>
+    <a href="/ch1-overview.html">Chapter 1</a><span>·</span>
+    Mains Edition
+  </p>
+
+  <div class="page-header">
+    <p class="chapter-label">Polity · Laxmikanth Ch. 1 · Mains Edition</p>
+    <h1 class="page-title">Historical Background — Mains Edition</h1>
+    <p class="page-subtitle">AIR 10 standard. Click any question to expand. Diagrams, flowcharts, comparison tables, and analytical frameworks included within word limits.</p>
+  </div>
+
+  <div class="format-tabs">
+    <a class="tab" href="/ch1-overview.html">Overview</a>
+    <a class="tab" href="/ch1-prelims.html">Prelims Edition</a>
+    <a class="tab active" href="/ch1-mains.html">Mains Edition</a>
+  </div>
+
+  <div class="content">
+
+    <div class="air10-banner">
+      <p class="air10-banner-label">AIR 10 Answer Formula</p>
+      <p><strong>Controlling idea</strong> (thesis, not topic) → <strong>Quote/maxim</strong> (direction-setter) → <strong>Analytical body</strong> (multidimensional) → <strong>Diagram</strong> (saves words, earns marks) → <strong>Contemporary connect</strong> → <strong>Elevated conclusion</strong> (insight, not summary)</p>
+      <p>Word limits are sacred. 10 marks = ~150 words. 15 marks = ~250 words. Precision over volume — always.</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <h2 class="section-title">Evolution & Historical Development</h2>
+
+    <!-- Q1 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">15 Marks</span>
+            <span class="qa-type">Evolution · Analytical</span>
+            <span class="qa-wc">~250 words</span>
+          </div>
+          <p class="qa-question-text">Trace the evolution of constitutional development in India under Company Rule (1773–1858). How did each Act progressively shape central governance?</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>Company Rule was an 85-year institutional experiment in which British parliamentary control progressively replaced corporate autonomy — laying the structural DNA of Indian central governance.</p>
+        </div>
+
+        <div class="quote-block">
+          <p>"The history of British India is the progressive subordination of the Company to Parliament, and the progressive assertion of Parliament's right to govern."</p>
+        </div>
+
+        <h4>Evolution Diagram</h4>
+        <div class="diagram">
+          <p class="diagram-title">Company Rule — Constitutional Evolution (1773–1858)</p>
+          <div class="timeline-h">
+            <div class="tl-item">
+              <p class="tl-year">1773</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Regulating Act</p>
+              <p class="tl-sub">Parliamentary control begins. GG of Bengal. Supreme Court.</p>
+            </div>
+            <div class="tl-arrow">→</div>
+            <div class="tl-item">
+              <p class="tl-year">1784</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Pitt's India Act</p>
+              <p class="tl-sub">Double Govt. Board of Control. 'British possessions.'</p>
+            </div>
+            <div class="tl-arrow">→</div>
+            <div class="tl-item">
+              <p class="tl-year">1813</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Charter Act</p>
+              <p class="tl-sub">Trade monopoly abolished. Crown sovereignty asserted.</p>
+            </div>
+            <div class="tl-arrow">→</div>
+            <div class="tl-item">
+              <p class="tl-year">1833</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Charter Act</p>
+              <p class="tl-sub">GG of India. Peak centralisation. EIC becomes admin body.</p>
+            </div>
+            <div class="tl-arrow">→</div>
+            <div class="tl-item">
+              <p class="tl-year">1853</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Charter Act</p>
+              <p class="tl-sub">Legislature separated. Mini-Parliament. Open civil services.</p>
+            </div>
+            <div class="tl-arrow">→</div>
+            <div class="tl-item">
+              <p class="tl-year">1857</p>
+              <div class="tl-connector"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <p class="tl-label">Sepoy Mutiny</p>
+              <p class="tl-sub">Company Rule ends. Crown Rule begins 1858.</p>
+            </div>
+          </div>
+        </div>
+
+        <h4>Three Phases of Company Rule</h4>
+        <ul>
+          <li><strong>Control Established (1773–84)</strong> — Regulating Act 1773 created GG of Bengal (Warren Hastings), subordinated Bombay and Madras, established Supreme Court at Calcutta. Pitt's India Act 1784 separated commercial and political functions; Board of Control for politics, Court of Directors for commerce — first time territories called 'British possessions in India.'</li>
+          <li><strong>Centralisation Deepened (1793–1833)</strong> — Charter Act 1833 was the peak: GGoB became Governor-General of India (Lord William Bentick — first), Bombay and Madras lost legislative powers, EIC became purely administrative — holding territories "in trust for His Majesty."</li>
+          <li><strong>Seeds of Representation (1853)</strong> — Charter Act 1853 separated legislative and executive functions for the first time, creating the Indian (Central) Legislative Council — a mini-Parliament. Introduced open competition for civil services (Macaulay Committee 1854). First local representation in Central legislature.</li>
+        </ul>
+
+        <h4>Conclusion</h4>
+        <p>The Constituent Assembly inherited this architecture. It did not build from scratch — it democratised what Company Rule had assembled over 85 years: a unified executive, a separated legislature, and a competitive civil service.</p>
+
+        <div class="anthro-link">
+          <p class="anthro-link-label">🔬 Anthropology Leakage</p>
+          <p>The transition from Company to Crown mirrors Weber's shift from patrimonial to legal-rational authority — from personal commercial governance to rule-based bureaucratic governance. Deploy this in answers on institutional evolution.</p>
+        </div>
+
+        <div class="answer-tip">
+          <p class="answer-tip-label">✍ AIR 10 Tip</p>
+          <p>The timeline diagram saves ~40 words and communicates the evolution more clearly than prose. Always draw it in your actual answer. Use "institutional evolution" — signals analytical depth to the examiner.</p>
+        </div>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Control → Centralise → Represent</strong> — 1773/84 → 1833 → 1853. Three phases, one direction: corporate autonomy → parliamentary accountability.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">10 Marks</span>
+            <span class="qa-type">Critical Analysis</span>
+            <span class="qa-wc">~150 words</span>
+          </div>
+          <p class="qa-question-text">Examine the significance and limitations of the Regulating Act of 1773.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The Regulating Act was simultaneously India's first constitutional document and its first constitutional failure — significant enough to establish central administration, flawed enough to require two corrective Acts within eleven years.</p>
+        </div>
+
+        <h4>Governance Structure Created</h4>
+        <div class="diagram">
+          <p class="diagram-title">Governance Hierarchy — Regulating Act 1773</p>
+          <div class="flow-row"><div class="fbox">British Parliament</div></div>
+          <div class="flow-row"><div class="farrow">↓ oversight</div></div>
+          <div class="flow-row"><div class="fbox">Court of Directors (London)</div></div>
+          <div class="flow-row"><div class="farrow">↓ reports revenue, civil, military</div></div>
+          <div class="flow-row">
+            <div class="fbox brass">GG of Bengal + Executive Council (4 members)</div>
+          </div>
+          <div class="flow-row"><div class="farrow">↙ subordinate &nbsp;&nbsp; ↘ subordinate</div></div>
+          <div class="flow-row">
+            <div class="fbox light">Governor of Bombay</div>
+            <div style="width:16px"></div>
+            <div class="fbox light">Governor of Madras</div>
+          </div>
+          <div class="flow-row" style="margin-top:8px"><div class="fbox light" style="font-size:0.68rem">Supreme Court, Calcutta (1774) — 1 CJ + 3 Judges</div></div>
+        </div>
+
+        <div class="two-col">
+          <div class="col-box">
+            <p class="col-box-title">✓ Significance</p>
+            <ul>
+              <li>First parliamentary control over EIC</li>
+              <li>Foundation of central administration</li>
+              <li>Subordinated presidencies — began centralisation</li>
+              <li>Supreme Court at Calcutta — roots of Indian judiciary</li>
+              <li>Prohibited bribery — first administrative accountability</li>
+            </ul>
+          </div>
+          <div class="col-box">
+            <p class="col-box-title">✗ Limitations</p>
+            <ul>
+              <li>Council could overrule GG — no decisive authority</li>
+              <li>SC jurisdiction conflicted with revenue executive</li>
+              <li>No separation of commercial and political functions</li>
+              <li>Amending Act 1781 and Pitt's Act 1784 needed within 11 years</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Conclusion</h4>
+        <p>The Act's greatest achievement was not what it accomplished but what it established: that a private company governing millions required parliamentary accountability. That principle, once asserted, was never reversed.</p>
+
+        <div class="answer-tip">
+          <p class="answer-tip-label">✍ AIR 10 Tip</p>
+          <p>The two-column significance/limitation layout takes 5 seconds to draw and communicates structure immediately. The concluding line elevates the answer — don't summarise, synthesise.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">15 Marks</span>
+            <span class="qa-type">Critical Examination · Concept</span>
+            <span class="qa-wc">~250 words</span>
+          </div>
+          <p class="qa-question-text">Critically examine the Government of India Act 1919. How did the introduction of dyarchy represent both a step forward and a step back in India's constitutional evolution?</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>Dyarchy institutionalised colonial reform's central contradiction — offering Indians the form of responsible government while withholding its substance, creating a system structurally designed to fail.</p>
+        </div>
+
+        <div class="quote-block">
+          <p>"Dyarchy was a halfway house that satisfied nobody — Indians wanted more, the British were unwilling to give it."</p>
+        </div>
+
+        <h4>Dyarchy — Structural Diagram</h4>
+        <div class="diagram">
+          <p class="diagram-title">Dyarchy at Provincial Level — GoI Act 1919</p>
+          <div class="flow-row"><div class="fbox">Provincial Subjects (Devolution Rules)</div></div>
+          <div class="flow-row"><div class="farrow">↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘</div></div>
+          <div class="flow-row">
+            <div class="fbox brass">TRANSFERRED<br><small>Health · Education<br>Agriculture · Local Govt</small></div>
+            <div style="width:16px"></div>
+            <div class="fbox">RESERVED<br><small>Police · Justice<br>Finance · Land Revenue</small></div>
+          </div>
+          <div class="flow-row"><div class="farrow">↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div></div>
+          <div class="flow-row">
+            <div class="fbox light">Indian Ministers<br><small>✓ Responsible to Legislature<br>✗ No independent revenue</small></div>
+            <div style="width:16px"></div>
+            <div class="fbox light">Governor + Exec. Council<br><small>✗ NOT responsible to Legislature<br>✓ Controls all revenue</small></div>
+          </div>
+          <p style="font-size:0.70rem;color:var(--ink-muted);text-align:center;margin-top:10px">Key flaw: Transferred departments depended on Reserved departments for funds → Accountability without power</p>
+        </div>
+
+        <div class="two-col">
+          <div class="col-box">
+            <p class="col-box-title">✓ Step Forward</p>
+            <ul>
+              <li>First direct elections in India</li>
+              <li>First bicameralism at Centre (CoS + LA)</li>
+              <li>3 of 6 Viceroy's EC members to be Indian</li>
+              <li>Provincial budgets separated from Central</li>
+              <li>Central PSC (1926) — precursor to UPSC</li>
+            </ul>
+          </div>
+          <div class="col-box">
+            <p class="col-box-title">✗ Step Back</p>
+            <ul>
+              <li>Indians governed soft state; British kept hard state</li>
+              <li>No independent revenue for transferred subjects</li>
+              <li>Communal electorates extended to 4 more communities</li>
+              <li>Governor could override Ministers</li>
+              <li>Simon Commission (1927) recommended abolition</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Conclusion</h4>
+        <p>Dyarchy's failure was instructive: you cannot govern health without controlling finance. The GoI Act 1935 abolished provincial dyarchy — an implicit admission that 1919's design was structurally incapable of working. The lesson was absorbed in the Constitution's full provincial autonomy under Article 246.</p>
+
+        <div class="anthro-link">
+          <p class="anthro-link-label">🔬 Anthropology Leakage</p>
+          <p>James Scott's "seeing like a state" — the British imposed a neat administrative division (transferred/reserved) onto a reality where governance is indivisible. The failure was epistemic before it was political.</p>
+        </div>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>DEBT</strong> — Dyarchy, Elections (first direct), Bicameralism (first), Transferred/Reserved subjects. <strong>Dyarchy = Democracy with handcuffs.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <h2 class="section-title">Comparison Questions</h2>
+
+    <!-- Q4 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">10 Marks</span>
+            <span class="qa-type">Comparison · Table</span>
+            <span class="qa-wc">~150 words</span>
+          </div>
+          <p class="qa-question-text">Distinguish between the Government of India Act 1919 and the Government of India Act 1935 with reference to dyarchy, federal structure, and provincial autonomy.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The GoI Act 1935 was the GoI Act 1919's corrected edition — absorbing the failures of dyarchy and partial reform to move decisively toward provincial autonomy and federal structure, even if it could not fully implement either.</p>
+        </div>
+
+        <h4>Evolution Flowchart</h4>
+        <div class="diagram">
+          <p class="diagram-title">From 1919 to 1935 — What Changed</p>
+          <div class="flow-row">
+            <div class="fbox">GoI Act 1919<br><small>Dyarchy (provinces)<br>No federation<br>Partial autonomy<br>Limited franchise</small></div>
+            <div class="farrow">→ Simon Commission 1927 → Round Tables → White Paper →</div>
+            <div class="fbox brass">GoI Act 1935<br><small>Dyarchy abolished (provinces)<br>Federation proposed<br>Full provincial autonomy<br>14% franchise</small></div>
+          </div>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th>Aspect</th><th>GoI Act 1919</th><th>GoI Act 1935</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Dyarchy</td><td>Introduced at provincial level</td><td>Abolished provincially; proposed (never implemented) at Centre</td></tr>
+            <tr><td>Provincial Autonomy</td><td>Partial — reserved subjects with Governor</td><td>Full — provinces derive power directly from Crown</td></tr>
+            <tr><td>Federal Structure</td><td>None — unitary Centre</td><td>Proposed All-India Federation (never materialised)</td></tr>
+            <tr><td>Legislative Lists</td><td>Central and Provincial (Devolution Rules)</td><td>Federal (59), Provincial (54), Concurrent (36)</td></tr>
+            <tr><td>Bicameralism</td><td>Centre only — CoS + LA</td><td>Extended to 6 provinces</td></tr>
+            <tr><td>Franchise</td><td>Property/tax qualifications — tiny fraction</td><td>14% of total population</td></tr>
+            <tr><td>Key Institutions</td><td>Central PSC (1926); Chamber of Princes (1921)</td><td>RBI (1935); Federal Court (1937); Auditor-General</td></tr>
+            <tr><td>Constitutional Legacy</td><td>Bicameral Parliament; direct elections</td><td>Three Lists; emergency provisions; Supreme Court; UPSC</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Conclusion</h4>
+        <p>The 1935 Act's deeper legacy lies not in what it implemented but in what it gave the Constitution — the Seventh Schedule's three lists, Articles 352–360's emergency provisions, and the Federal Court that became the Supreme Court of India.</p>
+
+        <div class="answer-tip">
+          <p class="answer-tip-label">✍ AIR 10 Tip</p>
+          <p>Draw this table + the flowchart in your answer. A table without analysis is data; add the analytical conclusion paragraph. Always connect the 1935 Act to specific Constitutional articles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">10 Marks</span>
+            <span class="qa-type">Comparison · Three-way</span>
+            <span class="qa-wc">~150 words</span>
+          </div>
+          <p class="qa-question-text">Compare the Indian Councils Acts of 1861, 1892 and 1909 in terms of their contribution to representative governance in India.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The three Indian Councils Acts trace a trajectory from nomination to near-election to communal election — each expanding Indian participation while simultaneously constraining the terms on which that participation occurred.</p>
+        </div>
+
+        <h4>Progression Diagram</h4>
+        <div class="diagram">
+          <p class="diagram-title">Path to Representative Governance — 1861 to 1909</p>
+          <div class="flow-row">
+            <div class="fbox light" style="text-align:left;min-width:170px"><strong>1861</strong><br>Pure nomination<br>3 Indians in 1862<br>BPD: Benaras, Patiala, Dinkar Rao<br><em>Decentralisation begins</em></div>
+            <div class="farrow">→</div>
+            <div class="fbox light" style="text-align:left;min-width:170px"><strong>1892</strong><br>"Nomination on recommendation"<br>Budget discussion allowed<br>Word 'election' not used<br><em>Almost elections</em></div>
+            <div class="farrow">→</div>
+            <div class="fbox brass" style="text-align:left;min-width:170px"><strong>1909</strong><br>Direct elections for some seats<br>16 → 60 members (Centre)<br>Communal electorate for Muslims<br><em>Communally elected</em></div>
+          </div>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th>Aspect</th><th>1861</th><th>1892</th><th>1909</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Indian representation</td><td>Nominated (3 Indians in 1862)</td><td>Nomination on recommendation</td><td>16 → 60; Sinha in Viceroy's EC</td></tr>
+            <tr><td>Nature of elections</td><td>None</td><td>Indirect — not called 'election'</td><td>Direct elections + communal electorates</td></tr>
+            <tr><td>Legislative functions</td><td>Legislative powers restored to Bombay, Madras</td><td>Budget discussion; questions to executive</td><td>Supplementary questions; budget resolutions</td></tr>
+            <tr><td>Key innovation</td><td>Portfolio system; ordinance power (6 months)</td><td>Seeds of local democracy in nominations</td><td>Communal representation — legalised communalism</td></tr>
+          </tbody>
+        </table>
+
+        <h4>The Darker Thread</h4>
+        <p>The 1909 Act's communal electorate transformed religious identity into a political category. This institutionalisation of communal boundaries was the seed of the Communal Award (1932) and, ultimately, the Partition of 1947.</p>
+
+        <div class="anthro-link">
+          <p class="anthro-link-label">🔬 Anthropology Leakage</p>
+          <p>Fredrik Barth's "ethnic boundary maintenance" — the state institutionalised religious identity as the basis of political representation. Cultural difference became political category, making partition an institutional outcome, not merely a political one.</p>
+        </div>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Nominated → Almost Elected → Communally Elected</strong>. Each Act expanded participation; each Act also constrained how that participation happened.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <h2 class="section-title">Legacy & Constitutional Impact</h2>
+
+    <!-- Q6 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">15 Marks</span>
+            <span class="qa-type">Statement · Critical</span>
+            <span class="qa-wc">~250 words</span>
+          </div>
+          <p class="qa-question-text">"The Government of India Act 1935 was the most important constitutional document before the Indian Constitution of 1950." Critically examine.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The GoI Act 1935 gave the Constitution its skeleton — the Constituent Assembly gave it a soul. The statement is structurally accurate but constitutionally incomplete.</p>
+        </div>
+
+        <div class="quote-block">
+          <p>"The draft constitution is essentially the Government of India Act 1935 with adult franchise."</p>
+          <cite>— T.T. Krishnamachari, Constituent Assembly Member</cite>
+        </div>
+
+        <h4>1935 Act → Constitution: Direct Inheritance Diagram</h4>
+        <div class="diagram">
+          <p class="diagram-title">GoI Act 1935 to Indian Constitution — Direct Inheritances</p>
+          <table class="map-table">
+            <thead><tr><th>1935 Act Provision</th><th>Constitutional Provision</th></tr></thead>
+            <tbody>
+              <tr><td>Federal (59), Provincial (54), Concurrent (36) Lists</td><td>Seventh Schedule — Union (97), State (66), Concurrent (47)</td></tr>
+              <tr><td>Federal Court (1937)</td><td>Supreme Court of India — Articles 124–147</td></tr>
+              <tr><td>Federal Public Service Commission</td><td>Union Public Service Commission — Articles 315–323</td></tr>
+              <tr><td>Emergency provisions (Ss. 45, 93, 102)</td><td>Articles 352, 356, 360 — National, State, Financial Emergency</td></tr>
+              <tr><td>Reserve Bank of India (1935)</td><td>Continues — monetary authority of India</td></tr>
+              <tr><td>Auditor-General</td><td>Comptroller & Auditor General — Article 148</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Arguments For the Statement</h4>
+        <ul>
+          <li>Governed independent India 1947–1950 as interim constitution (with modifications)</li>
+          <li>Three legislative lists directly became Seventh Schedule — the federal architecture of India</li>
+          <li>Federal Court became Supreme Court; its jurisdiction structure inherited intact</li>
+          <li>Emergency provisions most directly inherited — Articles 352–360 trace to this Act</li>
+        </ul>
+
+        <h4>Qualifications — Where the Statement Overstates</h4>
+        <ul>
+          <li>All-India Federation never materialised — princely states refused; the Act's central provision remained on paper</li>
+          <li>Provincial Autonomy lasted only 1937–1939 before Congress resigned over WWII</li>
+          <li>No universal franchise — 14% coverage vs Constitution's universal adult franchise</li>
+          <li>No fundamental rights, no directive principles — the Constitution's most humanising provisions had no 1935 antecedent</li>
+          <li>Rejected by Indian political leadership — experienced as imposition, not reform</li>
+        </ul>
+
+        <h4>Conclusion</h4>
+        <p>The 1935 Act provided the skeleton; the Constituent Assembly provided the soul. What was inherited was the structure — what was transformed was the purpose. The Constitution democratised a colonial framework by adding universal franchise, fundamental rights, and directive principles. Granville Austin called it a "cornerstone document" precisely because it transformed its inheritance rather than merely transmitting it.</p>
+
+        <div class="answer-tip">
+          <p class="answer-tip-label">✍ AIR 10 Tip</p>
+          <p>The T.T. Krishnamachari quote immediately signals historiographical awareness. The inheritance mapping table earns marks and saves ~50 words. The "skeleton vs soul" formulation is the kind of memorable phrase examiners note. The "What Was Rejected" section separates this from average answers — showing what the Constitution didn't inherit is as important as showing what it did.</p>
+        </div>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>1935 gave skeleton. Constitution gave soul.</strong> Three Lists → Seventh Schedule. Federal Court → Supreme Court. FPSC → UPSC. Emergency powers → Articles 352–360.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">10 Marks</span>
+            <span class="qa-type">Significance · Transition</span>
+            <span class="qa-wc">~150 words</span>
+          </div>
+          <p class="qa-question-text">Discuss the significance of the Indian Independence Act 1947 in ending British paramountcy and shaping the transition to self-governance.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The Indian Independence Act did not merely end British rule — it dissolved the legal architecture of empire while deliberately preserving enough constitutional continuity to ensure governance did not collapse in the transition.</p>
+        </div>
+
+        <h4>Chronology Flowchart — Path to Independence</h4>
+        <div class="diagram">
+          <p class="diagram-title">1947 — Chronology of Transfer of Power</p>
+          <div class="flow-row">
+            <div class="fbox light" style="min-width:140px;text-align:left"><strong>Feb 20, 1947</strong><br>Attlee announces end of British rule by June 30, 1948</div>
+            <div class="farrow">→</div>
+            <div class="fbox light" style="min-width:140px;text-align:left"><strong>June 3, 1947</strong><br>Mountbatten Plan (Partition Plan) announced. Accepted by Congress + Muslim League.</div>
+            <div class="farrow">→</div>
+            <div class="fbox brass" style="min-width:140px;text-align:left"><strong>Aug 14–15, 1947</strong><br>Power transferred at midnight. India + Pakistan independent.</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="col-box">
+            <p class="col-box-title">Ending Paramountcy</p>
+            <ul>
+              <li>Lapse of all treaty relations with 565 princely states</li>
+              <li>States given 3 choices: India, Pakistan or independent</li>
+              <li>Abolished Secretary of State for India</li>
+              <li>Viceroy abolished — replaced by Governor-General</li>
+              <li>Dropped 'Emperor of India' from British King's titles</li>
+            </ul>
+          </div>
+          <div class="col-box">
+            <p class="col-box-title">Enabling Transition</p>
+            <ul>
+              <li>GoI Act 1935 as interim constitution — administrative continuity</li>
+              <li>Constituent Assembly empowered to frame constitution and repeal any British Act</li>
+              <li>Civil services retained — ICS framework continued as IAS/IPS/IFS</li>
+              <li>CA 1946 became Parliament of Indian Dominion</li>
+              <li>Mountbatten: First GG of India. Nehru: First PM.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Conclusion</h4>
+        <p>The Act was constitutionally minimalist but historically maximal. It cleared the legal ground for India to decide its own future — and that is what sovereignty means.</p>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>Three abolitions in 1947</strong> — Viceroy abolished, Secretary of State abolished, Emperor of India title abolished. Three things ended, one nation began.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="qa-block">
+      <div class="qa-question" onclick="toggleQA(this)">
+        <div style="flex:1">
+          <div class="qa-meta">
+            <span class="qa-marks">15 Marks</span>
+            <span class="qa-type">Legacy · Constitutional Connect</span>
+            <span class="qa-wc">~250 words</span>
+          </div>
+          <p class="qa-question-text">How did British colonial legislation lay the foundations of the Indian Constitution? Identify specific inheritances with reference to constitutional provisions.</p>
+        </div>
+        <span class="qa-toggle">+</span>
+      </div>
+      <div class="qa-answer">
+
+        <div class="ci">
+          <p class="ci-label">Controlling Idea</p>
+          <p>The Indian Constitution democratised a colonial structure — adding a republican soul to an imperial skeleton. It inherited the form; it transformed the purpose.</p>
+        </div>
+
+        <h4>Colonial Act → Constitutional Article: Inheritance Map</h4>
+        <div class="diagram">
+          <p class="diagram-title">British Colonial Legislation → Indian Constitution — Direct Inheritances</p>
+          <table class="map-table">
+            <thead><tr><th>Colonial Act</th><th>Provision Inherited</th><th>Constitutional Article/Schedule</th></tr></thead>
+            <tbody>
+              <tr><td>Regulating Act 1773</td><td>Supreme Court at Calcutta — judicial system origin</td><td>Articles 124–147 (Supreme Court)</td></tr>
+              <tr><td>Charter Act 1853</td><td>Open competition for civil services (Macaulay 1854)</td><td>Articles 315–323 (UPSC); Article 312 (All India Services)</td></tr>
+              <tr><td>GoI Act 1919</td><td>Bicameral legislature at Centre — Council of State + LA</td><td>Articles 79–122 (Parliament — Rajya Sabha + Lok Sabha)</td></tr>
+              <tr><td>GoI Act 1935</td><td>Three legislative lists — Federal, Provincial, Concurrent</td><td>Seventh Schedule — Union, State, Concurrent Lists</td></tr>
+              <tr><td>GoI Act 1935</td><td>Federal Court (1937) — original and appellate jurisdiction</td><td>Articles 124–147 (Supreme Court of India)</td></tr>
+              <tr><td>GoI Act 1935</td><td>Emergency provisions — GG's special powers</td><td>Articles 352, 356, 360</td></tr>
+              <tr><td>GoI Act 1935</td><td>Federal Public Service Commission</td><td>Articles 315–323 (UPSC)</td></tr>
+              <tr><td>GoI Act 1935</td><td>Auditor-General of India</td><td>Article 148 (CAG of India)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>What the Constitution Rejected</h4>
+        <div class="diagram">
+          <p class="diagram-title">Colonial Legacy — Rejected vs Retained vs Transformed</p>
+          <div class="flow-row">
+            <div class="fbox" style="min-width:160px">RETAINED<br><small>Federal structure · Three lists<br>Judiciary · Civil services<br>Emergency provisions</small></div>
+            <div style="width:12px"></div>
+            <div class="fbox brass" style="min-width:160px">TRANSFORMED<br><small>Property franchise → Universal suffrage<br>Nominated legislature → Elected Parliament<br>Colonial civil services → Democratic accountability</small></div>
+            <div style="width:12px"></div>
+            <div class="fbox light" style="min-width:160px">REJECTED<br><small>Communal electorates (1909)<br>No fundamental rights<br>No directive principles<br>No sovereignty</small></div>
+          </div>
+        </div>
+
+        <h4>Conclusion</h4>
+        <p>The Constituent Assembly was not a blank slate — it was a deliberate act of selective inheritance. What it retained was structure. What it transformed was spirit. What it rejected was colonialism's most enduring distortions. Granville Austin called the Constitution a "cornerstone document" precisely because it transformed its inheritance rather than merely transmitting it.</p>
+
+        <div class="anthro-link">
+          <p class="anthro-link-label">🔬 Anthropology Leakage</p>
+          <p>Eric Wolf's "articulation of modes" — old structures are not destroyed but transformed, with new values inserted into existing frameworks. The colonial state's institutional architecture was retained; its extractive purpose replaced with a developmental one. This tension between inherited form and new purpose explains many of the Constitution's inherent ambiguities.</p>
+        </div>
+
+        <div class="answer-tip">
+          <p class="answer-tip-label">✍ AIR 10 Tip</p>
+          <p>The inheritance mapping table with Article numbers is your single most powerful presentation tool for this question. The Retained/Transformed/Rejected diagram takes 30 seconds to draw and communicates what would take 60 words of prose. Cite Granville Austin — it signals you've read beyond Laxmikanth.</p>
+        </div>
+
+        <div class="memory-aid">
+          <p class="memory-aid-label">🧠 Memory Aid</p>
+          <p><strong>FBCEJ</strong> — Federal structure (1935), Bicameralism (1919), Civil services (1853), Emergency provisions (1935), Judiciary (1773/1935).</p>
+          <p><strong>Constitution's departures</strong> — Universal franchise, Fundamental Rights, DPSPs, abolition of communal electorates.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-brand">The Working Aspirant</span>
+    <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+  function toggleQA(el) {
+    el.closest('.qa-block').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
