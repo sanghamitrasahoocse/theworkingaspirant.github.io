@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS Paper IV &mdash; Case Study &amp; Example Bank | The Working Aspirant</title>
+<meta name="description" content="A working case-study and example bank for UPSC GS Paper IV (Ethics, Integrity and Aptitude), organised by official syllabus sub-topic.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --cream-deep: #F2EBDC;
+    --brass: #8B6B3D;
+    --brass-deep: #6B4F28;
+    --ink: #2B2620;
+    --ink-soft: #5C5346;
+    --line: #DDD2BA;
+    --verify: #9C4B3A;
+    --verify-bg: #F7E9E4;
+    --card-bg: #FFFFFF;
+    --shadow: 0 1px 2px rgba(43,38,32,0.04), 0 8px 24px rgba(43,38,32,0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: #E4D3AE; }
+
+  a { color: inherit; }
+
+  /* ---------- Site nav (matches rest of site) ---------- */
+  .site-nav-wrap {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 24px 0;
+  }
+  .site-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 20px;
+  }
+  .site-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    color: var(--brass-deep);
+    text-decoration: none;
+  }
+  .site-nav-links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+  .site-nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .site-nav-links a:hover, .site-nav-links a.active { color: var(--brass-deep); }
+
+  .breadcrumb {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 24px 0;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .breadcrumb a { color: var(--ink-soft); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--brass-deep); }
+  .breadcrumb span { margin: 0 6px; opacity: 0.5; }
+
+  /* ---------- Header ---------- */
+  header.masthead {
+    background: linear-gradient(180deg, var(--cream-deep) 0%, var(--cream) 100%);
+    border-bottom: 1px solid var(--line);
+    padding: 40px 24px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  h1.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    color: var(--brass-deep);
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+  }
+
+  .subtitle-lede {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .status-strip {
+    margin: 28px auto 0;
+    max-width: 620px;
+    font-size: 13px;
+    color: var(--verify);
+    background: var(--verify-bg);
+    border: 1px solid #E6CFC6;
+    border-radius: 8px;
+    padding: 10px 16px;
+  }
+
+  /* ---------- Search bar ---------- */
+  .search-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 24px;
+  }
+
+  .search-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .search-inner svg { flex-shrink: 0; color: var(--brass); }
+
+  #search {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    background: transparent;
+  }
+
+  #search::placeholder { color: #A99B82; }
+
+  #resultCount {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  /* ---------- Layout ---------- */
+  .layout {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 40px;
+    padding: 40px 24px 100px;
+  }
+
+  /* ---------- TOC ---------- */
+  nav.toc {
+    position: sticky;
+    top: 78px;
+    align-self: start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+  nav.toc::-webkit-scrollbar { width: 5px; }
+  nav.toc::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+  .toc-title {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .toc-link {
+    display: block;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    margin-bottom: 1px;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .toc-link:hover {
+    background: var(--cream-deep);
+    color: var(--brass-deep);
+  }
+
+  .toc-link.active {
+    color: var(--brass-deep);
+    border-left-color: var(--brass);
+    background: var(--cream-deep);
+    font-weight: 600;
+  }
+
+  /* ---------- Main content ---------- */
+  main { min-width: 0; }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 32px 36px;
+    margin-bottom: 22px;
+    scroll-margin-top: 90px;
+  }
+
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--brass);
+    flex-shrink: 0;
+  }
+
+  .card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: var(--brass-deep);
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  h3.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin: 18px 0 10px;
+  }
+
+  ul.entry-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li.entry {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 15px;
+  }
+
+  li.entry:last-child { border-bottom: none; }
+
+  li.entry .term {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  li.entry .dash {
+    color: var(--brass);
+    margin: 0 4px;
+  }
+
+  li.entry .def {
+    color: var(--ink-soft);
+  }
+
+  li.entry.hidden { display: none; }
+
+  mark {
+    background: #F0DDA0;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+  }
+
+  .card.hidden { display: none; }
+
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    display: none;
+  }
+
+  .closing-note {
+    text-align: center;
+    padding: 10px 20px 0;
+    color: var(--ink-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-foot {
+    text-align: center;
+    padding: 30px 24px 50px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- Mobile TOC toggle ---------- */
+  .toc-toggle {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+      padding-top: 24px;
+    }
+    nav.toc {
+      position: static;
+      max-height: none;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card-bg);
+      padding: 16px 18px;
+      margin-bottom: 8px;
+    }
+    .toc-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+    }
+    .toc-title { display: none; }
+    .toc-list { display: none; margin-top: 14px; }
+    .toc-list.open { display: block; }
+    .card { padding: 24px 20px; }
+    .site-nav-links { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav-wrap">
+  <div class="site-nav-inner">
+    <a class="site-wordmark" href="/">The Working Aspirant</a>
+    <ul class="site-nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/notes.html">Notes</a></li>
+      <li><a href="/vault.html" class="active">The Vault</a></li>
+      <li><a href="/#subscribe">Subscribe</a></li>
+    </ul>
+  </div>
+</div>
+
+<p class="breadcrumb">
+  <a href="/vault.html">The Vault</a><span>&middot;</span>
+  <a href="/vault.html#gs4">GS Paper IV</a><span>&middot;</span>
+  Case Study &amp; Example Bank
+</p>
+
+<header class="masthead">
+  <div class="eyebrow">The Working Aspirant &middot; GS Paper IV Resource</div>
+  <h1 class="title">Ethics, Integrity &amp; Aptitude</h1>
+  <p class="subtitle-lede">A case-study and example bank, organised by official syllabus sub-topic &mdash; built for quick recall and answer-enrichment, not exhaustive theory.</p>
+  <div class="status-strip">This page has been adopted from various physical reference books and has culminated into this result.</div>
+</header>
+
+<div class="search-wrap">
+  <div class="search-inner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="text" id="search" placeholder="Search examples, names, concepts&hellip;" autocomplete="off">
+    <span id="resultCount"></span>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc">
+    <button class="toc-toggle" id="tocToggle">
+      <span>Jump to section</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+    <div class="toc-title">On this page</div>
+    <div class="toc-list" id="tocList">
+<a href="#sec-1" class="toc-link" data-num="1">1. Dimensions of Ethics — Applied/Emerging Issues</a>
+<a href="#sec-2" class="toc-link" data-num="2">2. Ethics in Private vs Public Life</a>
+<a href="#sec-3" class="toc-link" data-num="3">3. Professional Ethics — People to Remember</a>
+<a href="#sec-4" class="toc-link" data-num="4">4. Sports Ethics</a>
+<a href="#sec-5" class="toc-link" data-num="5">5. Environmental Ethics</a>
+<a href="#sec-6" class="toc-link" data-num="6">6. Media Ethics</a>
+<a href="#sec-7" class="toc-link" data-num="7">7. Role of Family in Inculcating Values</a>
+<a href="#sec-8" class="toc-link" data-num="8">8. Role of Society in Inculcating Values</a>
+<a href="#sec-9" class="toc-link" data-num="9">9. Aptitude</a>
+<a href="#sec-10" class="toc-link" data-num="10">10. Integrity</a>
+<a href="#sec-11" class="toc-link" data-num="11">11. Impartiality and Non-Partisanship</a>
+<a href="#sec-12" class="toc-link" data-num="12">12. Objectivity</a>
+<a href="#sec-13" class="toc-link" data-num="13">13. Dedication to Public Service</a>
+<a href="#sec-14" class="toc-link" data-num="14">14. Empathy</a>
+<a href="#sec-15" class="toc-link" data-num="15">15. Tolerance and Compassion Towards Weaker Sections</a>
+<a href="#sec-16" class="toc-link" data-num="16">16. Social Influence</a>
+<a href="#sec-17" class="toc-link" data-num="17">17. Persuasion</a>
+<a href="#sec-18" class="toc-link" data-num="18">18. Attitude — Content, Structure, Function</a>
+<a href="#sec-19" class="toc-link" data-num="19">19. Classic Ethical Dilemmas Checklist</a>
+<a href="#sec-20" class="toc-link" data-num="20">20. Laws, Rules, Regulations and Conscience as Sources of Ethical Guidance</a>
+<a href="#sec-21" class="toc-link" data-num="21">21. Emotional Intelligence — Concepts and Application in Administration and Governance</a>
+<a href="#sec-22" class="toc-link" data-num="22">22. Contributions of Moral Thinkers and Philosophers — Indian Values</a>
+<a href="#sec-23" class="toc-link" data-num="23">23. Strengthening Ethical and Moral Values in Governance</a>
+<a href="#sec-24" class="toc-link" data-num="24">24. Corporate Governance</a>
+<a href="#sec-25" class="toc-link" data-num="25">25. Probity in Governance: Concept of Public Service</a>
+<a href="#sec-26" class="toc-link" data-num="26">26. Right to Information</a>
+<a href="#sec-27" class="toc-link" data-num="27">27. Codes of Ethics, Codes of Conduct</a>
+<a href="#sec-28" class="toc-link" data-num="28">28. Citizen's Charters</a>
+<a href="#sec-29" class="toc-link" data-num="29">29. Work Culture</a>
+<a href="#sec-30" class="toc-link" data-num="30">30. Quality of Service Delivery</a>
+<a href="#sec-31" class="toc-link" data-num="31">31. Utilization of Public Funds</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="card" id="sec-1" data-section-title="dimensions of ethics — applied/emerging issues">
+      <div class="card-head">
+        <span class="card-num">1</span>
+        <h2>Dimensions of Ethics — Applied/Emerging Issues</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="clinical trials testing new drugs on human subjects before public release — raises consent, exploitation, and informed-consent ethics issues, especially with poor/illiterate participants in india.">
+          <span class="term">Clinical trials</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Testing new drugs on human subjects before public release — raises consent, exploitation, and informed-consent ethics issues, especially with poor/illiterate participants in India.</span>
+        </li>
+        <li class="entry" data-search="designer babies genetically selecting traits in embryos (looks, intelligence, disease-resistance) — raises questions of eugenics, equality, and 'playing god'.">
+          <span class="term">Designer babies</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Genetically selecting traits in embryos (looks, intelligence, disease-resistance) — raises questions of eugenics, equality, and 'playing god'.</span>
+        </li>
+        <li class="entry" data-search="surrogacy a woman carries a pregnancy for another person/couple — ethical concerns around commercial exploitation of poor women's bodies (india restricted commercial surrogacy via the surrogacy (regulation) act, 2021).">
+          <span class="term">Surrogacy</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A woman carries a pregnancy for another person/couple — ethical concerns around commercial exploitation of poor women's bodies (India restricted commercial surrogacy via the Surrogacy (Regulation) Act, 2021).</span>
+        </li>
+        <li class="entry" data-search="cloning creating a genetically identical organism — raises ethical concerns on identity, consent, and misuse (reproductive vs therapeutic cloning).">
+          <span class="term">Cloning</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Creating a genetically identical organism — raises ethical concerns on identity, consent, and misuse (reproductive vs therapeutic cloning).</span>
+        </li>
+        <li class="entry" data-search="gmo / lmo genetically modified / living modified organisms — altered at the genetic level; debate over food safety, biodiversity risk, and corporate control of seeds (e.g. bt cotton in india).">
+          <span class="term">GMO / LMO</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Genetically Modified / Living Modified Organisms — altered at the genetic level; debate over food safety, biodiversity risk, and corporate control of seeds (e.g. Bt cotton in India).</span>
+        </li>
+        <li class="entry" data-search="gm crops genetically modified crops — same debate as above, often discussed with farmer livelihoods and informed consent.">
+          <span class="term">GM crops</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Genetically modified crops — same debate as above, often discussed with farmer livelihoods and informed consent.</span>
+        </li>
+        <li class="entry" data-search="racism discrimination based on race/ethnicity — a recurring example for prejudice, dignity, and equality in ethics answers.">
+          <span class="term">Racism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Discrimination based on race/ethnicity — a recurring example for prejudice, dignity, and equality in ethics answers.</span>
+        </li>
+        <li class="entry" data-search="body-shaming mocking or criticising someone's physical appearance — used as an example of how social attitudes and media can violate dignity and self-worth.">
+          <span class="term">Body-shaming</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Mocking or criticising someone's physical appearance — used as an example of how social attitudes and media can violate dignity and self-worth.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-2" data-section-title="ethics in private vs public life">
+      <div class="card-head">
+        <span class="card-num">2</span>
+        <h2>Ethics in Private vs Public Life</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="daily habits as integrity markers examples like punctuality, cleanliness, simple living (shower, modest house, leather products, tax-paying honestly) are often cited to show how small private habits reflect larger integrity.">
+          <span class="term">Daily habits as integrity markers</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Examples like punctuality, cleanliness, simple living (shower, modest house, leather products, tax-paying honestly) are often cited to show how small private habits reflect larger integrity.</span>
+        </li>
+        <li class="entry" data-search="superstition belief in luck/rituals over reason — used to discuss rational thinking vs blind faith, especially for public officials.">
+          <span class="term">Superstition</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Belief in luck/rituals over reason — used to discuss rational thinking vs blind faith, especially for public officials.</span>
+        </li>
+        <li class="entry" data-search="punctuality &amp; loyalty culture (japan) japan is a recurring example of a society where punctuality and institutional loyalty are deeply ingrained values.">
+          <span class="term">Punctuality &amp; loyalty culture (Japan)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Japan is a recurring example of a society where punctuality and institutional loyalty are deeply ingrained values.</span>
+        </li>
+        <li class="entry" data-search="extra-marital affairs of public figures used to discuss where the line lies between a leader's private morality and their public duty/accountability — a genuinely debated ethics topic, not a settled one.">
+          <span class="term">Extra-marital affairs of public figures</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss where the line lies between a leader's private morality and their public duty/accountability — a genuinely debated ethics topic, not a settled one.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-3" data-section-title="professional ethics — people to remember">
+      <div class="card-head">
+        <span class="card-num">3</span>
+        <h2>Professional Ethics — People to Remember</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="hippocratic oath the ethical oath doctors take — classic reference point for medical/professional ethics in any answer.">
+          <span class="term">Hippocratic Oath</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The ethical oath doctors take — classic reference point for medical/professional ethics in any answer.</span>
+        </li>
+        <li class="entry" data-search="e. sreedharan known as the 'metro man' of india — cited for incorruptibility, discipline, and execution integrity (delhi metro).">
+          <span class="term">E. Sreedharan</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Known as the 'Metro Man' of India — cited for incorruptibility, discipline, and execution integrity (Delhi Metro).</span>
+        </li>
+        <li class="entry" data-search="l. b. shastri (lal bahadur shastri) former pm cited as an icon of moral integrity — known for personal simplicity and famously taking responsibility (resigning as railway minister after a train accident, despite no personal fault).">
+          <span class="term">L. B. Shastri (Lal Bahadur Shastri)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Former PM cited as an icon of moral integrity — known for personal simplicity and famously taking responsibility (resigning as Railway Minister after a train accident, despite no personal fault).</span>
+        </li>
+        <li class="entry" data-search="jrd tata industrialist known for ethical business practice and corporate welfare-mindedness, often cited against 'profit-at-any-cost' examples.">
+          <span class="term">JRD Tata</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Industrialist known for ethical business practice and corporate welfare-mindedness, often cited against 'profit-at-any-cost' examples.</span>
+        </li>
+        <li class="entry" data-search="narayan murthy infosys co-founder, cited for corporate governance and ethical leadership in indian business.">
+          <span class="term">Narayan Murthy</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Infosys co-founder, cited for corporate governance and ethical leadership in Indian business.</span>
+        </li>
+        <li class="entry" data-search="m. s. swaminathan father of india's green revolution — cited for science serving public good with integrity.">
+          <span class="term">M. S. Swaminathan</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Father of India's Green Revolution — cited for science serving public good with integrity.</span>
+        </li>
+        <li class="entry" data-search="verghese kurien father of the white revolution (amul/cooperative dairy model) — cited for institution-building with integrity.">
+          <span class="term">Verghese Kurien</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Father of the White Revolution (Amul/cooperative dairy model) — cited for institution-building with integrity.</span>
+        </li>
+        <li class="entry" data-search="hospital professional ethics incident a recurring upsc case-study archetype worth keeping in mind: a doctor or hospital administrator facing competing duties (e.g. two critical patients needing simultaneous urgent care, or balancing charitable treatment against the hospital's financial viability) — useful as a generic template for medical professional ethics dilemmas.">
+          <span class="term">Hospital professional ethics incident</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A recurring UPSC case-study archetype worth keeping in mind: a doctor or hospital administrator facing competing duties (e.g. two critical patients needing simultaneous urgent care, or balancing charitable treatment against the hospital's financial viability) — useful as a generic template for medical professional ethics dilemmas.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-4" data-section-title="sports ethics">
+      <div class="card-head">
+        <span class="card-num">4</span>
+        <h2>Sports Ethics</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="adam gilchrist cricketer known for 'walking' (self-declaring out) even when the umpire didn't catch it — classic sportsman-spirit example.">
+          <span class="term">Adam Gilchrist</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cricketer known for 'walking' (self-declaring out) even when the umpire didn't catch it — classic sportsman-spirit example.</span>
+        </li>
+        <li class="entry" data-search="rahul dravid cricketer cited repeatedly for integrity, fairness, and mentorship in indian sport.">
+          <span class="term">Rahul Dravid</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cricketer cited repeatedly for integrity, fairness, and mentorship in Indian sport.</span>
+        </li>
+        <li class="entry" data-search="steve smith / australian ball-tampering used as a negative example — cheating to win, and the fallout of getting caught.">
+          <span class="term">Steve Smith / Australian ball-tampering</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used as a negative example — cheating to win, and the fallout of getting caught.</span>
+        </li>
+        <li class="entry" data-search="lance armstrong cyclist stripped of titles after a long-running doping scandal — classic example of integrity collapse under pressure to win.">
+          <span class="term">Lance Armstrong</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cyclist stripped of titles after a long-running doping scandal — classic example of integrity collapse under pressure to win.</span>
+        </li>
+        <li class="entry" data-search="maria sharapova / russian doping cases used for discussing doping ethics and institutional cover-ups in sport.">
+          <span class="term">Maria Sharapova / Russian doping cases</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used for discussing doping ethics and institutional cover-ups in sport.</span>
+        </li>
+        <li class="entry" data-search="spot-fixing match-fixing for betting gains (e.g. ipl spot-fixing case) — corruption-in-sport example.">
+          <span class="term">Spot-fixing</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Match-fixing for betting gains (e.g. IPL spot-fixing case) — corruption-in-sport example.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-5" data-section-title="environmental ethics">
+      <div class="card-head">
+        <span class="card-num">5</span>
+        <h2>Environmental Ethics</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="amrita devi 18th-century bishnoi woman who sacrificed her life hugging trees to stop them being felled — root example for the later chipko movement.">
+          <span class="term">Amrita Devi</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">18th-century Bishnoi woman who sacrificed her life hugging trees to stop them being felled — root example for the later Chipko Movement.</span>
+        </li>
+        <li class="entry" data-search="chipko movement 1970s movement where villagers (notably women) hugged trees to prevent logging — classic eco-ethics example.">
+          <span class="term">Chipko Movement</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">1970s movement where villagers (notably women) hugged trees to prevent logging — classic eco-ethics example.</span>
+        </li>
+        <li class="entry" data-search="sunderlal bahuguna environmentalist and a key chipko movement leader.">
+          <span class="term">Sunderlal Bahuguna</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Environmentalist and a key Chipko Movement leader.</span>
+        </li>
+        <li class="entry" data-search="jadav payeng the 'forest man of india' who single-handedly planted a forest on a river island in assam.">
+          <span class="term">Jadav Payeng</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The 'Forest Man of India' who single-handedly planted a forest on a river island in Assam.</span>
+        </li>
+        <li class="entry" data-search="rajendra singh 'waterman of india' — known for water conservation and reviving rivers in rajasthan.">
+          <span class="term">Rajendra Singh</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Waterman of India' — known for water conservation and reviving rivers in Rajasthan.</span>
+        </li>
+        <li class="entry" data-search="afroz shah led the world's largest beach clean-up movement at versova beach, mumbai.">
+          <span class="term">Afroz Shah</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Led the world's largest beach clean-up movement at Versova Beach, Mumbai.</span>
+        </li>
+        <li class="entry" data-search="tulsi gowda 'encyclopedia of forest' — tribal environmentalist from karnataka honoured with padma shri for tree conservation.">
+          <span class="term">Tulsi Gowda</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Encyclopedia of forest' — tribal environmentalist from Karnataka honoured with Padma Shri for tree conservation.</span>
+        </li>
+        <li class="entry" data-search="animal trafficking / sparrow decline / animal testing used to discuss biodiversity loss and ethics of animal use in research.">
+          <span class="term">Animal trafficking / Sparrow decline / animal testing</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss biodiversity loss and ethics of animal use in research.</span>
+        </li>
+        <li class="entry" data-search="peta animal rights organisation — cited in debates on animal testing and welfare.">
+          <span class="term">PETA</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Animal rights organisation — cited in debates on animal testing and welfare.</span>
+        </li>
+        <li class="entry" data-search="need vs greed (jainism reference) jain philosophy of consumption only as per need, not greed — used as a sustainability/ethics frame.">
+          <span class="term">Need vs Greed (Jainism reference)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Jain philosophy of consumption only as per need, not greed — used as a sustainability/ethics frame.</span>
+        </li>
+        <li class="entry" data-search="eia / sia environmental impact assessment / social impact assessment — mandatory clearances before large projects; cited in development vs environment debates.">
+          <span class="term">EIA / SIA</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Environmental Impact Assessment / Social Impact Assessment — mandatory clearances before large projects; cited in development vs environment debates.</span>
+        </li>
+        <li class="entry" data-search="niyamgiri odisha hills case — tribal (dongria kondh) rights vs bauxite mining; landmark case of community consent (gram sabha) overriding corporate mining interest.">
+          <span class="term">Niyamgiri</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Odisha hills case — tribal (Dongria Kondh) rights vs bauxite mining; landmark case of community consent (Gram Sabha) overriding corporate mining interest.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-6" data-section-title="media ethics">
+      <div class="card-head">
+        <span class="card-num">6</span>
+        <h2>Media Ethics</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="p. sainath journalist known for reporting on rural distress and farmer suicides — cited for ethical, ground-level journalism.">
+          <span class="term">P. Sainath</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Journalist known for reporting on rural distress and farmer suicides — cited for ethical, ground-level journalism.</span>
+        </li>
+        <li class="entry" data-search="ravish kumar journalist cited for independent broadcast journalism.">
+          <span class="term">Ravish Kumar</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Journalist cited for independent broadcast journalism.</span>
+        </li>
+        <li class="entry" data-search="n. ram &amp; chitra subramaniam journalists associated with the bofors scandal exposé — cited for investigative journalism ethics.">
+          <span class="term">N. Ram &amp; Chitra Subramaniam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Journalists associated with the Bofors scandal exposé — cited for investigative journalism ethics.</span>
+        </li>
+        <li class="entry" data-search="sting operations undercover journalism to expose wrongdoing — raises ethics questions of means (deception) vs ends (public interest).">
+          <span class="term">Sting operations</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Undercover journalism to expose wrongdoing — raises ethics questions of means (deception) vs ends (public interest).</span>
+        </li>
+        <li class="entry" data-search="edward snowden nsa leaker who exposed mass surveillance — central example for whistleblowing ethics and state surveillance vs individual privacy.">
+          <span class="term">Edward Snowden</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">NSA leaker who exposed mass surveillance — central example for whistleblowing ethics and state surveillance vs individual privacy.</span>
+        </li>
+        <li class="entry" data-search="fake news / social media misinformation spread via platforms — modern media ethics issue.">
+          <span class="term">Fake news / Social media</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Misinformation spread via platforms — modern media ethics issue.</span>
+        </li>
+        <li class="entry" data-search="#metoo global movement against sexual harassment, amplified via social media — example of social-media-driven accountability.">
+          <span class="term">#MeToo</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Global movement against sexual harassment, amplified via social media — example of social-media-driven accountability.</span>
+        </li>
+        <li class="entry" data-search="#timesup companion movement to #metoo, focused on systemic change against harassment.">
+          <span class="term">#TimesUp</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Companion movement to #MeToo, focused on systemic change against harassment.</span>
+        </li>
+        <li class="entry" data-search="panama papers massive leak exposing offshore tax evasion by global elites — example of investigative journalism's role in exposing corruption.">
+          <span class="term">Panama Papers</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Massive leak exposing offshore tax evasion by global elites — example of investigative journalism's role in exposing corruption.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-7" data-section-title="role of family in inculcating values">
+      <div class="card-head">
+        <span class="card-num">7</span>
+        <h2>Role of Family in Inculcating Values</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="mahavir singh phogat father of wrestlers geeta and babita phogat (subject of the film dangal) — example of family shaping discipline and values against social norms.">
+          <span class="term">Mahavir Singh Phogat</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Father of wrestlers Geeta and Babita Phogat (subject of the film Dangal) — example of family shaping discipline and values against social norms.</span>
+        </li>
+        <li class="entry" data-search="japan / israel / scandinavian family models cited as cultural models of strong family-based value transmission.">
+          <span class="term">Japan / Israel / Scandinavian family models</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as cultural models of strong family-based value transmission.</span>
+        </li>
+        <li class="entry" data-search="old-age, gender, respect within family used to discuss how family structures teach respect for elders and gender sensitivity (or fail to).">
+          <span class="term">Old-age, gender, respect within family</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss how family structures teach respect for elders and gender sensitivity (or fail to).</span>
+        </li>
+        <li class="entry" data-search="upbringing shaping ideology (contrasting examples) a useful theme to keep a mental folder for: how the same broad environment (family, nation, faith) can produce very different ideological outcomes depending on the specific values instilled — e.g. contrasting a reform-minded upbringing against a radicalising one.">
+          <span class="term">Upbringing shaping ideology (contrasting examples)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A useful theme to keep a mental folder for: how the same broad environment (family, nation, faith) can produce very different ideological outcomes depending on the specific values instilled — e.g. contrasting a reform-minded upbringing against a radicalising one.</span>
+        </li>
+        <li class="entry" data-search="apj abdul kalam on roles that shape a child kalam frequently spoke of how a handful of figures around a child — parents, teachers, and community/society — jointly shape values; a generally useful reference point when an answer needs to credit multiple social actors, not just the family, for value formation.">
+          <span class="term">APJ Abdul Kalam on roles that shape a child</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Kalam frequently spoke of how a handful of figures around a child — parents, teachers, and community/society — jointly shape values; a generally useful reference point when an answer needs to credit multiple social actors, not just the family, for value formation.</span>
+        </li>
+        <li class="entry" data-search="broken families → juvenile delinquency used to show the cost of family breakdown on children's value formation.">
+          <span class="term">Broken families → juvenile delinquency</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to show the cost of family breakdown on children's value formation.</span>
+        </li>
+        <li class="entry" data-search="tagore family / bose family cited as examples of multi-generational families known for intellectual and cultural contribution.">
+          <span class="term">Tagore family / Bose family</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as examples of multi-generational families known for intellectual and cultural contribution.</span>
+        </li>
+        <li class="entry" data-search="joint family vs nuclear family used to discuss changing family structures and their effect on value transmission in modern india.">
+          <span class="term">Joint family vs nuclear family</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss changing family structures and their effect on value transmission in modern India.</span>
+        </li>
+        <li class="entry" data-search="kapoor family (bollywood) cited as an example of multi-generational legacy and family-transmitted values/culture.">
+          <span class="term">Kapoor family (Bollywood)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of multi-generational legacy and family-transmitted values/culture.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-8" data-section-title="role of society in inculcating values">
+      <div class="card-head">
+        <span class="card-num">8</span>
+        <h2>Role of Society in Inculcating Values</h2>
+      </div>
+      
+      <ul class="entry-list">
+      </ul>
+<h3 class="subtitle">8.1 Negative/Regressive Social Influences</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="consumerism excess materialism — cited as eroding simplicity and contentment as values.">
+          <span class="term">Consumerism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Excess materialism — cited as eroding simplicity and contentment as values.</span>
+        </li>
+        <li class="entry" data-search="individualism / bystander effect society becoming indifferent to others' suffering — linked to declining collective responsibility.">
+          <span class="term">Individualism / bystander effect</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Society becoming indifferent to others' suffering — linked to declining collective responsibility.</span>
+        </li>
+        <li class="entry" data-search="'son of the soil' exclusionary regional identity politics — used to discuss parochialism vs constitutional values.">
+          <span class="term">'Son of the soil'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Exclusionary regional identity politics — used to discuss parochialism vs constitutional values.</span>
+        </li>
+        <li class="entry" data-search="khap panchayat informal caste/community councils, sometimes responsible for honour killings — example of regressive social authority overriding law and individual rights.">
+          <span class="term">Khap Panchayat</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Informal caste/community councils, sometimes responsible for honour killings — example of regressive social authority overriding law and individual rights.</span>
+        </li>
+        <li class="entry" data-search="honour killing murder of family members (often young couples) for 'dishonouring' family/caste norms — extreme example of regressive social values.">
+          <span class="term">Honour killing</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Murder of family members (often young couples) for 'dishonouring' family/caste norms — extreme example of regressive social values.</span>
+        </li>
+        <li class="entry" data-search="untouchability / caste persisting caste-based discrimination despite constitutional abolition — core example of social vs constitutional values gap.">
+          <span class="term">Untouchability / caste</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Persisting caste-based discrimination despite constitutional abolition — core example of social vs constitutional values gap.</span>
+        </li>
+        <li class="entry" data-search="manual scavenging caste-linked degrading occupation of cleaning human waste by hand, despite being legally banned — example of social attitude lagging behind law.">
+          <span class="term">Manual scavenging</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Caste-linked degrading occupation of cleaning human waste by hand, despite being legally banned — example of social attitude lagging behind law.</span>
+        </li>
+        <li class="entry" data-search="section 377 former law criminalising homosexuality, read down by the supreme court in 2018 (navtej singh johar case) — example of evolving social/legal ethics around dignity and identity.">
+          <span class="term">Section 377</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Former law criminalising homosexuality, read down by the Supreme Court in 2018 (Navtej Singh Johar case) — example of evolving social/legal ethics around dignity and identity.</span>
+        </li>
+        <li class="entry" data-search="mob lynching vigilante violence, often rumour-driven — example of social media misinformation translating into real-world harm.">
+          <span class="term">Mob lynching</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Vigilante violence, often rumour-driven — example of social media misinformation translating into real-world harm.</span>
+        </li>
+        <li class="entry" data-search="acceptance of corruption normalised tolerance of bribery/corruption in daily life — a social attitude problem, not just an institutional one.">
+          <span class="term">Acceptance of corruption</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Normalised tolerance of bribery/corruption in daily life — a social attitude problem, not just an institutional one.</span>
+        </li>
+        <li class="entry" data-search="nimby syndrome 'not in my backyard' — people support a cause in principle but resist it affecting them personally (e.g. supporting waste plants but not nearby).">
+          <span class="term">NIMBY syndrome</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Not In My Backyard' — people support a cause in principle but resist it affecting them personally (e.g. supporting waste plants but not nearby).</span>
+        </li>
+        <li class="entry" data-search="'chalta hai' attitude casual indian colloquial attitude of tolerating mediocrity or wrongdoing — cited as a barrier to accountability culture.">
+          <span class="term">'Chalta hai' attitude</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Casual Indian colloquial attitude of tolerating mediocrity or wrongdoing — cited as a barrier to accountability culture.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">8.2 Campaigns, Movements &amp; Social Media as Value-Shapers</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="'black is beautiful' movement countering racial beauty stereotypes, asserting dignity for black identity.">
+          <span class="term">'Black is Beautiful'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Movement countering racial beauty stereotypes, asserting dignity for Black identity.</span>
+        </li>
+        <li class="entry" data-search="'happy to bleed' indian social media campaign challenging menstruation taboos.">
+          <span class="term">'Happy to Bleed'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Indian social media campaign challenging menstruation taboos.</span>
+        </li>
+        <li class="entry" data-search="nirbhaya case / india against corruption (iac) two major mass movements: the 2012 delhi gang-rape case sparking nationwide protest on women's safety, and the iac anti-corruption movement led by anna hazare.">
+          <span class="term">Nirbhaya case / India Against Corruption (IAC)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Two major mass movements: the 2012 Delhi gang-rape case sparking nationwide protest on women's safety, and the IAC anti-corruption movement led by Anna Hazare.</span>
+        </li>
+        <li class="entry" data-search="blue whale, kiki, momo challenges dangerous online 'challenge' trends targeting youth — example of social media's harmful influence absent regulation/awareness.">
+          <span class="term">Blue Whale, Kiki, Momo challenges</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Dangerous online 'challenge' trends targeting youth — example of social media's harmful influence absent regulation/awareness.</span>
+        </li>
+        <li class="entry" data-search="isis example of radicalisation via online propaganda and distorted ideology.">
+          <span class="term">ISIS</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Example of radicalisation via online propaganda and distorted ideology.</span>
+        </li>
+        <li class="entry" data-search="brexit / us presidential elections cited as examples of how media/social media shapes political attitudes and polarisation at a societal scale.">
+          <span class="term">Brexit / US presidential elections</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as examples of how media/social media shapes political attitudes and polarisation at a societal scale.</span>
+        </li>
+        <li class="entry" data-search="cigarette, alcohol normalisation used to discuss how culture/media normalises harmful habits over time.">
+          <span class="term">Cigarette, alcohol normalisation</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss how culture/media normalises harmful habits over time.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">8.3 Moral &amp; Political Attitudes — Figures</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="positive: angela merkel, nelson mandela, justin trudeau cited as leaders associated with principled, inclusive, or reconciliatory political conduct.">
+          <span class="term">Positive: Angela Merkel, Nelson Mandela, Justin Trudeau</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as leaders associated with principled, inclusive, or reconciliatory political conduct.</span>
+        </li>
+        <li class="entry" data-search="negative: trump, stalin, hitler, aurangzeb cited as leaders associated with authoritarianism, intolerance, or abuse of power (use carefully and neutrally in answers — upsc rewards balanced, non-inflammatory framing).">
+          <span class="term">Negative: Trump, Stalin, Hitler, Aurangzeb</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as leaders associated with authoritarianism, intolerance, or abuse of power (use carefully and neutrally in answers — UPSC rewards balanced, non-inflammatory framing).</span>
+        </li>
+        <li class="entry" data-search="caste-based voting example of identity politics overriding policy-based political choice.">
+          <span class="term">Caste-based voting</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Example of identity politics overriding policy-based political choice.</span>
+        </li>
+        <li class="entry" data-search="internal party democracy (lack of) cited as an issue undermining democratic political attitudes within parties themselves.">
+          <span class="term">Internal party democracy (lack of)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an issue undermining democratic political attitudes within parties themselves.</span>
+        </li>
+        <li class="entry" data-search="political funding opacity in political donations (e.g. electoral bonds debate) — cited as an integrity issue in the political system.">
+          <span class="term">Political funding</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Opacity in political donations (e.g. electoral bonds debate) — cited as an integrity issue in the political system.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">8.4 Social Influence &amp; Persuasion via Media</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="social media: arab spring mass political uprisings across the middle east/north africa, organised largely via social media — landmark example of digital mobilisation.">
+          <span class="term">Social media: Arab Spring</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Mass political uprisings across the Middle East/North Africa, organised largely via social media — landmark example of digital mobilisation.</span>
+        </li>
+        <li class="entry" data-search="social media: #metoo, 'selfie with daughter' #metoo as global accountability movement; 'selfie with daughter' as pm modi's campaign promoting the girl child.">
+          <span class="term">Social media: #MeToo, 'selfie with daughter'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">#MeToo as global accountability movement; 'Selfie with Daughter' as PM Modi's campaign promoting the girl child.</span>
+        </li>
+        <li class="entry" data-search="fit india movement, #timesup government and global campaigns using social media for health and accountability messaging respectively.">
+          <span class="term">Fit India Movement, #TimesUp</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Government and global campaigns using social media for health and accountability messaging respectively.</span>
+        </li>
+        <li class="entry" data-search="red cross/red dot campaign public health/awareness campaigns leveraging media reach.">
+          <span class="term">Red Cross/Red Dot campaign</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Public health/awareness campaigns leveraging media reach.</span>
+        </li>
+        <li class="entry" data-search="movies: padman, dangal, toilet — ek prem katha, pink bollywood films cited for driving social conversation on menstrual hygiene, gender in sport, sanitation, and consent respectively.">
+          <span class="term">Movies: Padman, Dangal, Toilet — Ek Prem Katha, Pink</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Bollywood films cited for driving social conversation on menstrual hygiene, gender in sport, sanitation, and consent respectively.</span>
+        </li>
+        <li class="entry" data-search="documentary: inside job documentary on the 2008 financial crisis — cited for exposing systemic corporate/financial ethics failure.">
+          <span class="term">Documentary: Inside Job</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Documentary on the 2008 financial crisis — cited for exposing systemic corporate/financial ethics failure.</span>
+        </li>
+        <li class="entry" data-search="books: silent spring rachel carson's book that launched the modern environmental movement by exposing pesticide harm.">
+          <span class="term">Books: Silent Spring</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Rachel Carson's book that launched the modern environmental movement by exposing pesticide harm.</span>
+        </li>
+        <li class="entry" data-search="books: small is beautiful e. f. schumacher's book advocating human-scale, sustainable economics over unchecked growth.">
+          <span class="term">Books: Small Is Beautiful</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">E. F. Schumacher's book advocating human-scale, sustainable economics over unchecked growth.</span>
+        </li>
+        <li class="entry" data-search="books: poverty and un-british rule in india dadabhai naoroji's work introducing the 'drain of wealth' theory — economic critique of colonial rule.">
+          <span class="term">Books: Poverty and Un-British Rule in India</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Dadabhai Naoroji's work introducing the 'Drain of Wealth' theory — economic critique of colonial rule.</span>
+        </li>
+        <li class="entry" data-search="books: communist manifesto / hind swaraj marx &amp; engels' foundational socialist text, and gandhi's foundational text on self-rule and critique of modern civilisation — both cited as ideology-shaping works.">
+          <span class="term">Books: Communist Manifesto / Hind Swaraj</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Marx &amp; Engels' foundational socialist text, and Gandhi's foundational text on self-rule and critique of modern civilisation — both cited as ideology-shaping works.</span>
+        </li>
+        <li class="entry" data-search="radio/tv: satyamev jayate, 'darwaza band' campaign aamir khan's tv show that drove national conversation on social issues; sanitation-focused awareness campaign.">
+          <span class="term">Radio/TV: Satyamev Jayate, 'Darwaza Band' campaign</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Aamir Khan's TV show that drove national conversation on social issues; sanitation-focused awareness campaign.</span>
+        </li>
+        <li class="entry" data-search="usha mehta freedom fighter who ran a secret underground radio station during the quit india movement (1942) — example of media as a tool of resistance and integrity under risk.">
+          <span class="term">Usha Mehta</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Freedom fighter who ran a secret underground radio station during the Quit India Movement (1942) — example of media as a tool of resistance and integrity under risk.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-9" data-section-title="aptitude">
+      <div class="card-head">
+        <span class="card-num">9</span>
+        <h2>Aptitude</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="thomas edison inventor cited for persistence despite repeated failure — classic aptitude/attitude example.">
+          <span class="term">Thomas Edison</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Inventor cited for persistence despite repeated failure — classic aptitude/attitude example.</span>
+        </li>
+        <li class="entry" data-search="elon musk — tesla, spacex cited for risk-taking aptitude and innovation-driven persistence.">
+          <span class="term">Elon Musk — Tesla, SpaceX</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for risk-taking aptitude and innovation-driven persistence.</span>
+        </li>
+        <li class="entry" data-search="eklavya self-taught archer from the mahabharata — example of self-driven aptitude despite lack of formal access to a teacher.">
+          <span class="term">Eklavya</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Self-taught archer from the Mahabharata — example of self-driven aptitude despite lack of formal access to a teacher.</span>
+        </li>
+        <li class="entry" data-search="r. n. tagore cited again here for being multi-talented — singer, poet, educationist, author — example of broad aptitude.">
+          <span class="term">R. N. Tagore</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here for being multi-talented — singer, poet, educationist, author — example of broad aptitude.</span>
+        </li>
+        <li class="entry" data-search="t. l. satyaprakash (ias, gurugram) known for building a gis triangulation system for urban planning and land records — example of using technical aptitude for governance innovation.">
+          <span class="term">T. L. Satyaprakash (IAS, Gurugram)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Known for building a GIS triangulation system for urban planning and land records — example of using technical aptitude for governance innovation.</span>
+        </li>
+        <li class="entry" data-search="apj abdul kalam — pokhran, veena, missile cited for combining scientific aptitude (pokhran tests, missile programme) with artistic sensitivity (he played the veena) — a 'well-rounded aptitude' example.">
+          <span class="term">APJ Abdul Kalam — Pokhran, Veena, Missile</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for combining scientific aptitude (Pokhran tests, missile programme) with artistic sensitivity (he played the veena) — a 'well-rounded aptitude' example.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-10" data-section-title="integrity">
+      <div class="card-head">
+        <span class="card-num">10</span>
+        <h2>Integrity</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="nelson mandela after winning south africa's first black-majority government, chose reconciliation over retaliation against his former oppressors — example of moral integrity in victory.">
+          <span class="term">Nelson Mandela</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">After winning South Africa's first black-majority government, chose reconciliation over retaliation against his former oppressors — example of moral integrity in victory.</span>
+        </li>
+        <li class="entry" data-search="h. r. khanna supreme court judge who gave a lone dissent in the 1976 adm jabalpur case, upholding habeas corpus rights during the emergency despite the political cost to his career — landmark example of institutional/judicial integrity.">
+          <span class="term">H. R. Khanna</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Supreme Court judge who gave a lone dissent in the 1976 ADM Jabalpur case, upholding habeas corpus rights during the Emergency despite the political cost to his career — landmark example of institutional/judicial integrity.</span>
+        </li>
+        <li class="entry" data-search="baba amte, abhay bang cited for professional integrity — both devoted medical and social careers to marginalised and underserved communities.">
+          <span class="term">Baba Amte, Abhay Bang</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for professional integrity — both devoted medical and social careers to marginalised and underserved communities.</span>
+        </li>
+        <li class="entry" data-search="l. b. shastri cited again here specifically for moral integrity (see also professional ethics above).">
+          <span class="term">L. B. Shastri</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here specifically for moral integrity (see also Professional Ethics above).</span>
+        </li>
+        <li class="entry" data-search="aaya ram, gaya ram phrase from 1960s haryana politics describing repeated party-defection by a legislator — shorthand for political opportunism and lack of integrity.">
+          <span class="term">Aaya Ram, Gaya Ram</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Phrase from 1960s Haryana politics describing repeated party-defection by a legislator — shorthand for political opportunism and lack of integrity.</span>
+        </li>
+        <li class="entry" data-search="m. visvesvaraya engineer-statesman (designed major dam and flood-control systems) cited as an integrity icon in public engineering/administration.">
+          <span class="term">M. Visvesvaraya</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Engineer-statesman (designed major dam and flood-control systems) cited as an integrity icon in public engineering/administration.</span>
+        </li>
+        <li class="entry" data-search="mci corruption medical council of india corruption scandal — negative example of institutional integrity failure in a professional regulatory body.">
+          <span class="term">MCI corruption</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Medical Council of India corruption scandal — negative example of institutional integrity failure in a professional regulatory body.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-11" data-section-title="impartiality and non-partisanship">
+      <div class="card-head">
+        <span class="card-num">11</span>
+        <h2>Impartiality and Non-Partisanship</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="akbar — din-i-ilahi, sulh-i-kul akbar's syncretic religious policy and doctrine of 'peace with all' — cited as a historical example of impartial, inclusive governance.">
+          <span class="term">Akbar — Din-i-Ilahi, Sulh-i-Kul</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Akbar's syncretic religious policy and doctrine of 'peace with all' — cited as a historical example of impartial, inclusive governance.</span>
+        </li>
+        <li class="entry" data-search="ashoka — dhamma ashoka's post-kalinga policy of moral governance applied evenly across religious and social lines.">
+          <span class="term">Ashoka — Dhamma</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Ashoka's post-Kalinga policy of moral governance applied evenly across religious and social lines.</span>
+        </li>
+        <li class="entry" data-search="shivaji — hindu-muslim cited for maintaining an inclusive administration that employed people across religious lines despite the religious framing of his era's politics.">
+          <span class="term">Shivaji — Hindu-Muslim</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for maintaining an inclusive administration that employed people across religious lines despite the religious framing of his era's politics.</span>
+        </li>
+        <li class="entry" data-search="officer favouring political interests for post-retirement gain a recurring case-study archetype worth keeping a mental tab on: a serving officer subtly aligning decisions with a ruling party's interest in hope of a post-retirement appointment (governorship, tribunal seat, rajya sabha nomination) — a real and recurring impartiality risk in indian administration.">
+          <span class="term">Officer favouring political interests for post-retirement gain</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A recurring case-study archetype worth keeping a mental tab on: a serving officer subtly aligning decisions with a ruling party's interest in hope of a post-retirement appointment (governorship, tribunal seat, Rajya Sabha nomination) — a real and recurring impartiality risk in Indian administration.</span>
+        </li>
+        <li class="entry" data-search="touching feet of a politician used as an example of sycophantic behaviour by officials that compromises impartiality.">
+          <span class="term">Touching feet of a politician</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used as an example of sycophantic behaviour by officials that compromises impartiality.</span>
+        </li>
+        <li class="entry" data-search="caste discrimination disrupting a welfare scheme (e.g. mid-day meal) a recurring real-world pattern worth keeping a mental tab on: food cooked or served by a dalit worker being refused or boycotted by upper-caste families/students in government school feeding programmes — used to illustrate how caste prejudice undermines impartial public service delivery even when policy itself is caste-blind.">
+          <span class="term">Caste discrimination disrupting a welfare scheme (e.g. Mid-Day Meal)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A recurring real-world pattern worth keeping a mental tab on: food cooked or served by a Dalit worker being refused or boycotted by upper-caste families/students in government school feeding programmes — used to illustrate how caste prejudice undermines impartial public service delivery even when policy itself is caste-blind.</span>
+        </li>
+        <li class="entry" data-search="partisanship — british 'divide and rule' colonial strategy of exploiting religious/caste divisions to maintain control — historical root example of partisanship's damage.">
+          <span class="term">Partisanship — British 'divide and rule'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Colonial strategy of exploiting religious/caste divisions to maintain control — historical root example of partisanship's damage.</span>
+        </li>
+        <li class="entry" data-search="partisanship — caste-based politics, nepotism modern examples of partisanship undermining impartial governance.">
+          <span class="term">Partisanship — caste-based politics, nepotism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Modern examples of partisanship undermining impartial governance.</span>
+        </li>
+        <li class="entry" data-search="partisanship — governor, speaker constitutional offices expected to act impartially; their politicisation is a recurring gs2/gs4 ethics issue.">
+          <span class="term">Partisanship — Governor, Speaker</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Constitutional offices expected to act impartially; their politicisation is a recurring GS2/GS4 ethics issue.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-12" data-section-title="objectivity">
+      <div class="card-head">
+        <span class="card-num">12</span>
+        <h2>Objectivity</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="fact-checking, rti tools that support objective, evidence-based decision-making and transparency.">
+          <span class="term">Fact-checking, RTI</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Tools that support objective, evidence-based decision-making and transparency.</span>
+        </li>
+        <li class="entry" data-search="raja rammohan roy — studying the vedas studied hindu scripture critically and objectively rather than accepting tradition uncritically — used as an example of objective, reform-minded scholarship.">
+          <span class="term">Raja Rammohan Roy — studying the Vedas</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Studied Hindu scripture critically and objectively rather than accepting tradition uncritically — used as an example of objective, reform-minded scholarship.</span>
+        </li>
+        <li class="entry" data-search="e-auctioning, removal of interviews in group c/b/d posts administrative reforms aimed at reducing subjective bias — e-auctioning replacing discretionary allocation, and removing interview rounds for certain government posts to reduce favouritism.">
+          <span class="term">E-auctioning, removal of interviews in Group C/B/D posts</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Administrative reforms aimed at reducing subjective bias — e-auctioning replacing discretionary allocation, and removing interview rounds for certain government posts to reduce favouritism.</span>
+        </li>
+        <li class="entry" data-search="secc-based beneficiaries socio economic caste census used as an objective, data-driven criterion for identifying welfare scheme beneficiaries, reducing subjective/discretionary selection.">
+          <span class="term">SECC-based beneficiaries</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Socio Economic Caste Census used as an objective, data-driven criterion for identifying welfare scheme beneficiaries, reducing subjective/discretionary selection.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-13" data-section-title="dedication to public service">
+      <div class="card-head">
+        <span class="card-num">13</span>
+        <h2>Dedication to Public Service</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="kerala — ias officers and fishermen likely referencing coordinated rescue efforts (e.g. during the 2018 kerala floods, where local fishermen and administrators worked together) — example of dedication transcending formal duty.">
+          <span class="term">Kerala — IAS officers and fishermen</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Likely referencing coordinated rescue efforts (e.g. during the 2018 Kerala floods, where local fishermen and administrators worked together) — example of dedication transcending formal duty.</span>
+        </li>
+        <li class="entry" data-search="vivekananda cited for a life dedicated to social and spiritual public service.">
+          <span class="term">Vivekananda</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for a life dedicated to social and spiritual public service.</span>
+        </li>
+        <li class="entry" data-search="kailash satyarthi nobel laureate and child rights activist, known for rescuing children from forced labour.">
+          <span class="term">Kailash Satyarthi</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Nobel laureate and child rights activist, known for rescuing children from forced labour.</span>
+        </li>
+        <li class="entry" data-search="civil servants noted for dedication to public service a category to keep building over time — officers known for going beyond formal duty in service delivery, disaster response, or community upliftment.">
+          <span class="term">Civil servants noted for dedication to public service</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A category to keep building over time — officers known for going beyond formal duty in service delivery, disaster response, or community upliftment.</span>
+        </li>
+        <li class="entry" data-search="e. sreedharan cited again here for dedication to public service (delhi metro).">
+          <span class="term">E. Sreedharan</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here for dedication to public service (Delhi Metro).</span>
+        </li>
+        <li class="entry" data-search="red cross society, doctors without borders international humanitarian organisations cited as institutional examples of dedicated public/medical service.">
+          <span class="term">Red Cross Society, Doctors Without Borders</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">International humanitarian organisations cited as institutional examples of dedicated public/medical service.</span>
+        </li>
+        <li class="entry" data-search="dashrath manjhi the 'mountain man' who carved a road through a mountain by hand over 22 years to shorten his village's access to medical care — extreme example of individual dedication.">
+          <span class="term">Dashrath Manjhi</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The 'Mountain Man' who carved a road through a mountain by hand over 22 years to shorten his village's access to medical care — extreme example of individual dedication.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-14" data-section-title="empathy">
+      <div class="card-head">
+        <span class="card-num">14</span>
+        <h2>Empathy</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="bezwada wilson magsaysay award-winning activist who has worked to eradicate manual scavenging in india.">
+          <span class="term">Bezwada Wilson</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Magsaysay Award-winning activist who has worked to eradicate manual scavenging in India.</span>
+        </li>
+        <li class="entry" data-search="baba amte cited again here for empathetic care toward leprosy patients and marginalised communities.">
+          <span class="term">Baba Amte</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here for empathetic care toward leprosy patients and marginalised communities.</span>
+        </li>
+        <li class="entry" data-search="mother teresa cited for a life of service to the poor and dying in kolkata.">
+          <span class="term">Mother Teresa</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for a life of service to the poor and dying in Kolkata.</span>
+        </li>
+        <li class="entry" data-search="kylian mbappé — cancer hospital as the youngest player in a fifa world cup-winning squad, donated his prize money to fund a cancer hospital/charity — modern empathy example relevant to younger aspirants.">
+          <span class="term">Kylian Mbappé — cancer hospital</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">As the youngest player in a FIFA World Cup-winning squad, donated his prize money to fund a cancer hospital/charity — modern empathy example relevant to younger aspirants.</span>
+        </li>
+        <li class="entry" data-search="ishwar chandra vidyasagar — coat anecdote of giving away his own coat/shawl to someone less fortunate — classic empathy example in indian social reform history.">
+          <span class="term">Ishwar Chandra Vidyasagar — coat</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Anecdote of giving away his own coat/shawl to someone less fortunate — classic empathy example in Indian social reform history.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-15" data-section-title="tolerance and compassion towards weaker sections">
+      <div class="card-head">
+        <span class="card-num">15</span>
+        <h2>Tolerance and Compassion Towards Weaker Sections</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="positive: akbar, trudeau cited as examples of leaders showing tolerance and accommodation toward minorities/weaker groups.">
+          <span class="term">Positive: Akbar, Trudeau</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as examples of leaders showing tolerance and accommodation toward minorities/weaker groups.</span>
+        </li>
+        <li class="entry" data-search="negative: cow vigilantism, mob lynching examples of intolerance escalating into violence against vulnerable groups.">
+          <span class="term">Negative: cow vigilantism, mob lynching</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Examples of intolerance escalating into violence against vulnerable groups.</span>
+        </li>
+        <li class="entry" data-search="negative: killing of rationalists likely references cases such as those of dabholkar, pansare, and kalburgi — rationalist thinkers killed for challenging superstition — example of intolerance toward dissenting thought.">
+          <span class="term">Negative: killing of rationalists</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Likely references cases such as those of Dabholkar, Pansare, and Kalburgi — rationalist thinkers killed for challenging superstition — example of intolerance toward dissenting thought.</span>
+        </li>
+        <li class="entry" data-search="negative: communalism, 'son of the soil' politics examples of identity-based exclusion undermining constitutional tolerance.">
+          <span class="term">Negative: communalism, 'son of the soil' politics</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Examples of identity-based exclusion undermining constitutional tolerance.</span>
+        </li>
+        <li class="entry" data-search="new-age value clashes: section 377, live-in relationships cited as areas where evolving social values around personal liberty test society's tolerance and the law's responsiveness.">
+          <span class="term">New-age value clashes: Section 377, live-in relationships</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as areas where evolving social values around personal liberty test society's tolerance and the law's responsiveness.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-16" data-section-title="social influence">
+      <div class="card-head">
+        <span class="card-num">16</span>
+        <h2>Social Influence</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="amitabh bachchan, vidya balan cited as examples of celebrity endorsement shaping public behaviour (e.g. bachchan's swachh bharat/bahuguna pension ads, balan's polio/sanitation campaigns).">
+          <span class="term">Amitabh Bachchan, Vidya Balan</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as examples of celebrity endorsement shaping public behaviour (e.g. Bachchan's Swachh Bharat/Bahuguna pension ads, Balan's polio/sanitation campaigns).</span>
+        </li>
+        <li class="entry" data-search="cigarette, alcohol, advertising used to discuss how advertising normalises and influences harmful consumption habits.">
+          <span class="term">Cigarette, alcohol, advertising</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss how advertising normalises and influences harmful consumption habits.</span>
+        </li>
+        <li class="entry" data-search="'black is beautiful' — nivedita das indian short film/campaign challenging colourism and beauty standards.">
+          <span class="term">'Black is Beautiful' — Nivedita Das</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Indian short film/campaign challenging colourism and beauty standards.</span>
+        </li>
+        <li class="entry" data-search="media, leaders cited generally as primary channels of social influence.">
+          <span class="term">Media, leaders</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited generally as primary channels of social influence.</span>
+        </li>
+        <li class="entry" data-search="parameswaran iyer — 'two pits' former swachh bharat mission secretary associated with promoting twin-pit toilet technology — example of an official using technical/behavioural influence for public health.">
+          <span class="term">Parameswaran Iyer — 'two pits'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Former Swachh Bharat Mission Secretary associated with promoting twin-pit toilet technology — example of an official using technical/behavioural influence for public health.</span>
+        </li>
+        <li class="entry" data-search="arvind kumar — sent his daughter to a government school an official choosing public schooling for his own child to set a personal example — used to discuss leading social change by personal conduct.">
+          <span class="term">Arvind Kumar — sent his daughter to a government school</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">An official choosing public schooling for his own child to set a personal example — used to discuss leading social change by personal conduct.</span>
+        </li>
+        <li class="entry" data-search="gender stereotyping used to discuss how social influence reinforces or can be used to challenge gender roles.">
+          <span class="term">Gender stereotyping</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to discuss how social influence reinforces or can be used to challenge gender roles.</span>
+        </li>
+        <li class="entry" data-search="domino effect, bandwagon effect, broken windows theory, mob psychology social-psychology concepts useful for explaining how social influence spreads — domino effect (one event triggering a chain), bandwagon effect (following the crowd), broken windows theory (visible small disorder encourages more disorder), mob psychology (individuals losing personal restraint in a crowd).">
+          <span class="term">Domino effect, bandwagon effect, broken windows theory, mob psychology</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Social-psychology concepts useful for explaining how social influence spreads — domino effect (one event triggering a chain), bandwagon effect (following the crowd), broken windows theory (visible small disorder encourages more disorder), mob psychology (individuals losing personal restraint in a crowd).</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-17" data-section-title="persuasion">
+      <div class="card-head">
+        <span class="card-num">17</span>
+        <h2>Persuasion</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="gandhi — non-violence used satyagraha (non-violent resistance) as a persuasive moral force rather than coercion.">
+          <span class="term">Gandhi — non-violence</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used satyagraha (non-violent resistance) as a persuasive moral force rather than coercion.</span>
+        </li>
+        <li class="entry" data-search="martin luther king jr. — 'i have a dream' landmark speech cited as a model of moral persuasion through rhetoric.">
+          <span class="term">Martin Luther King Jr. — 'I Have a Dream'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Landmark speech cited as a model of moral persuasion through rhetoric.</span>
+        </li>
+        <li class="entry" data-search="'give up' campaign government campaign persuading well-off lpg consumers to voluntarily give up their subsidy.">
+          <span class="term">'Give Up' campaign</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Government campaign persuading well-off LPG consumers to voluntarily give up their subsidy.</span>
+        </li>
+        <li class="entry" data-search="'satyamev jayate' — fake news episode of aamir khan's show addressing misinformation, cited as media-driven persuasion against fake news.">
+          <span class="term">'Satyamev Jayate' — fake news</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Episode of Aamir Khan's show addressing misinformation, cited as media-driven persuasion against fake news.</span>
+        </li>
+        <li class="entry" data-search="immunisation, contraceptive use campaigns public health persuasion campaigns aimed at behaviour change.">
+          <span class="term">Immunisation, contraceptive use campaigns</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Public health persuasion campaigns aimed at behaviour change.</span>
+        </li>
+        <li class="entry" data-search="vinoba bhave — bhoodan movement persuaded landowners to voluntarily donate land to the landless — example of moral persuasion achieving redistribution without coercion or law.">
+          <span class="term">Vinoba Bhave — Bhoodan Movement</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Persuaded landowners to voluntarily donate land to the landless — example of moral persuasion achieving redistribution without coercion or law.</span>
+        </li>
+        <li class="entry" data-search="negative/backfire — isis, blue whale game examples of persuasion techniques used for harmful radicalisation or manipulation, especially of youth.">
+          <span class="term">Negative/backfire — ISIS, Blue Whale game</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Examples of persuasion techniques used for harmful radicalisation or manipulation, especially of youth.</span>
+        </li>
+        <li class="entry" data-search="boomerang effect — over-persuasion psychological concept where excessive or heavy-handed persuasion causes the opposite reaction — people resist the more they feel pushed.">
+          <span class="term">Boomerang effect — over-persuasion</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Psychological concept where excessive or heavy-handed persuasion causes the opposite reaction — people resist the more they feel pushed.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-18" data-section-title="attitude — content, structure, function">
+      <div class="card-head">
+        <span class="card-num">18</span>
+        <h2>Attitude — Content, Structure, Function</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="positive example: 'never give up' used to illustrate a constructive, resilient attitude shaping behaviour positively.">
+          <span class="term">Positive example: 'Never give up'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to illustrate a constructive, resilient attitude shaping behaviour positively.</span>
+        </li>
+        <li class="entry" data-search="negative example: nimby attitude used to illustrate how a self-serving attitude undermines collective good despite verbal support for a cause.">
+          <span class="term">Negative example: NIMBY attitude</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Used to illustrate how a self-serving attitude undermines collective good despite verbal support for a cause.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-19" data-section-title="classic ethical dilemmas checklist">
+      <div class="card-head">
+        <span class="card-num">19</span>
+        <h2>Classic Ethical Dilemmas Checklist</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="law vs conscience when following the letter of the law conflicts with what feels morally right.">
+          <span class="term">Law vs Conscience</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">When following the letter of the law conflicts with what feels morally right.</span>
+        </li>
+        <li class="entry" data-search="duty vs humanity when official duty conflicts with basic human compassion in a specific situation.">
+          <span class="term">Duty vs Humanity</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">When official duty conflicts with basic human compassion in a specific situation.</span>
+        </li>
+        <li class="entry" data-search="economic vs environment development/growth priorities conflicting with ecological protection.">
+          <span class="term">Economic vs Environment</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Development/growth priorities conflicting with ecological protection.</span>
+        </li>
+        <li class="entry" data-search="security vs privacy state security needs (surveillance, data collection) conflicting with individual privacy rights.">
+          <span class="term">Security vs Privacy</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">State security needs (surveillance, data collection) conflicting with individual privacy rights.</span>
+        </li>
+        <li class="entry" data-search="freedom of speech vs law and order right to expression conflicting with public order/safety concerns.">
+          <span class="term">Freedom of Speech vs Law and Order</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Right to expression conflicting with public order/safety concerns.</span>
+        </li>
+        <li class="entry" data-search="means vs end whether a good outcome justifies ethically questionable methods to get there.">
+          <span class="term">Means vs End</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Whether a good outcome justifies ethically questionable methods to get there.</span>
+        </li>
+        <li class="entry" data-search="profession vs personal interest professional/official duty conflicting with one's own personal gain or interest.">
+          <span class="term">Profession vs Personal Interest</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Professional/official duty conflicting with one's own personal gain or interest.</span>
+        </li>
+        <li class="entry" data-search="idealism vs realism holding to principle vs adapting to practical/political constraints.">
+          <span class="term">Idealism vs Realism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Holding to principle vs adapting to practical/political constraints.</span>
+        </li>
+        <li class="entry" data-search="efficiency vs quality speed and output conflicting with thoroughness and standards.">
+          <span class="term">Efficiency vs Quality</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Speed and output conflicting with thoroughness and standards.</span>
+        </li>
+        <li class="entry" data-search="equity vs equality treating people according to their differing needs (equity) vs treating everyone identically (equality).">
+          <span class="term">Equity vs Equality</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Treating people according to their differing needs (equity) vs treating everyone identically (equality).</span>
+        </li>
+        <li class="entry" data-search="national vs international interest a country's own interest conflicting with global/multilateral obligations.">
+          <span class="term">National vs International Interest</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A country's own interest conflicting with global/multilateral obligations.</span>
+        </li>
+        <li class="entry" data-search="justice vs peace pursuing accountability/punishment vs prioritising reconciliation and stability.">
+          <span class="term">Justice vs Peace</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Pursuing accountability/punishment vs prioritising reconciliation and stability.</span>
+        </li>
+        <li class="entry" data-search="individual vs community rights an individual's rights conflicting with the interests of the wider community.">
+          <span class="term">Individual vs Community Rights</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">An individual's rights conflicting with the interests of the wider community.</span>
+        </li>
+        <li class="entry" data-search="doing right things vs doing things right pursuing the correct goal vs following correct process — these can pull in different directions.">
+          <span class="term">Doing right things vs Doing things right</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Pursuing the correct goal vs following correct process — these can pull in different directions.</span>
+        </li>
+        <li class="entry" data-search="confidentiality vs rti duty to keep information confidential conflicting with the public's right to information.">
+          <span class="term">Confidentiality vs RTI</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Duty to keep information confidential conflicting with the public's right to information.</span>
+        </li>
+        <li class="entry" data-search="cultural values vs individual rights community/cultural traditions conflicting with an individual's personal rights and choices.">
+          <span class="term">Cultural values vs Individual Rights</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Community/cultural traditions conflicting with an individual's personal rights and choices.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-20" data-section-title="laws, rules, regulations and conscience as sources of ethical guidance">
+      <div class="card-head">
+        <span class="card-num">20</span>
+        <h2>Laws, Rules, Regulations and Conscience as Sources of Ethical Guidance</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="gandhi — chauri chaura gandhi called off the entire non-cooperation movement after the 1922 chauri chaura violence, prioritising his conscience-based commitment to non-violence over political momentum — classic example of conscience overriding strategic gain.">
+          <span class="term">Gandhi — Chauri Chaura</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Gandhi called off the entire Non-Cooperation Movement after the 1922 Chauri Chaura violence, prioritising his conscience-based commitment to non-violence over political momentum — classic example of conscience overriding strategic gain.</span>
+        </li>
+        <li class="entry" data-search="cuban missile crisis — vasili arkhipov a soviet naval officer refused to authorise a nuclear torpedo launch during the 1962 crisis despite pressure, arguably preventing nuclear war — textbook example of individual conscience as the last line of ethical defence.">
+          <span class="term">Cuban Missile Crisis — Vasili Arkhipov</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A Soviet naval officer refused to authorise a nuclear torpedo launch during the 1962 crisis despite pressure, arguably preventing nuclear war — textbook example of individual conscience as the last line of ethical defence.</span>
+        </li>
+        <li class="entry" data-search="sacrifice as a path to conscience-driven action a theme worth keeping a mental tab on: cases of individuals or rulers giving up position, comfort, or wealth to act on conscience rather than convenience — a recurring motif across history (rulers abdicating, officials resigning on principle, soldiers risking their lives for civilians).">
+          <span class="term">Sacrifice as a path to conscience-driven action</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A theme worth keeping a mental tab on: cases of individuals or rulers giving up position, comfort, or wealth to act on conscience rather than convenience — a recurring motif across history (rulers abdicating, officials resigning on principle, soldiers risking their lives for civilians).</span>
+        </li>
+        <li class="entry" data-search="edward snowden — prism exposed the nsa's prism mass surveillance programme — cited again here specifically as a conscience-over-law example (broke the law to follow his conscience).">
+          <span class="term">Edward Snowden — PRISM</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Exposed the NSA's PRISM mass surveillance programme — cited again here specifically as a conscience-over-law example (broke the law to follow his conscience).</span>
+        </li>
+        <li class="entry" data-search="whistleblower (general concept) cited as a category — someone who reports wrongdoing from within an organisation, often at personal/professional risk.">
+          <span class="term">Whistleblower (general concept)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a category — someone who reports wrongdoing from within an organisation, often at personal/professional risk.</span>
+        </li>
+        <li class="entry" data-search="pepsi vs coca-cola (pesticide controversy) refers to the early-2000s controversy in india over pesticide residue found in cola products — an ethics-in-business/regulation example.">
+          <span class="term">Pepsi vs Coca-Cola (pesticide controversy)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Refers to the early-2000s controversy in India over pesticide residue found in cola products — an ethics-in-business/regulation example.</span>
+        </li>
+        <li class="entry" data-search="vietnam war — muhammad ali refused the military draft on conscientious-objector grounds, losing his boxing title and facing prison — example of personal conscience defying state law at major personal cost.">
+          <span class="term">Vietnam War — Muhammad Ali</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Refused the military draft on conscientious-objector grounds, losing his boxing title and facing prison — example of personal conscience defying state law at major personal cost.</span>
+        </li>
+        <li class="entry" data-search="big tobacco scandal refers to a tobacco industry insider (widely dramatised as the jeffrey wigand case in the film the insider) who exposed the industry's knowledge of cigarette harm despite public denial — conscience exposing corporate wrongdoing.">
+          <span class="term">Big Tobacco Scandal</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Refers to a tobacco industry insider (widely dramatised as the Jeffrey Wigand case in the film The Insider) who exposed the industry's knowledge of cigarette harm despite public denial — conscience exposing corporate wrongdoing.</span>
+        </li>
+        <li class="entry" data-search="k. r. narayanan former president of india, cited here as an example of conscience-driven constitutional conduct.">
+          <span class="term">K. R. Narayanan</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Former President of India, cited here as an example of conscience-driven constitutional conduct.</span>
+        </li>
+        <li class="entry" data-search="collective conscience — 2012 delhi gang rape case the phrase 'collective conscience of society' is a legal concept indian courts have invoked in sentencing reasoning, and the 2012 delhi case is cited as the landmark instance shaping public and legal conscience on women's safety.">
+          <span class="term">Collective conscience — 2012 Delhi gang rape case</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The phrase 'collective conscience of society' is a legal concept Indian courts have invoked in sentencing reasoning, and the 2012 Delhi case is cited as the landmark instance shaping public and legal conscience on women's safety.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">Accountability and Ethical Governance</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="pragati 'pro-active governance and timely implementation' — a real-time monitoring platform for government project implementation and grievance redressal, used directly by the pm's office.">
+          <span class="term">PRAGATI</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Pro-Active Governance and Timely Implementation' — a real-time monitoring platform for government project implementation and grievance redressal, used directly by the PM's office.</span>
+        </li>
+        <li class="entry" data-search="cpgrams 'centralized public grievance redress and monitoring system' — the indian government's online portal for citizens to lodge grievances against public authorities.">
+          <span class="term">CPGRAMS</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Centralized Public Grievance Redress and Monitoring System' — the Indian government's online portal for citizens to lodge grievances against public authorities.</span>
+        </li>
+        <li class="entry" data-search="social audit a participatory accountability tool where local communities review and verify government scheme implementation (e.g. under mgnrega) — example of bottom-up accountability.">
+          <span class="term">Social audit</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A participatory accountability tool where local communities review and verify government scheme implementation (e.g. under MGNREGA) — example of bottom-up accountability.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-21" data-section-title="emotional intelligence — concepts and application in administration and governance">
+      <div class="card-head">
+        <span class="card-num">21</span>
+        <h2>Emotional Intelligence — Concepts and Application in Administration and Governance</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="communal riots, disaster management cited as situations where an administrator's emotional intelligence (calm decision-making under stress, empathy with affected people) is critical.">
+          <span class="term">Communal riots, disaster management</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as situations where an administrator's emotional intelligence (calm decision-making under stress, empathy with affected people) is critical.</span>
+        </li>
+        <li class="entry" data-search="administrators noted for emotional intelligence in crisis a category worth building over time — officers cited for calm, empathetic decision-making during disasters, riots, or other high-stress administrative situations.">
+          <span class="term">Administrators noted for emotional intelligence in crisis</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A category worth building over time — officers cited for calm, empathetic decision-making during disasters, riots, or other high-stress administrative situations.</span>
+        </li>
+        <li class="entry" data-search="field-level improvisation during disaster response a useful general theme: officers using quick, practical, low-cost interventions (such as makeshift flood barriers) under pressure — emotional intelligence showing up as composed, resourceful action rather than panic or rigid procedure-following.">
+          <span class="term">Field-level improvisation during disaster response</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A useful general theme: officers using quick, practical, low-cost interventions (such as makeshift flood barriers) under pressure — emotional intelligence showing up as composed, resourceful action rather than panic or rigid procedure-following.</span>
+        </li>
+        <li class="entry" data-search="gandhi, vallabhbhai patel, v. p. menon, dhoni cited as figures known for emotional composure and steady decision-making under pressure (patel and menon specifically for the calm, persistent diplomacy used in integrating princely states; dhoni for composure in high-pressure cricket finishes).">
+          <span class="term">Gandhi, Vallabhbhai Patel, V. P. Menon, Dhoni</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as figures known for emotional composure and steady decision-making under pressure (Patel and Menon specifically for the calm, persistent diplomacy used in integrating princely states; Dhoni for composure in high-pressure cricket finishes).</span>
+        </li>
+        <li class="entry" data-search="v. p. menon and sardar vallabhbhai patel (svp) cited together for their joint role in the political integration of india's princely states post-independence — a model of patient, emotionally intelligent negotiation under huge pressure.">
+          <span class="term">V. P. Menon and Sardar Vallabhbhai Patel (SVP)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited together for their joint role in the political integration of India's princely states post-independence — a model of patient, emotionally intelligent negotiation under huge pressure.</span>
+        </li>
+        <li class="entry" data-search="ajit doval — mizoram mnf surrender as intelligence bureau officer, doval met mizo national front chief laldenga; six of seven top mnf commanders chose to return to delhi with him, which broke laldenga's resolve and led to the insurgency's peaceful end — example of psychological persuasion and patient field-craft in conflict resolution.">
+          <span class="term">Ajit Doval — Mizoram MNF surrender</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">As Intelligence Bureau officer, Doval met Mizo National Front chief Laldenga; six of seven top MNF commanders chose to return to Delhi with him, which broke Laldenga's resolve and led to the insurgency's peaceful end — example of psychological persuasion and patient field-craft in conflict resolution.</span>
+        </li>
+        <li class="entry" data-search="bismarck — unification of germany cited for shrewd, patient political strategy (realpolitik) — relevant to eq in high-stakes negotiation and coalition-building.">
+          <span class="term">Bismarck — Unification of Germany</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited for shrewd, patient political strategy (realpolitik) — relevant to EQ in high-stakes negotiation and coalition-building.</span>
+        </li>
+        <li class="entry" data-search="fateh singh rathore — tribal rehabilitation tiger conservationist instrumental in establishing ranthambore national park, known for sensitively managing the relocation and rehabilitation of local tribal communities — example of balancing conservation goals with empathy for displaced people.">
+          <span class="term">Fateh Singh Rathore — tribal rehabilitation</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Tiger conservationist instrumental in establishing Ranthambore National Park, known for sensitively managing the relocation and rehabilitation of local tribal communities — example of balancing conservation goals with empathy for displaced people.</span>
+        </li>
+        <li class="entry" data-search="neerja bhanot — operation airlift flight attendant who saved hundreds of passengers during the 1986 pan am hijacking before losing her own life — example of extraordinary composure and selflessness under extreme pressure.">
+          <span class="term">Neerja Bhanot — Operation Airlift</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Flight attendant who saved hundreds of passengers during the 1986 Pan Am hijacking before losing her own life — example of extraordinary composure and selflessness under extreme pressure.</span>
+        </li>
+        <li class="entry" data-search="dandakaranya, kerala floods noted as additional eq-relevant examples (likely tribal rehabilitation and disaster-response contexts respectively) — flagged for more context if you have it.">
+          <span class="term">Dandakaranya, Kerala floods</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Noted as additional EQ-relevant examples (likely tribal rehabilitation and disaster-response contexts respectively) — flagged for more context if you have it.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-22" data-section-title="contributions of moral thinkers and philosophers — indian values">
+      <div class="card-head">
+        <span class="card-num">22</span>
+        <h2>Contributions of Moral Thinkers and Philosophers — Indian Values</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="ahimsa paramo dharma sanskrit principle meaning 'non-violence is the highest duty/religion' — foundational to gandhian and jain ethical thought.">
+          <span class="term">Ahimsa Paramo Dharma</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Sanskrit principle meaning 'non-violence is the highest duty/religion' — foundational to Gandhian and Jain ethical thought.</span>
+        </li>
+        <li class="entry" data-search="sheelam param bhushanam sanskrit verse meaning 'character is the greatest ornament' — used to stress that conduct and integrity outweigh wealth, status, or any external adornment.">
+          <span class="term">Sheelam Param Bhushanam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Sanskrit verse meaning 'character is the greatest ornament' — used to stress that conduct and integrity outweigh wealth, status, or any external adornment.</span>
+        </li>
+        <li class="entry" data-search="sarvajan hitay 'for the welfare of all' — a foundational indian value phrase used in public service and buddhist ethical contexts.">
+          <span class="term">Sarvajan Hitay</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'For the welfare of all' — a foundational Indian value phrase used in public service and Buddhist ethical contexts.</span>
+        </li>
+        <li class="entry" data-search="sa vidya ya vimuktaye 'that alone is knowledge which liberates' — classical indian view that true education/knowledge should be transformative, not just informative.">
+          <span class="term">Sa Vidya Ya Vimuktaye</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'That alone is knowledge which liberates' — classical Indian view that true education/knowledge should be transformative, not just informative.</span>
+        </li>
+        <li class="entry" data-search="satyamev jayate 'truth alone triumphs' — from the mundaka upanishad, also india's national motto.">
+          <span class="term">Satyamev Jayate</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Truth alone triumphs' — from the Mundaka Upanishad, also India's national motto.</span>
+        </li>
+        <li class="entry" data-search="nishkam karma 'action without attachment to the fruits of action' — a central teaching of the bhagavad gita, often cited as the ideal mindset for selfless public service.">
+          <span class="term">Nishkam Karma</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">'Action without attachment to the fruits of action' — a central teaching of the Bhagavad Gita, often cited as the ideal mindset for selfless public service.</span>
+        </li>
+        <li class="entry" data-search="other philosophers and thinkers worth keeping in this list build this out over time with figures such as swami vivekananda (service and self-realisation), mahatma gandhi (truth and non-violence), confucius (duty and social harmony), immanuel kant (categorical imperative, duty-based ethics), aristotle (virtue ethics), and amartya sen (ethics of justice and capability) — a mix of indian and western thinkers commonly drawn on in gs4 answers.">
+          <span class="term">Other philosophers and thinkers worth keeping in this list</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Build this out over time with figures such as Swami Vivekananda (service and self-realisation), Mahatma Gandhi (truth and non-violence), Confucius (duty and social harmony), Immanuel Kant (categorical imperative, duty-based ethics), Aristotle (virtue ethics), and Amartya Sen (ethics of justice and capability) — a mix of Indian and Western thinkers commonly drawn on in GS4 answers.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-23" data-section-title="strengthening ethical and moral values in governance">
+      <div class="card-head">
+        <span class="card-num">23</span>
+        <h2>Strengthening Ethical and Moral Values in Governance</h2>
+      </div>
+      
+      <ul class="entry-list">
+      </ul>
+<h3 class="subtitle">Ethical Issues in International Relations and Funding</h3>
+      <ul class="entry-list">
+      </ul>
+<h3 class="subtitle">Positive/cooperative examples</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="political — gujral doctrine india's 1990s foreign policy doctrine of extending unilateral goodwill and non-reciprocity to smaller neighbours, without expecting matching concessions in return.">
+          <span class="term">Political — Gujral Doctrine</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India's 1990s foreign policy doctrine of extending unilateral goodwill and non-reciprocity to smaller neighbours, without expecting matching concessions in return.</span>
+        </li>
+        <li class="entry" data-search="political — panchsheel the five principles of peaceful coexistence, agreed between india and china in 1954, used as a model of ethical inter-state conduct.">
+          <span class="term">Political — Panchsheel</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The Five Principles of Peaceful Coexistence, agreed between India and China in 1954, used as a model of ethical inter-state conduct.</span>
+        </li>
+        <li class="entry" data-search="political — indus waters treaty (1960) india-pakistan treaty on sharing river waters, cited as an example of cooperation persisting despite political hostility.">
+          <span class="term">Political — Indus Waters Treaty (1960)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India-Pakistan treaty on sharing river waters, cited as an example of cooperation persisting despite political hostility.</span>
+        </li>
+        <li class="entry" data-search="political — nam (non-aligned movement) india's cold war-era foreign policy stance of not formally aligning with either power bloc, on ethical/sovereignty grounds.">
+          <span class="term">Political — NAM (Non-Aligned Movement)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India's Cold War-era foreign policy stance of not formally aligning with either power bloc, on ethical/sovereignty grounds.</span>
+        </li>
+        <li class="entry" data-search="political — no first use, support to palestine india's nuclear policy of not striking first; and india's traditional diplomatic support for palestinian statehood — both cited as principle-based foreign policy positions.">
+          <span class="term">Political — No First Use, support to Palestine</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India's nuclear policy of not striking first; and India's traditional diplomatic support for Palestinian statehood — both cited as principle-based foreign policy positions.</span>
+        </li>
+        <li class="entry" data-search="economy — neo-colonialism, china's debt-trap policy criticism of how some powerful states use economic leverage (loans, infrastructure financing) to gain political control over weaker states.">
+          <span class="term">Economy — Neo-colonialism, China's debt-trap policy</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Criticism of how some powerful states use economic leverage (loans, infrastructure financing) to gain political control over weaker states.</span>
+        </li>
+        <li class="entry" data-search="economy — mncs, protectionism ethical tension between multinational corporations' profit motives and a country's need to protect domestic industry/labour.">
+          <span class="term">Economy — MNCs, protectionism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Ethical tension between multinational corporations' profit motives and a country's need to protect domestic industry/labour.</span>
+        </li>
+        <li class="entry" data-search="culture — tagore's internationalism, vasudhaiva kutumbakam tagore's vision of a borderless, humanist world culture; and the sanskrit principle 'the world is one family' — both cited as indian ethical contributions to global thought.">
+          <span class="term">Culture — Tagore's internationalism, Vasudhaiva Kutumbakam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Tagore's vision of a borderless, humanist world culture; and the Sanskrit principle 'the world is one family' — both cited as Indian ethical contributions to global thought.</span>
+        </li>
+        <li class="entry" data-search="culture — universal brotherhood, multiculturalism cited as ethical ideals for managing a diverse, interconnected world.">
+          <span class="term">Culture — universal brotherhood, multiculturalism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as ethical ideals for managing a diverse, interconnected world.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">Critique/failure examples</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="east timor invasion — 'no one reacted' cited as an example of selective international concern, where a serious violation drew little global response.">
+          <span class="term">East Timor invasion — 'no one reacted'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of selective international concern, where a serious violation drew little global response.</span>
+        </li>
+        <li class="entry" data-search="biased npt, denuclearisation the non-proliferation treaty is criticised as unequal, entrenching the position of existing nuclear powers while restricting others.">
+          <span class="term">Biased NPT, denuclearisation</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The Non-Proliferation Treaty is criticised as unequal, entrenching the position of existing nuclear powers while restricting others.</span>
+        </li>
+        <li class="entry" data-search="institutional bias — un, world bank, imf these institutions are criticised for reflecting historical power imbalances (e.g. un security council veto structure, voting-share skew at the imf/world bank).">
+          <span class="term">Institutional bias — UN, World Bank, IMF</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">These institutions are criticised for reflecting historical power imbalances (e.g. UN Security Council veto structure, voting-share skew at the IMF/World Bank).</span>
+        </li>
+        <li class="entry" data-search="global commons — arctic, climate change, space weapons areas requiring shared ethical stewardship beyond narrow national interest, often undermined by competitive national behaviour.">
+          <span class="term">Global commons — Arctic, climate change, space weapons</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Areas requiring shared ethical stewardship beyond narrow national interest, often undermined by competitive national behaviour.</span>
+        </li>
+        <li class="entry" data-search="unilateral sanctions by us, withdrawal from unesco cited as examples of powerful states acting unilaterally in ways that bypass multilateral ethical norms.">
+          <span class="term">Unilateral sanctions by US, withdrawal from UNESCO</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as examples of powerful states acting unilaterally in ways that bypass multilateral ethical norms.</span>
+        </li>
+        <li class="entry" data-search="refugee crisis, white australia policy the historically racially discriminatory australian immigration policy, cited alongside the broader ethics of migration and refugee policy.">
+          <span class="term">Refugee crisis, White Australia Policy</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The historically racially discriminatory Australian immigration policy, cited alongside the broader ethics of migration and refugee policy.</span>
+        </li>
+        <li class="entry" data-search="apartheid, espionage apartheid as a historical example of state-sanctioned discrimination; espionage cited for the ethical grey area of state surveillance/spying on other nations.">
+          <span class="term">Apartheid, espionage</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Apartheid as a historical example of state-sanctioned discrimination; espionage cited for the ethical grey area of state surveillance/spying on other nations.</span>
+        </li>
+        <li class="entry" data-search="state-sponsored terrorism cited as a severe breach of international ethical norms.">
+          <span class="term">State-sponsored terrorism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a severe breach of international ethical norms.</span>
+        </li>
+        <li class="entry" data-search="china — unclos violation, south china sea (scs) china's actions in the south china sea are cited as a contemporary example of a state disregarding international maritime law (the un convention on the law of the sea).">
+          <span class="term">China — UNCLOS violation, South China Sea (SCS)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">China's actions in the South China Sea are cited as a contemporary example of a state disregarding international maritime law (the UN Convention on the Law of the Sea).</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-24" data-section-title="corporate governance">
+      <div class="card-head">
+        <span class="card-num">24</span>
+        <h2>Corporate Governance</h2>
+      </div>
+      
+      <ul class="entry-list">
+      </ul>
+<h3 class="subtitle">Positive examples</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="uday kotak, companies act, n. murthy (narayana murthy) cited as figures/legislation associated with strong corporate governance standards in india.">
+          <span class="term">Uday Kotak, Companies Act, N. Murthy (Narayana Murthy)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as figures/legislation associated with strong corporate governance standards in India.</span>
+        </li>
+        <li class="entry" data-search="jrd tata — compassionate cited again here specifically for compassionate, ethics-led corporate leadership.">
+          <span class="term">JRD Tata — compassionate</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here specifically for compassionate, ethics-led corporate leadership.</span>
+        </li>
+        <li class="entry" data-search="infosys award for science and technology cited as an example of corporate philanthropy supporting science and research.">
+          <span class="term">Infosys Award for Science and Technology</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of corporate philanthropy supporting science and research.</span>
+        </li>
+        <li class="entry" data-search="csr, product recall corporate social responsibility as a governance obligation; voluntary product recalls cited as responsible corporate conduct when safety issues arise.">
+          <span class="term">CSR, product recall</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Corporate Social Responsibility as a governance obligation; voluntary product recalls cited as responsible corporate conduct when safety issues arise.</span>
+        </li>
+        <li class="entry" data-search="corporate support for national/social movements a general pattern worth tracking: companies lending funding, logistics, or public backing to broader national or social causes as part of their csr posture.">
+          <span class="term">Corporate support for national/social movements</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A general pattern worth tracking: companies lending funding, logistics, or public backing to broader national or social causes as part of their CSR posture.</span>
+        </li>
+        <li class="entry" data-search="giving pledge (bill gates) a commitment by billionaires to give away the majority of their wealth to philanthropic causes.">
+          <span class="term">Giving Pledge (Bill Gates)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A commitment by billionaires to give away the majority of their wealth to philanthropic causes.</span>
+        </li>
+        <li class="entry" data-search="gandhi's trusteeship gandhi's concept that the wealthy should see themselves as trustees of their wealth for society's benefit, not absolute owners.">
+          <span class="term">Gandhi's Trusteeship</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Gandhi's concept that the wealthy should see themselves as trustees of their wealth for society's benefit, not absolute owners.</span>
+        </li>
+        <li class="entry" data-search="'commerce without morality' reference to gandhi's list of 'seven social sins', which includes commerce without morality as a core ethical failure.">
+          <span class="term">'Commerce without morality'</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Reference to Gandhi's list of 'seven social sins', which includes commerce without morality as a core ethical failure.</span>
+        </li>
+        <li class="entry" data-search="ndtv — no fairness cream ads cited as an example of a media organisation taking an editorial stand against advertising that promotes harmful beauty standards.">
+          <span class="term">NDTV — no fairness cream ads</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of a media organisation taking an editorial stand against advertising that promotes harmful beauty standards.</span>
+        </li>
+        <li class="entry" data-search="paytm — free delivery during kerala floods cited as an example of a corporation extending free/discounted services during a humanitarian crisis.">
+          <span class="term">Paytm — free delivery during Kerala floods</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of a corporation extending free/discounted services during a humanitarian crisis.</span>
+        </li>
+      </ul>
+<h3 class="subtitle">Negative examples</h3>
+      <ul class="entry-list">
+        <li class="entry" data-search="harshad mehta, nirav modi cited as major indian financial fraud cases (1992 securities scam; pnb fraud case respectively).">
+          <span class="term">Harshad Mehta, Nirav Modi</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as major Indian financial fraud cases (1992 securities scam; PNB fraud case respectively).</span>
+        </li>
+        <li class="entry" data-search="samsung vice chairman (lee jae-yong) convicted of bribing south korea's then-president to secure government support for a merger that strengthened his family's control of the samsung conglomerate — widely cited example of collusion between corporate and political power.">
+          <span class="term">Samsung Vice Chairman (Lee Jae-yong)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Convicted of bribing South Korea's then-president to secure government support for a merger that strengthened his family's control of the Samsung conglomerate — widely cited example of collusion between corporate and political power.</span>
+        </li>
+        <li class="entry" data-search="rajat gupta (mckinsey) former mckinsey head convicted of insider trading — cited as a major professional/corporate governance failure.">
+          <span class="term">Rajat Gupta (McKinsey)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Former McKinsey head convicted of insider trading — cited as a major professional/corporate governance failure.</span>
+        </li>
+        <li class="entry" data-search="volkswagen fraud, satyam volkswagen's emissions-cheating scandal ('dieselgate'); satyam computer services' accounting fraud — both landmark corporate governance failures.">
+          <span class="term">Volkswagen fraud, Satyam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Volkswagen's emissions-cheating scandal ('Dieselgate'); Satyam Computer Services' accounting fraud — both landmark corporate governance failures.</span>
+        </li>
+        <li class="entry" data-search="johnson &amp; johnson cited likely in reference to product-safety litigation (e.g. talc-related lawsuits) — a corporate ethics/accountability example.">
+          <span class="term">Johnson &amp; Johnson</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited likely in reference to product-safety litigation (e.g. talc-related lawsuits) — a corporate ethics/accountability example.</span>
+        </li>
+        <li class="entry" data-search="wilful defaulters borrowers who default on loans despite having the capacity to repay — a recurring banking-sector ethics issue in india.">
+          <span class="term">Wilful defaulters</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Borrowers who default on loans despite having the capacity to repay — a recurring banking-sector ethics issue in India.</span>
+        </li>
+        <li class="entry" data-search="surrogate advertisement advertising banned products (e.g. alcohol) indirectly through associated branded goods — an ethics/regulation grey area.">
+          <span class="term">Surrogate advertisement</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Advertising banned products (e.g. alcohol) indirectly through associated branded goods — an ethics/regulation grey area.</span>
+        </li>
+        <li class="entry" data-search="environment, labour, women discrimination, sexual harassment cited as recurring corporate governance failure areas.">
+          <span class="term">Environment, labour, women discrimination, sexual harassment</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as recurring corporate governance failure areas.</span>
+        </li>
+        <li class="entry" data-search="audit failures, crony capitalism auditors failing to flag fraud; and businesses gaining advantage through political connections rather than fair competition.">
+          <span class="term">Audit failures, crony capitalism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Auditors failing to flag fraud; and businesses gaining advantage through political connections rather than fair competition.</span>
+        </li>
+        <li class="entry" data-search="minority stakeholder rights, anti-competitive predatory pricing, succession disputes cited as further corporate governance problem areas — protecting smaller shareholders, fair market competition, and orderly leadership transition.">
+          <span class="term">Minority stakeholder rights, anti-competitive predatory pricing, succession disputes</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as further corporate governance problem areas — protecting smaller shareholders, fair market competition, and orderly leadership transition.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-25" data-section-title="probity in governance: concept of public service">
+      <div class="card-head">
+        <span class="card-num">25</span>
+        <h2>Probity in Governance: Concept of Public Service</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="probity vs personal morality key conceptual distinction: probity refers specifically to integrity in public office and official conduct — a person can be procedurally 'probitous' in their public duties while still having separate personal moral failings (the book's own example: an honest civil servant who follows probity in office but may separately engage in adultery in personal life).">
+          <span class="term">Probity vs personal morality</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Key conceptual distinction: probity refers specifically to integrity in public office and official conduct — a person can be procedurally 'probitous' in their public duties while still having separate personal moral failings (the book's own example: an honest civil servant who follows probity in office but may separately engage in adultery in personal life).</span>
+        </li>
+        <li class="entry" data-search="army violation of human rights, rape cited as a severe probity failure within a uniformed public institution.">
+          <span class="term">Army violation of human rights, rape</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a severe probity failure within a uniformed public institution.</span>
+        </li>
+        <li class="entry" data-search="rajendra prasad india's first president, cited as an icon of personal simplicity and constitutional probity.">
+          <span class="term">Rajendra Prasad</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India's first President, cited as an icon of personal simplicity and constitutional probity.</span>
+        </li>
+        <li class="entry" data-search="tripura — low corruption cited as a positive state-level example of governance with comparatively low corruption.">
+          <span class="term">Tripura — low corruption</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a positive state-level example of governance with comparatively low corruption.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-26" data-section-title="right to information">
+      <div class="card-head">
+        <span class="card-num">26</span>
+        <h2>Right to Information</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="vyapam scam — 45 deaths of rti activists madhya pradesh recruitment/admissions scam; multiple rti activists investigating it died under suspicious circumstances — extreme example of the risks rti activists can face.">
+          <span class="term">Vyapam scam — 45 deaths of RTI activists</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Madhya Pradesh recruitment/admissions scam; multiple RTI activists investigating it died under suspicious circumstances — extreme example of the risks RTI activists can face.</span>
+        </li>
+        <li class="entry" data-search="adarsh housing society scam mumbai housing scam involving illegal allotment of flats meant for war widows/veterans to politicians and bureaucrats — exposed partly through rti.">
+          <span class="term">Adarsh Housing Society scam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Mumbai housing scam involving illegal allotment of flats meant for war widows/veterans to politicians and bureaucrats — exposed partly through RTI.</span>
+        </li>
+        <li class="entry" data-search="university research paper scam cited as an example of rti/investigative journalism exposing academic fraud.">
+          <span class="term">University research paper scam</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as an example of RTI/investigative journalism exposing academic fraud.</span>
+        </li>
+        <li class="entry" data-search="investigative journalism cited as a key partner mechanism to rti in exposing governance failures.">
+          <span class="term">Investigative journalism</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a key partner mechanism to RTI in exposing governance failures.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-27" data-section-title="codes of ethics, codes of conduct">
+      <div class="card-head">
+        <span class="card-num">27</span>
+        <h2>Codes of Ethics, Codes of Conduct</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="dhamma, hippocratic oath, panchsheel cited as historical/professional codes of ethical conduct across different domains (governance, medicine, diplomacy).">
+          <span class="term">Dhamma, Hippocratic Oath, Panchsheel</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as historical/professional codes of ethical conduct across different domains (governance, medicine, diplomacy).</span>
+        </li>
+        <li class="entry" data-search="media ethics, model code of ethics cited as professional codes specific to journalism and general conduct standards.">
+          <span class="term">Media Ethics, Model Code of Ethics</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as professional codes specific to journalism and general conduct standards.</span>
+        </li>
+        <li class="entry" data-search="7 principles of ai — google google's published ai ethics principles, cited as a modern corporate code of ethics example.">
+          <span class="term">7 Principles of AI — Google</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Google's published AI ethics principles, cited as a modern corporate code of ethics example.</span>
+        </li>
+        <li class="entry" data-search="civil service conduct rules, 1964 the formal rules governing the conduct of indian civil servants.">
+          <span class="term">Civil Service Conduct Rules, 1964</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The formal rules governing the conduct of Indian civil servants.</span>
+        </li>
+        <li class="entry" data-search="model code of conduct the set of guidelines enforced by the election commission of india during elections to ensure fair conduct by parties and candidates.">
+          <span class="term">Model Code of Conduct</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">The set of guidelines enforced by the Election Commission of India during elections to ensure fair conduct by parties and candidates.</span>
+        </li>
+        <li class="entry" data-search="common minimum programme a shared policy document agreed upon by coalition government partners — an example of a negotiated code of governance conduct.">
+          <span class="term">Common Minimum Programme</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A shared policy document agreed upon by coalition government partners — an example of a negotiated code of governance conduct.</span>
+        </li>
+        <li class="entry" data-search="10 commandments, ashtangik marg, panch mahavrata religious codes of conduct: the christian ten commandments, the buddhist eightfold path, and the jain five great vows respectively — cited together as examples of religious ethical codes.">
+          <span class="term">10 Commandments, Ashtangik Marg, Panch Mahavrata</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Religious codes of conduct: the Christian Ten Commandments, the Buddhist Eightfold Path, and the Jain five great vows respectively — cited together as examples of religious ethical codes.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-28" data-section-title="citizen's charters">
+      <div class="card-head">
+        <span class="card-num">28</span>
+        <h2>Citizen's Charters</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="passport seva kendra cited as a successful citizen-charter-driven service delivery reform for passport issuance.">
+          <span class="term">Passport Seva Kendra</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a successful citizen-charter-driven service delivery reform for passport issuance.</span>
+        </li>
+        <li class="entry" data-search="'seva setu' — hiware bazaar a model village governance reform programme, cited as a grassroots citizen-charter/service delivery success.">
+          <span class="term">'Seva Setu' — Hiware Bazaar</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A model village governance reform programme, cited as a grassroots citizen-charter/service delivery success.</span>
+        </li>
+        <li class="entry" data-search="jan seva kendra — ahmedabad, 70 services a one-stop citizen service centre model in ahmedabad offering around 70 government services under one roof.">
+          <span class="term">Jan Seva Kendra — Ahmedabad, 70 services</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A one-stop citizen service centre model in Ahmedabad offering around 70 government services under one roof.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-29" data-section-title="work culture">
+      <div class="card-head">
+        <span class="card-num">29</span>
+        <h2>Work Culture</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="isro, delhi metro cited as indian institutions known for disciplined, high-performance work culture.">
+          <span class="term">ISRO, Delhi Metro</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as Indian institutions known for disciplined, high-performance work culture.</span>
+        </li>
+        <li class="entry" data-search="japan, germany cited as national models of strong institutional work culture and precision.">
+          <span class="term">Japan, Germany</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as national models of strong institutional work culture and precision.</span>
+        </li>
+        <li class="entry" data-search="grameen bank, start-ups grameen bank (bangladesh microfinance pioneer) and the start-up ecosystem cited for innovative, mission-driven work culture.">
+          <span class="term">Grameen Bank, start-ups</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Grameen Bank (Bangladesh microfinance pioneer) and the start-up ecosystem cited for innovative, mission-driven work culture.</span>
+        </li>
+        <li class="entry" data-search="amul cooperative cited again here specifically as a positive cooperative work-culture model.">
+          <span class="term">Amul Cooperative</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here specifically as a positive cooperative work-culture model.</span>
+        </li>
+        <li class="entry" data-search="indian bureaucratic culture cited as a negative example — red-tapism and procedural delay as a work-culture problem.">
+          <span class="term">Indian bureaucratic culture</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a negative example — red-tapism and procedural delay as a work-culture problem.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-30" data-section-title="quality of service delivery">
+      <div class="card-head">
+        <span class="card-num">30</span>
+        <h2>Quality of Service Delivery</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="passport seva kendra cited again here as a quality service-delivery reform.">
+          <span class="term">Passport Seva Kendra</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited again here as a quality service-delivery reform.</span>
+        </li>
+        <li class="entry" data-search="home delivery of public services in delhi delhi government scheme allowing citizens to get certain government documents/services delivered to their homes.">
+          <span class="term">Home delivery of public services in Delhi</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Delhi government scheme allowing citizens to get certain government documents/services delivered to their homes.</span>
+        </li>
+        <li class="entry" data-search="state-level digital service delivery schemes a category worth tracking across states — local-language portals and schemes that bring government services online for quality, accessible delivery (alongside passport seva kendra and irctc as national examples).">
+          <span class="term">State-level digital service delivery schemes</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A category worth tracking across states — local-language portals and schemes that bring government services online for quality, accessible delivery (alongside Passport Seva Kendra and IRCTC as national examples).</span>
+        </li>
+        <li class="entry" data-search="aiims — online appointment system cited as a digital reform improving healthcare service delivery quality.">
+          <span class="term">AIIMS — online appointment system</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a digital reform improving healthcare service delivery quality.</span>
+        </li>
+        <li class="entry" data-search="irctc cited as a major digital public service delivery platform (railway ticketing).">
+          <span class="term">IRCTC</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a major digital public service delivery platform (railway ticketing).</span>
+        </li>
+        <li class="entry" data-search="kolkata bridge collapse cited as a negative example — infrastructure failure linked to poor maintenance/oversight in public service delivery.">
+          <span class="term">Kolkata bridge collapse</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as a negative example — infrastructure failure linked to poor maintenance/oversight in public service delivery.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" id="sec-31" data-section-title="utilization of public funds">
+      <div class="card-head">
+        <span class="card-num">31</span>
+        <h2>Utilization of Public Funds</h2>
+      </div>
+      
+      <ul class="entry-list">
+        <li class="entry" data-search="crowdsourced/public funding for major missions a useful general theme: large public or scientific endeavours partly funded or supported through broad public contribution or goodwill, illustrating collective ownership of public fund utilisation.">
+          <span class="term">Crowdsourced/public funding for major missions</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">A useful general theme: large public or scientific endeavours partly funded or supported through broad public contribution or goodwill, illustrating collective ownership of public fund utilisation.</span>
+        </li>
+        <li class="entry" data-search="aadhaar-linked dbt savings aadhaar-linked direct benefit transfer has eliminated tens of millions of fake/duplicate beneficiaries (lpg connections, ration cards), generating government savings credibly estimated in the lakhs of crores of rupees — a frequently cited example of technology improving fund utilisation efficiency.">
+          <span class="term">Aadhaar-linked DBT savings</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Aadhaar-linked Direct Benefit Transfer has eliminated tens of millions of fake/duplicate beneficiaries (LPG connections, ration cards), generating government savings credibly estimated in the lakhs of crores of rupees — a frequently cited example of technology improving fund utilisation efficiency.</span>
+        </li>
+        <li class="entry" data-search="pahal direct benefit transfer scheme for lpg subsidies, cited as an example of efficient, leakage-reducing fund utilisation.">
+          <span class="term">PAHAL</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Direct Benefit Transfer scheme for LPG subsidies, cited as an example of efficient, leakage-reducing fund utilisation.</span>
+        </li>
+        <li class="entry" data-search="pfms public financial management system — a government platform for tracking and ensuring efficient utilisation of public funds.">
+          <span class="term">PFMS</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Public Financial Management System — a government platform for tracking and ensuring efficient utilisation of public funds.</span>
+        </li>
+        <li class="entry" data-search="isro (mars orbiter mission) india's mars mission is frequently cited as a model of cost-efficient public fund utilisation in science and technology.">
+          <span class="term">ISRO (Mars Orbiter Mission)</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">India's Mars mission is frequently cited as a model of cost-efficient public fund utilisation in science and technology.</span>
+        </li>
+        <li class="entry" data-search="negative: scams, delay-cost overruns, npas, air india cited as recurring examples of poor public fund utilisation — corruption, project delays inflating costs, bad loans in public banks, and financial mismanagement at the former state-run airline.">
+          <span class="term">Negative: scams, delay-cost overruns, NPAs, Air India</span>
+          <span class="dash">&mdash;</span>
+          <span class="def">Cited as recurring examples of poor public fund utilisation — corruption, project delays inflating costs, bad loans in public banks, and financial mismanagement at the former state-run airline.</span>
+        </li>
+      </ul>
+    </section>
+    <p class="no-results" id="noResults">No entries match your search.</p>
+    <p class="closing-note">This bank covers the full physical reference book consulted, organised by official syllabus sub-topic for quick recall.</p>
+  </main>
+</div>
+
+<footer class="site-foot">
+  Compiled for personal revision use &middot; The Working Aspirant
+</footer>
+
+<script>
+  // Mobile TOC toggle
+  const tocToggle = document.getElementById('tocToggle');
+  const tocList = document.getElementById('tocList');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', () => tocList.classList.toggle('open'));
+  }
+
+  // Active TOC highlight on scroll
+  const sections = Array.from(document.querySelectorAll('.card'));
+  const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
+  function onScroll() {
+    let current = null;
+    for (const sec of sections) {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 120) current = sec.id;
+    }
+    tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Search / filter
+  const searchInput = document.getElementById('search');
+  const entries = Array.from(document.querySelectorAll('li.entry'));
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const resultCount = document.getElementById('resultCount');
+  const noResults = document.getElementById('noResults');
+
+  function highlight(el, query) {
+    if (!el) return;
+    const original = el.dataset.original || el.innerHTML;
+    el.dataset.original = original;
+    if (!query) { el.innerHTML = original; return; }
+    const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+    el.innerHTML = original.replace(re, '<mark>$1</mark>');
+  }
+
+  function runSearch() {
+    const q = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    if (!q) {
+      entries.forEach(e => { e.classList.remove('hidden'); const t=e.querySelector('.term'), d=e.querySelector('.def'); if(t&&t.dataset.original) t.innerHTML=t.dataset.original; if(d&&d.dataset.original) d.innerHTML=d.dataset.original; });
+      cards.forEach(c => c.classList.remove('hidden'));
+      resultCount.textContent = '';
+      noResults.style.display = 'none';
+      return;
+    }
+
+    cards.forEach(card => {
+      let cardHasMatch = false;
+      const sectionTitleMatch = (card.dataset.sectionTitle || '').includes(q);
+      card.querySelectorAll('li.entry').forEach(entry => {
+        const match = entry.dataset.search.includes(q);
+        entry.classList.toggle('hidden', !match && !sectionTitleMatch);
+        if (match || sectionTitleMatch) {
+          cardHasMatch = true;
+          visibleCount++;
+          highlight(entry.querySelector('.term'), q);
+          highlight(entry.querySelector('.def'), q);
+        }
+      });
+      card.classList.toggle('hidden', !cardHasMatch);
+    });
+
+    resultCount.textContent = visibleCount + (visibleCount === 1 ? ' match' : ' matches');
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', runSearch);
+
+  // Deep-link on load (e.g. page#sec-5)
+  if (window.location.hash) {
+    setTimeout(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }, 50);
+  }
+</script>
+
+</body>
+</html>
