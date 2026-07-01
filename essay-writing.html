@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essay Writing — The Working Aspirant</title>
+  <meta name="description" content="The complete ESSELGO system for the UPSC Essay paper — every framework, cheat code, and technique, in one anchor reference." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --brass-light: #E8D98A;
+      --brass-pale: #F3EEE3;
+      --rule: #DDD8D0;
+      --good: #4C6B4C;
+      --bad: #8A4A3E;
+      --max: 1100px;
+    }
+
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.92rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+
+    .crumb { padding: 18px 0 0; font-size: 0.78rem; color: var(--ink-muted); letter-spacing: 0.03em; }
+    .crumb a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--rule); }
+    .crumb a:hover { color: var(--brass); border-color: var(--brass); }
+
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+
+    .hero { padding: 32px 0 32px; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 24px; }
+    .hero-headline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.18; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 28px; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--ink); line-height: 1.7; max-width: 640px; border-left: 2px solid var(--brass); padding-left: 20px; }
+    .hero-meta { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+    .hero-meta div { font-size: 0.74rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .hero-meta strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--brass); text-transform: none; letter-spacing: 0; }
+
+    .quicknav { display: flex; gap: 10px; flex-wrap: wrap; padding: 4px 0; }
+    .quicknav a { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.05em; color: var(--ink-muted); text-decoration: none; border: 1px solid var(--rule); padding: 8px 14px; border-radius: 20px; transition: all 0.2s; white-space: nowrap; }
+    .quicknav a:hover { color: var(--brass); border-color: var(--brass); }
+
+    .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 10px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.9rem; color: var(--ink); margin-bottom: 22px; }
+    .section-sub { font-size: 0.86rem; color: var(--ink-muted); margin: -14px 0 22px; max-width: 70ch; }
+    section.block { padding: 8px 0 8px; scroll-margin-top: 24px; }
+
+    .prose-body { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.2rem; line-height: 1.8; color: var(--ink); max-width: 74ch; }
+    .prose-body p + p { margin-top: 1.2em; }
+
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; padding: 4px 0 8px; }
+    .search-input { flex: 1; min-width: 220px; padding: 11px 16px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 300; background: #fff; border: 1px solid var(--rule); color: var(--ink); outline: none; transition: border-color 0.2s; }
+    .search-input::placeholder { color: #C0BAB0; }
+    .search-input:focus { border-color: var(--brass); }
+    .chip { padding: 9px 16px; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); background: transparent; border: 1px solid var(--rule); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .chip:hover { color: var(--brass); border-color: var(--brass); }
+    .chip.active { color: var(--bg); background: var(--ink); border-color: var(--ink); }
+
+    .fw-list { margin-top: 20px; position: relative; }
+    .fw-list::before { content: ''; position: absolute; left: 31px; top: 12px; bottom: 12px; width: 1px; background: var(--rule); }
+    .fw-item { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 26px 0; position: relative; }
+    .fw-number { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.1rem; color: var(--brass); width: 40px; height: 40px; border: 1px solid var(--brass); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg); position: relative; z-index: 1; }
+    .fw-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+    .fw-tag { display: inline-block; font-size: 0.64rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); border: 1px solid var(--rule); padding: 3px 9px; margin-bottom: 12px; }
+    .fw-desc { font-size: 0.92rem; color: var(--ink-muted); line-height: 1.75; max-width: 68ch; }
+    .fw-desc strong { color: var(--ink); font-weight: 500; }
+    .fw-desc a { color: var(--brass); text-decoration: none; border-bottom: 1px solid var(--brass-light); }
+
+    .callout { border-left: 2px solid var(--brass); background: #FDFBF6; padding: 22px 26px; margin: 8px 0 30px; }
+    .callout-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; }
+    .callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--ink); line-height: 1.6; }
+    .callout.plain p { font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.88rem; color: var(--ink-muted); }
+
+    .diagram-frame { border: 1px solid var(--rule); background: #fff; padding: 28px; margin: 20px 0; }
+    .diagram-frame svg { width: 100%; height: auto; display: block; }
+    .diagram-caption { font-size: 0.76rem; color: var(--ink-muted); text-align: center; margin-top: 14px; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--rule); margin: 14px 0; }
+    table.cross { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 560px; }
+    table.cross th { text-align: left; padding: 12px 16px; background: var(--brass-pale); font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.66rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--rule); }
+    table.cross td { padding: 12px 16px; border-bottom: 1px solid var(--rule); color: var(--ink-muted); vertical-align: top; }
+    table.cross tr:last-child td { border-bottom: none; }
+    table.cross td.dim, table.cross td.lbl { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--ink); font-weight: 500; }
+    table.cross tr.total td { font-weight: 600; color: var(--ink); background: var(--brass-pale); }
+    table.cross input[type=text] { width: 100%; border: none; border-bottom: 1px dotted var(--rule); background: transparent; font-family: 'Inter', sans-serif; font-size: 0.85rem; padding: 4px 2px; color: var(--ink); }
+    table.cross input[type=text]:focus { outline: none; border-bottom-color: var(--brass); }
+    .pending-note { font-size: 0.78rem; color: var(--ink-muted); opacity: 0.75; margin-top: 12px; font-style: italic; }
+
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 18px 0; border: 1px solid var(--rule); }
+    .check-item { display: flex; gap: 12px; padding: 16px 18px; border: 1px solid var(--rule); background: var(--bg); font-size: 0.86rem; color: var(--ink-muted); }
+    .check-item .n { font-family: 'Cormorant Garamond', serif; color: var(--brass); font-weight: 500; font-size: 1rem; flex-shrink: 0; }
+    .check-item strong { color: var(--ink); font-weight: 500; }
+
+    .lens-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2px; margin: 18px 0; border: 1px solid var(--rule); }
+    .lens-item { padding: 20px 18px; border: 1px solid var(--rule); background: var(--bg); text-align: center; }
+    .lens-item .icon { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--brass); margin-bottom: 8px; }
+    .lens-item .label { font-size: 0.82rem; font-weight: 500; color: var(--ink); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 820px) {
+      .two-col { grid-template-columns: 1fr; gap: 20px; }
+      .check-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .nav-links { gap: 18px; }
+      .fw-item { grid-template-columns: 1fr; gap: 6px; }
+      .fw-list::before { display: none; }
+      footer { flex-direction: column; text-align: center; }
+      .hero-meta { gap: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="index.html">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="vault.html" class="active">The Vault</a></li>
+        <li><a href="index.html#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <p class="crumb"><a href="vault.html">The Vault</a> / Essay Writing</p>
+
+    <div class="rule"></div>
+
+    <section class="hero">
+      <p class="hero-eyebrow">The Vault · GS Essay Paper · Anchor Reference</p>
+      <h1 class="hero-headline">One idea, followed<br />through — not fifteen<br />scattered points.</h1>
+      <p class="hero-tagline">"Controlling-idea-driven essays consistently outperform example-accumulation essays." — the governing finding behind everything on this page.</p>
+      <div class="hero-meta">
+        <div>Blocks in ESSELGO<strong>7</strong></div>
+        <div>Exam time budgeted<strong>180 min</strong></div>
+        <div>Body blocks<strong>4</strong></div>
+        <div>Source chapters covered<strong>27 / 27</strong></div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <div class="quicknav">
+      <a href="#wants">What UPSC Wants</a>
+      <a href="#time">Time Mastery</a>
+      <a href="#topic">Choosing a Topic</a>
+      <a href="#esselgo">The ESSELGO Framework</a>
+      <a href="#arguments">Argument Craft</a>
+      <a href="#language">Language &amp; Flow</a>
+      <a href="#quotes-facts">Quotes &amp; Facts</a>
+      <a href="#exam-day">Exam-Day Execution</a>
+      <a href="#toppers">Topper Analysis</a>
+    </div>
+
+    <div class="rule"></div>
+
+    <section class="block" id="wants">
+      <p class="section-label">Read This First</p>
+      <h2 class="section-title">What UPSC Actually Wants</h2>
+      <p class="section-sub">Straight from UPSC's own Essay paper notification — not interpretation, the actual brief.</p>
+
+      <div class="callout">
+        <p class="callout-label">The notification, in full</p>
+        <p>"Candidates may be required to write essays on multiple topics. They will be expected to keep closely to the subject of the essay, to arrange their ideas in orderly fashion, and to write concisely. Credit will be given for effective and exact expression."</p>
+      </div>
+
+      <div class="prose-body" style="margin-bottom: 10px;">
+        <p>Five demands sit inside that one paragraph. Miss any of them and you're leaving marks on the table no matter how well-read you are.</p>
+      </div>
+
+      <div class="check-grid">
+        <div class="check-item"><span class="n">I</span><div><strong>Stay on the topic.</strong> Not "roughly related" — the argument itself should be about the relationship in the topic, not a tour of everything you know that's adjacent to it.</div></div>
+        <div class="check-item"><span class="n">II</span><div><strong>Arrange ideas in order.</strong> Structure (intro / body / conclusion as a skeleton) plus flow (one point leading into the next, not sitting beside it).</div></div>
+        <div class="check-item"><span class="n">III</span><div><strong>Write concisely.</strong> For a 1000-word essay: ~700 words of body ÷ ~50 words a point ≈ 14 well-made points, not 30 thin ones.</div></div>
+        <div class="check-item"><span class="n">IV</span><div><strong>Effective, exact expression.</strong> Simple and precise beats dense and literary. If a sentence needs re-reading, it's costing you marks, not earning them.</div></div>
+        <div class="check-item"><span class="n">V</span><div><strong>Choose well from multiple topics.</strong> Two essays, each picked from four choices in its section. The choice itself is a scored decision — see the Decision Matrix below.</div></div>
+      </div>
+
+      <p class="section-label" style="margin-top: 34px;">Fourteen Traps That Keep Essays Average</p>
+      <div class="prose-body" style="font-size: 1.05rem; margin-bottom: 6px;"><p>Common mistakes produce the common, average score. In brief:</p></div>
+      <div class="check-grid">
+        <div class="check-item"><span class="n">1</span><div>Writing a <strong>personal</strong> essay (about you) instead of an <strong>analytical</strong> one. UPSC essays are impersonal — no anecdotes, no "I feel."</div></div>
+        <div class="check-item"><span class="n">2</span><div>Leaning on <strong>emotional appeal or hyperbole</strong> instead of logic. Convince with reasoning, not rhetoric.</div></div>
+        <div class="check-item"><span class="n">3</span><div><strong>Generalizations and stereotypes</strong> as evidence — "usually true" isn't "always true," and the examiner knows it.</div></div>
+        <div class="check-item"><span class="n">4</span><div>Treating <strong>poems and quotes</strong> as load-bearing. They decorate; they don't argue. A strong point needs no quote to back it.</div></div>
+        <div class="check-item"><span class="n">5</span><div>Practicing only <strong>untimed</strong> essays. A three-hour, two-essay exam is a different skill from a leisurely week-long draft.</div></div>
+        <div class="check-item"><span class="n">6</span><div><strong>Choosing the wrong topic</strong> under panic. Solved by the Decision Matrix — see below.</div></div>
+        <div class="check-item"><span class="n">7</span><div>Not finding the <strong>heart of the topic</strong> — the relationship between its two halves — before writing a word.</div></div>
+        <div class="check-item"><span class="n">8</span><div>Writing in <strong>passive voice.</strong> "Over half the candidates failed the exam," not "the exam was failed by over half the candidates."</div></div>
+        <div class="check-item"><span class="n">9</span><div>Treating <strong>rough work as optional.</strong> Everything downstream flows from it — skipping it is the single most expensive shortcut.</div></div>
+        <div class="check-item"><span class="n">10</span><div>Skipping <strong>revision.</strong> A dedicated review pass can swing the score by up to 10% — see Exam-Day Execution.</div></div>
+        <div class="check-item"><span class="n">11</span><div><strong>Repetition</strong> — restating the same point in different words to pad the word count. The examiner notices immediately.</div></div>
+        <div class="check-item"><span class="n">12</span><div>Poor <strong>paragraph spacing</strong>, or using bullets/numbering in what should be a formal, flowing essay.</div></div>
+        <div class="check-item"><span class="n">13</span><div>Chasing <strong>facts or grammar polish</strong> at the expense of argument quality — grammar is a floor, not a ceiling.</div></div>
+        <div class="check-item"><span class="n">14</span><div>Believing there's <strong>no wrong way</strong> to write the essay. There is: opinions without reasoning behind them.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="time">
+      <p class="section-label">Before the Exam</p>
+      <h2 class="section-title">Time Mastery: The 180-Minute Budget</h2>
+      <p class="section-sub">Not time <em>management</em> — the goal is to stop needing to look at the clock at all.</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 800 190" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="20" font-family="Inter" font-size="11" letter-spacing="1" fill="var(--ink-muted)">180 MINUTES · TWO ESSAYS</text>
+          <g transform="translate(0,36)">
+            <rect x="0" y="0" width="44" height="46" fill="var(--brass)"/>
+            <rect x="44" y="0" width="178" height="46" fill="var(--ink)"/>
+            <rect x="222" y="0" width="444" height="46" fill="var(--brass-light)"/>
+            <rect x="666" y="0" width="67" height="46" fill="var(--ink-muted)" opacity="0.55"/>
+            <rect x="733" y="0" width="67" height="46" fill="var(--rule)"/>
+          </g>
+          <g font-family="Cormorant Garamond" font-size="15" fill="var(--ink)">
+            <text x="0" y="102">Choosing the topic</text>
+            <text x="44" y="102">Pre-writing / Rough work</text>
+            <text x="222" y="102">Transcribing &amp; writing</text>
+            <text x="666" y="102">Revision</text>
+            <text x="733" y="102">Buffer</text>
+          </g>
+          <g font-family="Inter" font-size="12" fill="var(--ink-muted)">
+            <text x="0" y="122">10 min · 5.6%</text>
+            <text x="44" y="122">40 min · 22.2%</text>
+            <text x="222" y="122">100 min · 55.6%</text>
+            <text x="666" y="122">15 min · 8.3%</text>
+            <text x="733" y="122">15 min · 8.3%</text>
+          </g>
+          <text x="0" y="160" font-family="Cormorant Garamond" font-style="italic" font-size="14" fill="var(--ink-muted)">Per essay: 5 min choosing · 20 min rough work · 50 min writing.</text>
+        </svg>
+        <p class="diagram-caption">A suggested time budget — recalibrate it against your own mock-test pace.</p>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="fw-title" style="font-size:1.15rem;">Why "mastery," not "management"</div>
+          <div class="fw-desc">Running out of time triggers an anxiety-performance spiral: rushing lowers quality, which raises anxiety, which lowers quality further. Budgeting time in advance — including a buffer — removes the spiral before it starts.</div>
+        </div>
+        <div>
+          <div class="fw-title" style="font-size:1.15rem;">Time-bombs to buffer for</div>
+          <div class="fw-desc">Toilet breaks, invigilator document checks, hand fatigue from ~2,000 words of continuous writing, misprints, disturbances. None are likely alone; together they can eat 15 minutes — which is exactly what the buffer above covers.</div>
+        </div>
+      </div>
+
+      <div class="callout plain">
+        <p class="callout-label">Building the internal clock</p>
+        <p>Practice in fixed 25-minute focused blocks (a Pomodoro), no distractions, five-minute break between. The 100-minute writing phase is exactly four such blocks; a 3-hour paper is roughly seven. Enough repetitions and you stop needing the clock — your sense of elapsed time becomes accurate on its own.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="topic">
+      <p class="section-label">Before the Exam</p>
+      <h2 class="section-title">Choosing a Topic: The Decision Matrix</h2>
+      <p class="section-sub">Two essays, each chosen from four options. The choice is a scored decision, not a gut call — "well begun is half done."</p>
+
+      <div class="prose-body" style="margin-bottom: 6px;">
+        <p>Score every candidate topic 0–9 on each row below, then total the columns. The highest score is your safer choice — and a low total on a topic you felt confident about is worth noticing; overconfidence is exactly what this catches.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="cross">
+          <thead>
+            <tr><th>Criterion (score 0–9)</th><th>Topic A</th><th>Topic B</th><th>Topic C</th><th>Topic D</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="lbl">Relevance to my optional subject</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">Depth of understanding of the topic</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">Prior practice on this or a similar topic</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">3 concrete examples <em>for</em> the argument</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">3 concrete examples <em>against</em> the argument</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">3 connections to India specifically</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr><td class="lbl">Connection to something current</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            <tr class="total"><td class="lbl">Total</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pending-note">Fillable in-browser for practice — nothing here is saved, so screenshot or copy out a completed matrix before closing the tab.</p>
+
+      <div class="callout plain" style="margin-top:24px;">
+        <p class="callout-label">In the exam itself</p>
+        <p>The full matrix is a preparation tool, not an exam-day one — ten minutes is budgeted for topic choice, not fifty. Run it on paper during practice until scoring becomes automatic, then do it mentally on exam day. And once you've chosen: don't re-open the other options. Revisiting a decision mid-essay only invites doubt.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="esselgo">
+      <p class="section-label">Writing the Essay</p>
+      <h2 class="section-title">The ESSELGO Framework</h2>
+      <p class="section-sub">Essay Generation Algorithm — the master sequence every other technique on this page sits inside.</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg">
+          <g font-family="Inter" font-size="11.5" font-weight="500">
+            <g>
+              <rect x="0" y="10" width="150" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="32" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">I</text>
+              <text x="75" y="50" text-anchor="middle" fill="var(--ink)">Deconstruct</text>
+            </g>
+            <path d="M150,38 H190" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(190,0)">
+              <rect x="0" y="10" width="150" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="32" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">II</text>
+              <text x="75" y="50" text-anchor="middle" fill="var(--ink)">4Q — Deepen</text>
+            </g>
+            <path d="M340,38 H380" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(380,0)">
+              <rect x="0" y="10" width="150" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="32" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">III</text>
+              <text x="75" y="50" text-anchor="middle" fill="var(--ink)">Brainstorm</text>
+            </g>
+            <path d="M530,38 H570" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(570,0)">
+              <rect x="0" y="10" width="150" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="32" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">IV</text>
+              <text x="75" y="50" text-anchor="middle" fill="var(--ink)">4Q² — Intro</text>
+            </g>
+            <path d="M645,66 V96" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <path d="M645,96 H75" stroke="var(--rule)" stroke-width="1.5"/>
+            <path d="M75,96 V126" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(0,136)">
+              <rect x="0" y="0" width="340" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="170" y="22" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">V</text>
+              <text x="170" y="40" text-anchor="middle" fill="var(--ink)">Body Blocks (Bad · Good · Indian · Should)</text>
+            </g>
+            <path d="M340,164 H380" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(380,136)">
+              <rect x="0" y="0" width="150" height="56" fill="none" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="22" text-anchor="middle" fill="var(--brass)" font-family="Cormorant Garamond" font-size="15">VI</text>
+              <text x="75" y="40" text-anchor="middle" fill="var(--ink)">Dimensional*</text>
+            </g>
+            <path d="M530,164 H570" stroke="var(--rule)" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <g transform="translate(570,136)">
+              <rect x="0" y="0" width="150" height="56" fill="var(--brass)" stroke="var(--brass)" stroke-width="1.5"/>
+              <text x="75" y="22" text-anchor="middle" fill="var(--bg)" font-family="Cormorant Garamond" font-size="15">VII</text>
+              <text x="75" y="40" text-anchor="middle" fill="var(--bg)">SCoReF</text>
+            </g>
+          </g>
+          <text x="0" y="228" font-family="Cormorant Garamond" font-style="italic" font-size="13.5" fill="var(--ink-muted)">*Dimensional Analysis applies specifically to abstract/philosophical topics — see block VI.</text>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--rule)"/></marker>
+          </defs>
+        </svg>
+        <p class="diagram-caption">Each block hands its output to the next — this is the whole essay, start to finish.</p>
+      </div>
+
+      <div class="toolbar">
+        <input type="text" class="search-input" id="searchInput" placeholder="Search a block — e.g. &quot;deconstruction&quot;, &quot;conclusion&quot;…" />
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="opening">Opening</button>
+        <button class="chip" data-filter="body">Body</button>
+        <button class="chip" data-filter="closing">Closing</button>
+      </div>
+
+      <div class="fw-list" id="fwList">
+
+        <div class="fw-item" data-cat="opening" data-name="deconstruction thing 1 thing 2 relationship">
+          <div class="fw-number">I</div>
+          <div>
+            <span class="fw-tag">Opening move</span>
+            <div class="fw-title">Deconstruction</div>
+            <div class="fw-desc">Split the topic into <strong>Thing 1</strong>, <strong>Thing 2</strong>, and the relationship between them, before writing a word. "Technology cannot replace manpower" becomes Technology — (cannot replace) — Manpower. You don't need full accuracy yet, just a clear enough starting shape to build on.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="opening" data-name="4q four questions relationship counterexamples other side peace">
+          <div class="fw-number">II</div>
+          <div>
+            <span class="fw-tag">Opening move</span>
+            <div class="fw-title">4Q — Deepen the Relationship</div>
+            <div class="fw-desc">Four questions aimed specifically at the relationship you just isolated: <strong>(1)</strong> What is the relationship, stated plainly? <strong>(2)</strong> Are there counter-examples to it? <strong>(3)</strong> What's the other side of the story? <strong>(4)</strong> Can there be peace between Thing 1 and Thing 2 — some resolution short of "one wins"? This is what stops an essay from picking a side too early.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="body" data-name="structured brainstorming 3sb 12qc keywords">
+          <div class="fw-number">III</div>
+          <div>
+            <span class="fw-tag">Generating material</span>
+            <div class="fw-title">Structured Brainstorming — 3SB &amp; 12QC</div>
+            <div class="fw-desc">Three steps: consider Thing 1 alone, pull 12–15 words for it using twelve prompt-questions (where you've encountered it, its opposite, an Indian example, a current example, its optimistic and pessimistic reading, and so on), then repeat for Thing 2. Raw material generated <em>before</em> drafting, so nothing has to be invented mid-sentence under time pressure.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="opening" data-name="4q2 four questions introduction">
+          <div class="fw-number">IV</div>
+          <div>
+            <span class="fw-tag">Building the introduction</span>
+            <div class="fw-title">4Q² — the Introduction</div>
+            <div class="fw-desc">The same four-question shape as 4Q, simplified — what is Thing 1, what is Thing 2, what connects them, why does it matter — but now answered <em>using</em> the keywords from Structured Brainstorming, each in one plain sentence a fifteen-year-old could follow. Stacked together, the four answers become the introduction.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="body" data-name="body blocks bad good indian should four step bodybuilding">
+          <div class="fw-number">V</div>
+          <div>
+            <span class="fw-tag">Carrying the argument</span>
+            <div class="fw-title">Body Blocks — 4-Step Bodybuilding</div>
+            <div class="fw-desc">Four blocks, ~200 words and 2–4 points each, in sequence: <strong>Bad Things</strong> (the problem, argued with urgency) → <strong>Good Things</strong> (the other side, the benefits) → <strong>Indian Things</strong> (why it matters for India specifically) → <strong>Should Things</strong> (concrete solutions). Together they run to roughly 800 words of a 1000-word essay, leaving ~100 each for intro and conclusion.</div>
+            <div class="lens-grid" style="margin-top:16px;">
+              <div class="lens-item"><div class="icon">✕</div><div class="label">Bad Things<br><span style="font-weight:400;color:var(--ink-muted);font-size:0.76rem;">the problem, urgently stated</span></div></div>
+              <div class="lens-item"><div class="icon">✓</div><div class="label">Good Things<br><span style="font-weight:400;color:var(--ink-muted);font-size:0.76rem;">the other side, the upside</span></div></div>
+              <div class="lens-item"><div class="icon">⌂</div><div class="label">Indian Things<br><span style="font-weight:400;color:var(--ink-muted);font-size:0.76rem;">why it matters for India</span></div></div>
+              <div class="lens-item"><div class="icon">→</div><div class="label">Should Things<br><span style="font-weight:400;color:var(--ink-muted);font-size:0.76rem;">concrete solutions</span></div></div>
+            </div>
+            <div class="fw-desc" style="margin-top:14px;">These four blocks also mirror the four question-types the Mains exam actually asks: knowledge ("what is X"), impact ("effect of X on Y"), solution ("what can be done about X"), and implication ("why does X matter"). Practicing the blocks separately is, quietly, practice for GS and Ethics answer-writing too.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="body" data-name="indian things four lenses women environment weaker sections economic growth">
+          <div class="fw-number">V·a</div>
+          <div>
+            <span class="fw-tag">Inside Indian Things</span>
+            <div class="fw-title">Four Lenses for the Indian Angle</div>
+            <div class="fw-desc">When a topic isn't explicitly about India, four reliable lenses connect it anyway — each is a stated government priority and a constitutional value, so none of them can be "wrong" to invoke:</div>
+            <div class="lens-grid" style="margin-top:14px;">
+              <div class="lens-item"><div class="icon">♀</div><div class="label">Women</div></div>
+              <div class="lens-item"><div class="icon">❁</div><div class="label">Environment</div></div>
+              <div class="lens-item"><div class="icon">◇</div><div class="label">Weaker Sections</div></div>
+              <div class="lens-item"><div class="icon">↗</div><div class="label">Economic Growth</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="body" data-name="should things five levers laws technology psychology inclusiveness environment solutions">
+          <div class="fw-number">V·b</div>
+          <div>
+            <span class="fw-tag">Inside Should Things</span>
+            <div class="fw-title">Five Levers for Solutions</div>
+            <div class="fw-desc">Every essay topic is ultimately about human beings, and human problems are solved through a small set of universal levers. Scan these five whenever a "should things" block needs a solution:</div>
+            <div class="lens-grid" style="margin-top:14px;">
+              <div class="lens-item"><div class="icon">⚖</div><div class="label">Law / Regulation</div></div>
+              <div class="lens-item"><div class="icon">⚙</div><div class="label">Technology</div></div>
+              <div class="lens-item"><div class="icon">◐</div><div class="label">Psychology / Nudges</div></div>
+              <div class="lens-item"><div class="icon">◎</div><div class="label">Inclusiveness</div></div>
+              <div class="lens-item"><div class="icon">❋</div><div class="label">Environment</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="closing" data-name="dimensional analysis philosophical topics multiple perspectives">
+          <div class="fw-number">VI</div>
+          <div>
+            <span class="fw-tag">Advanced variant · philosophical topics</span>
+            <div class="fw-title">Dimensional Analysis</div>
+            <div class="fw-desc">For abstract topics, Deconstruction extends into reading the topic through several valid, simultaneous perspectives rather than one. A biologist, an economist, a psychologist, and an ethicist looking at the same issue will each be right, and each incomplete — the point of this technique is showing the topic has been read comprehensively, not picking the "correct" lens.</div>
+          </div>
+        </div>
+
+        <div class="fw-item" data-cat="closing" data-name="scoref summarize complications resolvable future conclusion">
+          <div class="fw-number">VII</div>
+          <div>
+            <span class="fw-tag">Closing move</span>
+            <div class="fw-title">SCoReF — the Conclusion</div>
+            <div class="fw-desc">Four short answers, ~20–50 words each, guided by their own hint-question: <strong>S</strong>ummarize the core relationship, name the <strong>Co</strong>mplications in it, sketch how it's <strong>Re</strong>solvable, describe the <strong>F</strong>uture that follows. A conclusion that closes on resolution and forward motion, not a restated thesis.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="diagram-frame" style="margin-top:8px;">
+        <svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="210" r="58" fill="var(--brass)"/>
+          <text x="250" y="205" text-anchor="middle" fill="var(--bg)" font-family="Cormorant Garamond" font-size="15">The Essay</text>
+          <text x="250" y="222" text-anchor="middle" fill="var(--bg)" font-family="Cormorant Garamond" font-size="15">Topic</text>
+          <g font-family="Inter" font-size="12" fill="var(--ink)">
+            <g>
+              <line x1="250" y1="210" x2="250" y2="55" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="250" cy="45" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="250" y="49" text-anchor="middle">Economic</text>
+            </g>
+            <g>
+              <line x1="250" y1="210" x2="405" y2="118" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="420" cy="108" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="420" y="112" text-anchor="middle">Ethical</text>
+            </g>
+            <g>
+              <line x1="250" y1="210" x2="405" y2="302" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="420" cy="312" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="420" y="316" text-anchor="middle">Psychological</text>
+            </g>
+            <g>
+              <line x1="250" y1="210" x2="250" y2="365" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="250" cy="375" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="250" y="379" text-anchor="middle">Environmental</text>
+            </g>
+            <g>
+              <line x1="250" y1="210" x2="95" y2="302" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="80" cy="312" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="80" y="316" text-anchor="middle">Political</text>
+            </g>
+            <g>
+              <line x1="250" y1="210" x2="95" y2="118" stroke="var(--rule)" stroke-width="1.5"/>
+              <circle cx="80" cy="108" r="26" fill="none" stroke="var(--brass)" stroke-width="1.3"/>
+              <text x="80" y="112" text-anchor="middle">Individual</text>
+            </g>
+          </g>
+        </svg>
+        <p class="diagram-caption">Dimensional Analysis: the same topic, read through several valid lenses at once — none of them "the" answer.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="arguments">
+      <p class="section-label">Writing the Essay</p>
+      <h2 class="section-title">Argument Craft</h2>
+      <p class="section-sub">Opinions are not arguments. This is what turns one into the other.</p>
+
+      <div class="check-grid">
+        <div class="check-item"><span class="n">1</span><div><strong>Anticipate counterarguments.</strong> Argue both sides internally before committing — assume you might be wrong somewhere and look for it on purpose.</div></div>
+        <div class="check-item"><span class="n">2</span><div><strong>L.E.D. every point</strong> — Logic, Examples, Data. A statement without at least one is an opinion; with one, it's an argument.</div></div>
+        <div class="check-item"><span class="n">3</span><div><strong>Structure is steel, arguments are brick.</strong> The narrative (ESSELGO's sequence) is the frame; each point is one brick laid on it.</div></div>
+        <div class="check-item"><span class="n">4</span><div><strong>Attack the premise, not the conclusion.</strong> Find the assumption an argument quietly depends on — undermine that, and the whole argument weakens with it.</div></div>
+        <div class="check-item"><span class="n">5</span><div><strong>Spot correlation dressed as causation.</strong> Two things moving together doesn't mean one causes the other — naming this is an easy, high-credibility move.</div></div>
+        <div class="check-item"><span class="n">6</span><div><strong>Counter-LED the opposition.</strong> For every example they'd offer, have a counter-example ready — Bill Gates giving to charity doesn't make billionaire wealth moral by itself.</div></div>
+        <div class="check-item"><span class="n">7</span><div><strong>Reductio ad absurdum, sparingly.</strong> Extend an opposing claim to its logical extreme to show it breaks — a sharp tool, easy to overuse.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="language">
+      <p class="section-label">Writing the Essay</p>
+      <h2 class="section-title">Language &amp; Flow</h2>
+      <p class="section-sub">Structure gets you the skeleton; connecting words are what make it read as one continuous argument instead of twenty separate ones.</p>
+
+      <div class="prose-body" style="margin-bottom: 6px;"><p>Two hard limits worth holding onto: keep each ESSELGO block to roughly <strong>30–50 words</strong>, and default to the simpler word every time there's a choice — it's harder to misspell, harder to misuse, and easier for the examiner to read at speed.</p></div>
+
+      <div class="table-wrap">
+        <table class="cross">
+          <thead><tr><th>Where you are</th><th>Connectors that fit</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Opening the introduction</td><td>To begin with · At the outset · Fundamentally</td></tr>
+            <tr><td class="lbl">Starting "Bad Things"</td><td>To begin with · Firstly · Primarily</td></tr>
+            <tr><td class="lbl">Adding a second/third point</td><td>Secondly, moreover · Further, · In addition</td></tr>
+            <tr><td class="lbl">Turning to "Good Things"</td><td>On the other hand · By contrast · Conversely</td></tr>
+            <tr><td class="lbl">Turning to "Indian Things"</td><td>Closer home · At the same time · Considering India specifically</td></tr>
+            <tr><td class="lbl">Turning to "Should Things"</td><td>With this in mind · Going forward · The way ahead lies in</td></tr>
+            <tr><td class="lbl">Opening the conclusion</td><td>In sum · Taken together · All things considered</td></tr>
+            <tr><td class="lbl">Naming a complication</td><td>Yet · However · This is not without tension</td></tr>
+            <tr><td class="lbl">Closing on resolution</td><td>Ultimately · Looking ahead · In time</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pending-note">Use sparingly — one well-placed connector per transition beats several stacked together.</p>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="quotes-facts">
+      <p class="section-label">Writing the Essay</p>
+      <h2 class="section-title">Quotes &amp; Facts — Used Sparingly, Chosen Well</h2>
+      <p class="section-sub">Neither is mandatory. Both can help, if you don't let either substitute for the argument itself.</p>
+
+      <div class="two-col">
+        <div>
+          <div class="fw-title" style="font-size:1.2rem;">Quotes: the VASP filter</div>
+          <div class="fw-desc" style="margin-bottom:14px;">A quote earns its place only if it's <strong>V</strong>ersatile (usable across many topics, not one), <strong>A</strong>uthoritative (an uncontroversial, widely respected source), <strong>S</strong>hort, and <strong>P</strong>ithy. That's a high bar on purpose — memorizing dozens of quotes is a poor use of prep time next to building arguments. A personal bank of 8–10 VASP-filtered quotes, built over time from your own reading, beats a long memorized list you can't place precisely.</div>
+        </div>
+        <div>
+          <div class="fw-title" style="font-size:1.2rem;">Expression: metaphor with restraint</div>
+          <div class="fw-desc" style="margin-bottom:14px;">A metaphor states one thing as another for the sake of comparison — used well, it lands a point memorably; used often, it reads as padding. The same applies to emotionally-loaded words: a small personal bank, sorted by the feeling you want to evoke (urgency, gravity, hope), used once or twice per essay rather than throughout, does more than a large one used indiscriminately.</div>
+        </div>
+      </div>
+
+      <div class="rule" style="margin: 28px 0;"></div>
+
+      <div class="fw-title" style="font-size:1.2rem;">Facts: the UN SDG shortcut</div>
+      <div class="prose-body" style="margin-bottom: 6px;">
+        <p>Facts are a double-edged tool — too few and the essay reads unsubstantiated, too many and there's no room left for argument. Three or four well-placed, well-cited facts beat memorizing hundreds you'll mostly never use.</p>
+      </div>
+      <div class="check-grid">
+        <div class="check-item"><span class="n">•</span><div>Anchor your fact-bank to the <strong>UN Sustainable Development Goals</strong> and Indian government reports — both authoritative, both cover nearly every essay topic UPSC has ever asked, and neither goes stale quickly.</div></div>
+        <div class="check-item"><span class="n">•</span><div>Never cite <strong>Wikipedia</strong> as a source in an answer — it carries no official authority, however accurate the number might be.</div></div>
+        <div class="check-item"><span class="n">•</span><div>A fact with no argument attached is inert. "India accounts for a large share of global TB cases" only earns marks once it's <em>doing work</em> for a specific point you're making.</div></div>
+        <div class="check-item"><span class="n">•</span><div>A wrong fact is worse than no fact — a misquoted date or statistic costs more than the fact would have earned you.</div></div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="exam-day">
+      <p class="section-label">On the Day</p>
+      <h2 class="section-title">Exam-Day Execution</h2>
+      <p class="section-sub">Everything above is preparation. This is what changes between your desk at home and the exam hall.</p>
+
+      <div class="fw-title" style="font-size:1.2rem;">Know your real writing speed</div>
+      <div class="fw-desc" style="margin-bottom: 18px;">Free writing and exam writing are not the same speed — expect a real drop (often near 40%) once a topic is unfamiliar and the clock is visible. Time yourself for exactly 3 minutes on a plain topic, count the words, divide by three — that's your honest words-per-minute under pressure, not your best-case one.</div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="18" font-family="Inter" font-size="11" letter-spacing="1" fill="var(--ink-muted)">STRATEGIC SPACING ON THE ANSWER SHEET</text>
+          <rect x="0" y="32" width="720" height="255" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+          <g stroke="#EEE8DA" stroke-width="1">
+            <line x1="20" y1="55" x2="700" y2="55"/><line x1="20" y1="72" x2="700" y2="72"/>
+            <line x1="20" y1="120" x2="700" y2="120"/><line x1="20" y1="137" x2="700" y2="137"/><line x1="20" y1="154" x2="700" y2="154"/>
+            <line x1="20" y1="200" x2="700" y2="200"/><line x1="20" y1="217" x2="700" y2="217"/><line x1="20" y1="234" x2="700" y2="234"/>
+            <line x1="20" y1="264" x2="700" y2="264"/>
+          </g>
+          <rect x="20" y="38" width="680" height="14" fill="var(--brass-light)" opacity="0.5"/>
+          <text x="710" y="49" font-family="Inter" font-size="11" fill="var(--ink-muted)" text-anchor="end">&#8592; 1–2 lines free at top, for continuing a point from the page before</text>
+          <rect x="0" y="55" width="16" height="232" fill="var(--brass)" opacity="0.35"/>
+          <rect x="20" y="158" width="680" height="38" fill="var(--brass-light)" opacity="0.5"/>
+          <text x="710" y="180" font-family="Inter" font-size="11" fill="var(--ink-muted)" text-anchor="end">&#8592; space for one more example, added on review</text>
+          <rect x="20" y="268" width="680" height="14" fill="var(--brass-light)" opacity="0.5"/>
+          <text x="710" y="279" font-family="Inter" font-size="11" fill="var(--ink-muted)" text-anchor="end">&#8592; 1–2 lines free at bottom, same reason</text>
+          <text x="8" y="175" font-family="Inter" font-size="10.5" fill="var(--bg)" transform="rotate(-90 8 175)" text-anchor="middle">CONNECTORS</text>
+        </svg>
+        <p class="diagram-caption">Leave these four zones blank <em>while writing</em> — they're what makes revision additive instead of messy.</p>
+      </div>
+
+      <div class="two-col" style="margin-top: 10px;">
+        <div>
+          <div class="fw-title" style="font-size:1.15rem;">What revision is actually for</div>
+          <div class="fw-desc">Not spelling or underlining — in a pen-and-paper exam you write what's already correct or incorrect in your head, and underlining doesn't fix weak content. Spend the 15 minutes checking: did I answer the actual question, not a nearby one? Did I drop a keyword like "not" that flips a sentence's meaning? Are my roll number and question numbers correct? Are any facts or figures I cited accurate?</div>
+        </div>
+        <div>
+          <div class="fw-title" style="font-size:1.15rem;">Never leave a question blank</div>
+          <div class="fw-desc">A blank answer guarantees zero. If nothing comes to mind, restate the question in your own words and write what you can around it — partial, imperfect content can still earn partial marks, and a blank space by definition cannot.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="toppers" style="padding-bottom: 20px;">
+      <p class="section-label">Topper Cross-Analysis</p>
+      <div class="callout">
+        <p class="callout-label">Central finding</p>
+        <p>Across Akansh Dhull, Zinnia Arora, and Ujjwal Priyank, essays anchored to one controlling idea per paragraph consistently outscored essays that accumulated many loosely-related examples.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="cross">
+          <thead>
+            <tr><th>Dimension</th><th>Akansh Dhull</th><th>Zinnia Arora</th><th>Ujjwal Priyank</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="dim">Opening technique</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td class="dim">Controlling idea use</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td class="dim">Example selection</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td class="dim">Paragraph transitions</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td class="dim">Quote anchoring</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td class="dim">Closing technique</td><td>—</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pending-note">Deferred — table awaiting transfer from your Master Pattern Bank.</p>
+    </section>
+
+    <div class="rule"></div>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+    </footer>
+
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const chips = document.querySelectorAll('.chip');
+    const items = document.querySelectorAll('#fwList .fw-item');
+
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      const activeChip = document.querySelector('.chip.active').dataset.filter;
+      items.forEach(item => {
+        const matchesText = !q || (item.dataset.name || item.innerText.toLowerCase()).includes(q);
+        const matchesCat = activeChip === 'all' || item.dataset.cat === activeChip;
+        item.style.display = (matchesText && matchesCat) ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        applyFilters();
+      });
+    });
+  </script>
+
+</body>
+</html>
