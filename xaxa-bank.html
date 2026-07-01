@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xaxa Committee Report Bank — The Working Aspirant</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAF7F2; --ink: #1C1C1C; --ink-muted: #5A5750;
+      --brass: #B8960C; --rule: #DDD8D0; --max: 1100px;
+      --green: #1A6B3C; --red: #8B1A1A; --blue: #2E4057;
+    }
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+
+    /* Nav */
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+
+    /* Breadcrumb */
+    .breadcrumb { font-size: 0.72rem; color: var(--ink-muted); margin-bottom: 32px; }
+    .breadcrumb a { color: var(--ink-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brass); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+    /* Page header */
+    .page-header { padding: 16px 0 40px; }
+    .page-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .page-sub { font-size: 0.82rem; color: var(--ink-muted); font-weight: 300; line-height: 1.7; max-width: 640px; }
+    .report-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+    .meta-pill { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border: 1px solid var(--rule); color: var(--ink-muted); }
+
+    /* Search + filter bar */
+    .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; align-items: center; }
+    .search-box { flex: 1; min-width: 220px; padding: 9px 14px; border: 1px solid var(--rule); background: #fff; font-size: 0.85rem; font-family: 'Inter', sans-serif; color: var(--ink); outline: none; }
+    .search-box:focus { border-color: var(--brass); }
+    .filter-btn { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 14px; border: 1px solid var(--rule); background: none; color: var(--ink-muted); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--brass); color: var(--brass); background: rgba(184,150,12,0.05); }
+    .result-count { font-size: 0.72rem; color: var(--ink-muted); margin-left: auto; white-space: nowrap; }
+
+    /* Part headers */
+    .part-header { background: var(--blue); color: #fff; padding: 14px 20px; margin: 48px 0 24px; }
+    .part-header h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.4rem; letter-spacing: 0.04em; }
+
+    /* Section */
+    .section { margin-bottom: 40px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--green); border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin-bottom: 16px; }
+
+    /* Entry card */
+    .entry { border: 1px solid var(--rule); background: #fff; margin-bottom: 12px; overflow: hidden; }
+    .entry-head { padding: 14px 16px 12px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .entry-head:hover { background: rgba(184,150,12,0.03); }
+    .entry-topic { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); margin-bottom: 4px; }
+    .entry-title { font-size: 0.92rem; font-weight: 500; color: var(--ink); line-height: 1.4; flex: 1; }
+    .entry-toggle { font-size: 0.75rem; color: var(--ink-muted); flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
+    .entry.open .entry-toggle { transform: rotate(180deg); }
+
+    .entry-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--rule); }
+    .entry.open .entry-body { display: block; }
+
+    /* Inside entry */
+    .findings { margin: 12px 0; }
+    .finding { padding: 4px 0 4px 14px; border-left: 2px solid var(--rule); font-size: 0.85rem; color: var(--ink); line-height: 1.6; margin-bottom: 6px; }
+    .finding strong { color: var(--ink); }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; margin: 12px 0; }
+    .stat-box { background: #FAF7F2; border: 1px solid var(--rule); padding: 10px 12px; }
+    .stat-label { font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 3px; }
+    .stat-value { font-size: 0.92rem; font-weight: 500; color: var(--ink); }
+
+    .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0 4px; }
+    .tag { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; background: rgba(184,150,12,0.08); border: 1px solid rgba(184,150,12,0.25); color: var(--brass); }
+    .tag.p1 { background: rgba(46,64,87,0.06); border-color: rgba(46,64,87,0.2); color: var(--blue); }
+    .tag.p2 { background: rgba(26,107,60,0.06); border-color: rgba(26,107,60,0.2); color: var(--green); }
+
+    .cite-box { background: rgba(139,26,26,0.04); border-left: 3px solid var(--red); padding: 10px 14px; margin: 12px 0; }
+    .cite-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+    .cite-text { font-size: 0.83rem; color: var(--ink); font-style: italic; line-height: 1.6; }
+
+    .tip-box { background: rgba(26,107,60,0.04); border-left: 3px solid var(--green); padding: 10px 14px; margin: 12px 0; }
+    .tip-label { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+    .tip-text { font-size: 0.83rem; color: var(--ink); line-height: 1.6; }
+
+    /* Quick ref table */
+    .qr-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 12px 0; }
+    .qr-table th { background: var(--blue); color: #fff; padding: 8px 12px; text-align: left; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .qr-table td { padding: 8px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .qr-table tr:nth-child(even) td { background: #FAF7F2; }
+    .qr-table td:first-child { font-weight: 500; color: var(--ink-muted); font-size: 0.78rem; }
+    .qr-table td:last-child { color: var(--ink); font-weight: 500; }
+
+    /* Phrases */
+    .phrase { background: #fff; border: 1px solid var(--rule); border-left: 3px solid var(--brass); padding: 12px 16px; margin-bottom: 10px; font-size: 0.85rem; color: var(--ink); line-height: 1.65; font-style: italic; }
+
+    /* Hidden */
+    .entry.hidden, .section.hidden, .part-header.hidden { display: none; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; margin-top: 56px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 14px; }
+      .stat-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="wordmark" href="/">The Working Aspirant</a>
+    <ul class="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/notes.html">Notes</a></li>
+      <li><a href="/vault.html" class="active">The Vault</a></li>
+      <li><a href="/mindmaps.html">Mind Maps</a></li>
+      <li><a href="/#subscribe">Subscribe</a></li>
+    </ul>
+  </nav>
+
+  <div class="rule"></div>
+
+  <p class="breadcrumb">
+    <a href="/">Home</a><span>&middot;</span><a href="/vault.html">The Vault</a><span>&middot;</span>Anthropology Optional<span>&middot;</span>Xaxa Committee Report
+  </p>
+
+  <div class="page-header">
+    <p class="page-label">Anthropology Optional &mdash; Answer Enrichment Bank</p>
+    <h1 class="page-title">Xaxa Committee Report (2014)</h1>
+    <p class="page-sub">High Level Committee on Socioeconomic, Health and Educational Status of Tribal Communities of India. Chaired by Prof. Virginius Xaxa. Ministry of Tribal Affairs, Government of India. 431 pages of findings, data, and recommendations — extracted and organised by Anthropology syllabus topic.</p>
+    <div class="report-meta">
+      <span class="meta-pill">Ministry of Tribal Affairs · GoI · May 2014</span>
+      <span class="meta-pill">Chairman: Prof. Virginius Xaxa</span>
+      <span class="meta-pill">431 Pages</span>
+      <span class="meta-pill">Paper 1 + Paper 2 Relevant</span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <input class="search-box" id="searchBox" type="text" placeholder="Search findings, statistics, topics…" oninput="filterEntries()" />
+    <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" data-filter="p1" onclick="setFilter('p1', this)">Paper 1</button>
+    <button class="filter-btn" data-filter="p2" onclick="setFilter('p2', this)">Paper 2</button>
+    <button class="filter-btn" data-filter="stat" onclick="setFilter('stat', this)">Statistics</button>
+    <button class="filter-btn" data-filter="cite" onclick="setFilter('cite', this)">Citations</button>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PART I: PAPER 2 -->
+  <!-- ============================================================ -->
+  <div class="part-header" data-part="all p2">
+    <h2>Part I &mdash; Paper 2: Indian Anthropology</h2>
+  </div>
+
+  <!-- SECTION 1: DEFINITION -->
+  <div class="section" data-section="definition">
+    <h3 class="section-title">1. Definition of Tribe &amp; Criteria for Scheduling</h3>
+
+    <div class="entry" data-tags="p2 cite" data-text="definition lokur criteria scheduling article 342 constitution politico-administrative">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Constitutional Framework</p>
+          <p class="entry-title">Lokur Committee Criteria &amp; Their Colonial Baggage</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Definition Debates</span><span class="tag">ST Status</span></div>
+        <div class="findings">
+          <div class="finding">Article 342 created a <strong>politico-administrative category</strong> distinct from the sociological concept of tribe — Constitution did not define criteria for ST recognition.</div>
+          <div class="finding">Lokur Committee (1965) recommended <strong>five criteria</strong>: (1) primitive traits, (2) distinct culture, (3) geographical isolation, (4) shyness of contact, (5) general backwardness.</div>
+          <div class="finding">Xaxa critique: these criteria <strong>"carry forward paternalistic and pejorative connotations from the colonial era."</strong></div>
+          <div class="finding">272 modifications made to ST list since 2001 Census — the category is continuously contested and politically constructed.</div>
+          <div class="finding">705 individual groups notified as STs (Census 2011). Term 'adivasi' used as political self-reference — <strong>not recognised by Government of India.</strong></div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"Some of these criteria carry forward certain paternalistic and pejorative connotations from the colonial era." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Use in questions on 'problems of definition of tribe' or 'criteria for ST status.' A GoI-commissioned report critiquing the GoI's own criteria is the strongest possible citation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 p2 cite" data-text="colonial origins census tribe classification primitive animism adivasi vedic hinduism">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Colonial Ethnography</p>
+          <p class="entry-title">How the Colonial State Constructed 'Tribe'</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag p2">Paper 2</span><span class="tag">Colonial Anthropology</span></div>
+        <div class="findings">
+          <div class="finding">1881 Census: tribes = 'forest tribes' (sub-category of agricultural castes). 1901 Census: tribes = those who 'practised animism.' 1931: 'primitive tribes.' GoI Act 1935: 'backward tribes.'</div>
+          <div class="finding"><strong>Key insight:</strong> "Tribes were identified largely in terms of what they were NOT — they did not practice Vedic Hinduism."</div>
+          <div class="finding">Tribal 'isolation' was a colonial construction — marginalisation through unjust forest policies and forced sedentarisation, not natural separation.</div>
+          <div class="finding">Post-colonial state inherited colonial development model — extraction of natural resources from tribal areas for capital accumulation.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"Tribes were identified largely in terms of what they were not — they did not practice Vedic Hinduism." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">For Paper 1 (colonialism and anthropology) and Paper 2 (tribe and Indian civilisation). Shows how knowledge production — census classification — created the very category it claimed to describe.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 p2 cite" data-text="integration assimilation isolation verrier elwin development alien fifth schedule">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Core Theoretical Argument</p>
+          <p class="entry-title">Assimilation Masquerading as Integration — Xaxa's Central Critique</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag p2">Paper 2</span><span class="tag">Integration vs Assimilation</span><span class="tag">Tribal Development</span></div>
+        <div class="findings">
+          <div class="finding">Two colonial discourses: (1) Isolation causes poverty → integrate; (2) Verrier Elwin: outside contact causes impoverishment → protect. Constitution adopted both.</div>
+          <div class="finding"><strong>Xaxa's finding:</strong> "What the State is actually pursuing in tribal areas — apart from Northeast India — is ASSIMILATION rather than integration, contrary to what is claimed."</div>
+          <div class="finding">Integration = tribal identity protected within national mainstream. Assimilation = cultural domination + erasure of distinctiveness.</div>
+          <div class="finding">"The framework of development is ALIEN to the tribes" — e.g., education in regional language familiar to general population but not to tribals.</div>
+          <div class="finding">"There is a need to re-orient development in tune with tribal culture and to adopt a more humane approach."</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"What the State is actually pursuing in tribal areas is assimilation rather than integration, contrary to what is claimed." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The single most powerful argument in the report. Use for Paper 2: 'tribe and Indian nation-state', 'isolation vs integration debate', 'tribal development policies.' Also directly answers Paper 1 acculturation questions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: DEMOGRAPHICS -->
+  <div class="section" data-section="demographics">
+    <h3 class="section-title">2. Demographic Profile of Scheduled Tribes</h3>
+
+    <div class="entry" data-tags="p2 stat" data-text="population census 2011 sex ratio growth rate rural urban distribution bhil gond santhal PVTG">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Census 2011 Data</p>
+          <p class="entry-title">Key Demographic Statistics</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Demographic Profile</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">Total ST Population</p><p class="stat-value">10.43 crore = 8.6% of India</p></div>
+          <div class="stat-box"><p class="stat-label">ST Groups Notified</p><p class="stat-value">705 (Census 2011)</p></div>
+          <div class="stat-box"><p class="stat-label">ST Sex Ratio</p><p class="stat-value">990 females/1000 males — favourable</p></div>
+          <div class="stat-box"><p class="stat-label">ST Growth Rate 2001–11</p><p class="stat-value">23.66% vs national 17.64%</p></div>
+          <div class="stat-box"><p class="stat-label">Rural ST</p><p class="stat-value">11.3% of Indian rural population</p></div>
+          <div class="stat-box"><p class="stat-label">Urban ST</p><p class="stat-value">Only 2.8% of urban population</p></div>
+          <div class="stat-box"><p class="stat-label">Districts with &gt;50% ST</p><p class="stat-value">90 districts across India</p></div>
+          <div class="stat-box"><p class="stat-label">Districts with 25–50% ST</p><p class="stat-value">62 districts</p></div>
+          <div class="stat-box"><p class="stat-label">Total districts with STs</p><p class="stat-value">543 of India's districts</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding">Most populous tribes: <strong>Bhil</strong> (1.27 cr), <strong>Gond</strong> (1.09 cr), <strong>Santhal</strong> (58.38 lakh), <strong>Mina</strong> (38 lakh), <strong>Oraon</strong> (31.42 lakh).</div>
+          <div class="finding">Most concentrated states (% within state): Lakshadweep 94.8%, Mizoram 94.4%, Nagaland 86.5%, Meghalaya 86.1%, Arunachal Pradesh 68.8%.</div>
+          <div class="finding">Largest share of national ST population: MP 14.7%, Maharashtra 10.1%, Odisha 9.2%, Rajasthan 8.9%, Gujarat 8.6%.</div>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Use sex ratio (990 — favourable) as evidence that some tribal communities have better gender relations than mainstream. Urban ST at 2.8% shows near-complete absence from economic mainstream.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p2 stat" data-text="PVTG particularly vulnerable tribal groups birjia sentinelese andaman jarawa onge population">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">PVTGs</p>
+          <p class="entry-title">Particularly Vulnerable Tribal Groups — Population Crisis</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">PVTGs</span><span class="tag">Andaman Tribes</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">Birjia (Bihar)</p><p class="stat-value">Only 17 persons — smallest PVTG</p></div>
+          <div class="stat-box"><p class="stat-label">Sentinelese</p><p class="stat-value">39 persons</p></div>
+          <div class="stat-box"><p class="stat-label">Great Andamanese</p><p class="stat-value">43 persons</p></div>
+          <div class="stat-box"><p class="stat-label">Onge</p><p class="stat-value">96 persons</p></div>
+          <div class="stat-box"><p class="stat-label">Jarawa</p><p class="stat-value">240 persons</p></div>
+          <div class="stat-box"><p class="stat-label">Shompen</p><p class="stat-value">398 persons</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding">75 PVTGs identified across India — pre-agricultural technology, extremely low literacy, subsistence economy, stagnant/declining population.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">Xaxa Committee (2014): PVTGs with population less than 1000 persons — Birjia (Bihar) with only 17 persons (Census 2001).</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The specific population numbers for Andaman tribes carry maximum impact. Birjia at 17 persons is the most dramatic figure for any question on tribal endangerment or extinction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: ECONOMY -->
+  <div class="section" data-section="economy">
+    <h3 class="section-title">3. Tribal Economy, Livelihoods &amp; Poverty</h3>
+
+    <div class="entry" data-tags="p2 stat cite" data-text="economy agriculture cultivators landlessness primary sector poverty BPL below poverty line forest mineral jharkhand odisha resource curse">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Agrarian Economy</p>
+          <p class="entry-title">Increasing Landlessness &amp; The Resource Paradox</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Tribal Economy</span><span class="tag">Poverty</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">ST in Primary Sector</p><p class="stat-value">&gt;80% vs 53% general population</p></div>
+          <div class="stat-box"><p class="stat-label">ST Cultivators (2001)</p><p class="stat-value">Declined to 45% from 68%</p></div>
+          <div class="stat-box"><p class="stat-label">ST Agricultural Labourers</p><p class="stat-value">Rose to 37% from ~20%</p></div>
+          <div class="stat-box"><p class="stat-label">Leaving agriculture/decade</p><p class="stat-value">~3.5 million tribal people</p></div>
+          <div class="stat-box"><p class="stat-label">ST BPL 1993–94</p><p class="stat-value">63.7% vs national 45.7%</p></div>
+          <div class="stat-box"><p class="stat-label">ST BPL 2004–05</p><p class="stat-value">60.0% vs national 37.7%</p></div>
+          <div class="stat-box"><p class="stat-label">Odisha tribal BPL 2004–05</p><p class="stat-value">75.6% — highest in India</p></div>
+          <div class="stat-box"><p class="stat-label">Jharkhand tribal BPL 2004–05</p><p class="stat-value">54.2%</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding"><strong>Resource Paradox:</strong> Odisha, Chhattisgarh, Jharkhand = 70% of India's coal, 80% high-grade iron ore, 60% bauxite, ~100% chromite — yet have highest tribal poverty.</div>
+          <div class="finding">~60% of India's forest cover is in tribal districts. 51 of 58 districts with &gt;67% forest cover are tribal districts.</div>
+          <div class="finding">About 50% of top mineral-producing districts are tribal districts.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"The number of STs who were cultivators declined from over 68% to 45% in 2001 whereas agricultural labourers increased from about 20% to 37%, demonstrating increasing landlessness." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The cultivator→labourer shift captures proletarianisation of tribal economy. The Jharkhand/Odisha poverty-despite-resources paradox is the most powerful structural argument in the report.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p2 stat cite" data-text="land alienation debt indebtedness mishra study non-tribal transfer fraudulent methods pesa FRA">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Land Alienation</p>
+          <p class="entry-title">Mishra Study: Scale &amp; Methods of Tribal Land Loss</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Land Alienation</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">Tribal HHs that lost land</p><p class="stat-value">21.95% of sample</p></div>
+          <div class="stat-box"><p class="stat-label">Land lost</p><p class="stat-value">24.69% of total tribal land</p></div>
+          <div class="stat-box"><p class="stat-label">Tribal→non-tribal transfers</p><p class="stat-value">85.95% of all transfers</p></div>
+          <div class="stat-box"><p class="stat-label">Tribal HHs in debt</p><p class="stat-value">82.11% of surveyed HHs</p></div>
+          <div class="stat-box"><p class="stat-label">Unaware of protective laws</p><p class="stat-value">&gt;85% of tribal HHs</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding">Eight methods of fraudulent transfer: sale, mortgage, benami transfer, forcible occupation, oral transfer, marital alliance, in name of concubines, other fraudulent means.</div>
+          <div class="finding">Main cause: prolonged indebtedness — medical expenses, religious obligations, litigation, alcoholism.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">Xaxa Committee (2014) citing Mishra (2002): "85.95% of all land transfers were tribal to non-tribal. More than 85% of tribal HHs were unaware of laws protecting their land."</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Legal protection without awareness is meaningless — this data makes that case empirically. Use in PESA/FRA implementation questions or land rights questions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: DISPLACEMENT -->
+  <div class="section" data-section="displacement">
+    <h3 class="section-title">4. Displacement &amp; Land Alienation</h3>
+
+    <div class="entry" data-tags="p2 stat cite" data-text="displacement dam mine industry Walter Fernandes 60 million rehabilitation failure coal india R&R">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Development-Induced Displacement</p>
+          <p class="entry-title">Scale of Displacement &amp; Rehabilitation Failure</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Displacement</span><span class="tag">Tribal Movements</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">Total displaced (Fernandes)</p><p class="stat-value">~60 million since independence</p></div>
+          <div class="stat-box"><p class="stat-label">ST % of dam-displaced</p><p class="stat-value">40% (ST = only 8.6% of population)</p></div>
+          <div class="stat-box"><p class="stat-label">Expert Group estimate</p><p class="stat-value">47% of all development-displaced are ST</p></div>
+          <div class="stat-box"><p class="stat-label">Researchers estimate</p><p class="stat-value">~25% of India's tribals become DP/PAP at least once</p></div>
+          <div class="stat-box"><p class="stat-label">DPs rehabilitated 1951–90</p><p class="stat-value">Only 25%. 75% unrehabilitated.</p></div>
+          <div class="stat-box"><p class="stat-label">ST in unrehab. backlog</p><p class="stat-value">6.42 million of 15.92 million total</p></div>
+          <div class="stat-box"><p class="stat-label">Land displaced from</p><p class="stat-value">25 million ha incl. 7 mn ha forests</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding"><strong>13-state data:</strong> 20.41 million DPs/PAPs — ST = 30.70%, Dalits = 15.65%, Others = 38.24%.</div>
+          <div class="finding"><strong>Coal India (since 1973):</strong> Tribals lost 13,956.84 ha but received only 91.16 ha in R&R — ratio 153:1. Only 10,097 given jobs.</div>
+          <div class="finding"><strong>Andhra Pradesh:</strong> Adivasis = 76.1% of DPs but only 6.99% of state population.</div>
+          <div class="finding">Samatha Judgment (1997): mining leases to private industry in Scheduled Areas = null and void. But "both the Fifth Schedule and Samatha judgment could not protect tribal interests."</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">Xaxa Committee (2014): "Tribal people lost 13,956 hectares but were given only 91.16 hectares under R&R." — Coal India data since 1973.</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The Coal India data is the most specific and damning. Andhra Pradesh 76.1% figure shows starkest disproportionality. Use 60 million total for scale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 p2 cite" data-text="sacred land forest hills God spirits religion ecology identity displacement sacrosanct">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Sacred Ecology</p>
+          <p class="entry-title">Land as Sacred Identity — Not Just Economic Asset</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag p2">Paper 2</span><span class="tag">Sacred Ecology</span><span class="tag">Human Ecology</span></div>
+        <div class="findings">
+          <div class="finding">"Land is the basis of tribal socio-cultural and religious identity, livelihood and their very existence. Their God and guardian spirits reside in hills, forests, groves."</div>
+          <div class="finding">"Forest and hills are the main source of tribal identity."</div>
+          <div class="finding">Displacement = destruction of sacred landscape = cultural death, not merely economic loss.</div>
+          <div class="finding">Traditional community ownership of land — not individual title — underpins egalitarian social relations and kinship organisation.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"Land is the basis of tribal socio-cultural and religious identity, livelihood and their very existence. Their God and guardian spirits reside in hills, forests, groves." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Directly applicable to Paper 1 human ecology / sacred groves / tribe-nature relationship questions. An official GoI report validating the sacred ecology framework is rare and powerful.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p2 cite" data-text="LWE left wing extremism naxal maoist fourth perspective governance security development">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Left-Wing Extremism</p>
+          <p class="entry-title">Xaxa's Fourth Perspective on LWE</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Tribal Movements</span><span class="tag">Governance</span></div>
+        <div class="findings">
+          <div class="finding">9 LWE-affected states — 6 have Scheduled districts. 83 LWE districts — 42 have Scheduled Areas.</div>
+          <div class="finding">Three conventional perspectives: (1) national security/military, (2) development deficit, (3) combination.</div>
+          <div class="finding"><strong>Xaxa's Fourth Perspective:</strong> "Explicit recognition that there has been subversion of the law by BOTH government and corporations to appropriate tribal resources, and that this situation needs to be rectified."</div>
+          <div class="finding">"A large section of tribal heartlands have lost faith in the ability of the law and willingness of the administration to protect their interests."</div>
+          <div class="finding">"Any solution should begin with confidence-building measures through the redress of past wrongs and the guarantee of justice."</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"Any solution should begin with confidence-building measures through the redress of past wrongs and the guarantee of justice." — Xaxa Committee (2014) on LWE.</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Transforms LWE from a security problem to a justice problem. Use for essay questions on internal security, tribal unrest, or tribal movements. The four-perspective framework is analytically elegant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: HEALTH -->
+  <div class="section" data-section="health">
+    <h3 class="section-title">5. Health Status of Scheduled Tribes</h3>
+
+    <div class="entry" data-tags="p2 stat" data-text="IMR U5MR infant mortality under five mortality life expectancy fertility TFR NFHS census">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Mortality &amp; Fertility</p>
+          <p class="entry-title">Mortality Indicators — The Health Gap</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Health Status</span><span class="tag stat">Statistics</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">IMR — Census 2001</p><p class="stat-value">88 vs 68 national — 30% higher</p></div>
+          <div class="stat-box"><p class="stat-label">U5MR — Census 2001</p><p class="stat-value">129 vs 96 national — 35% higher</p></div>
+          <div class="stat-box"><p class="stat-label">IMR — NFHS-3 (2005–06)</p><p class="stat-value">62.1/1000 (ST) vs 48.9 (others)</p></div>
+          <div class="stat-box"><p class="stat-label">U5MR — NFHS-3</p><p class="stat-value">95.7/1000 ST — 61% higher than non-ST</p></div>
+          <div class="stat-box"><p class="stat-label">1–4 year mortality</p><p class="stat-value">33.6 (ST) vs 10.3 (non-ST)</p></div>
+          <div class="stat-box"><p class="stat-label">Life expectancy (ST)</p><p class="stat-value">60.9 years; range 55–68.6</p></div>
+          <div class="stat-box"><p class="stat-label">IMR reduction 1992–98</p><p class="stat-value">Only 10% (ST) vs 25% (general)</p></div>
+          <div class="stat-box"><p class="stat-label">TFR (ST)</p><p class="stat-value">3.1 vs 2.4 for non-ST (NFHS-3)</p></div>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The 1–4 year mortality (33.6 vs 10.3 — over three times) is the most shocking number. The IMR reduction gap (10% vs 25%) shows health programmes reach tribals last and least.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 p2 stat cite" data-text="disease burden dual underdevelopment modernity sickle cell malnutrition malaria TB hypertension tobacco alcohol nutrition NNMB underweight stunting">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Disease Burden &amp; Nutrition</p>
+          <p class="entry-title">Triple Disease Burden + Nutritional Anthropometry</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag p2">Paper 2</span><span class="tag">Nutritional Anthropometry</span><span class="tag stat">Statistics</span></div>
+        <div class="findings">
+          <div class="finding"><strong>Three disease types simultaneously:</strong></div>
+          <div class="finding">A) <strong>Diseases of underdevelopment:</strong> malnutrition, malaria, TB, leprosy, diarrhoea, hepatitis, maternal/child health problems.</div>
+          <div class="finding">B) <strong>ST-specific diseases:</strong> Sickle Cell Disease (hemoglobinopathy), G-6PD deficiency, snake bites, animal bites.</div>
+          <div class="finding">C) <strong>Diseases of modernity:</strong> hypertension, high tobacco/alcohol, stress, diabetes — especially in conflict zones.</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">Underweight (1–5 yr children)</p><p class="stat-value">52% ST vs 43% rural average</p></div>
+          <div class="stat-box"><p class="stat-label">Stunted (1–5 yr children)</p><p class="stat-value">55% ST vs 49% rural average</p></div>
+          <div class="stat-box"><p class="stat-label">Wasted (1–5 yr children)</p><p class="stat-value">22% ST vs 19% rural average</p></div>
+          <div class="stat-box"><p class="stat-label">Hypertension (ST adults)</p><p class="stat-value">25% men, 23% women</p></div>
+          <div class="stat-box"><p class="stat-label">Hypertension awareness</p><p class="stat-value">Only 8.4% of tribal adults</p></div>
+          <div class="stat-box"><p class="stat-label">Tobacco use (ST men)</p><p class="stat-value">72% vs 56% non-ST men</p></div>
+          <div class="stat-box"><p class="stat-label">NNMB sample size</p><p class="stat-value">1,15,113 individuals — 9 states</p></div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">Xaxa Committee (2014): "STs suffer from diseases of underdevelopment, diseases peculiar to ST population (Sickle Cell), and diseases of modernity (hypertension, tobacco, alcohol) — simultaneously."</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">The triple burden framework is theoretically elegant. For Paper 1 biological anthropology: NNMB's nutritional anthropometry of 1.15 lakh individuals is the largest such tribal study — mention the methodology.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: EDUCATION -->
+  <div class="section" data-section="education">
+    <h3 class="section-title">6. Education</h3>
+
+    <div class="entry" data-tags="p2 stat cite" data-text="literacy dropout language barrier mother tongue residential school demilitarisation conflict security forces">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Education</p>
+          <p class="entry-title">Literacy Gap, Language Barrier &amp; Demilitarisation</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Education</span><span class="tag">Cultural Rights</span></div>
+        <div class="stat-grid">
+          <div class="stat-box"><p class="stat-label">ST Literacy (2001)</p><p class="stat-value">47% vs 69% national — 22 pt gap</p></div>
+        </div>
+        <div class="findings">
+          <div class="finding">Language barrier: taught in state official language from day one — creates cognitive alienation. Recommendation: early education in <strong>mother tongue/local language.</strong></div>
+          <div class="finding">Cultural mismatch: curriculum ignores tribal history, culture, folklore — makes education feel alien.</div>
+          <div class="finding">Residential schools: sexual abuse and exploitation documented — strong protection mechanisms needed.</div>
+          <div class="finding"><strong>Demilitarisation of schools:</strong> "No schools or areas in the immediate vicinity of schools should be occupied by security forces or police, as has been the case in conflict zones."</div>
+          <div class="finding">No-detention policy: recommend review — when parents/teachers request retention, child should be retained.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"Demilitarisation of schools is vital in order to restore schools as a place of safety, security and scholarship for students." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Demilitarisation recommendation is striking and specific — shows depth of knowledge. Mother tongue education is a rights-based argument that connects to linguistic anthropology.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: LEGAL -->
+  <div class="section" data-section="legal">
+    <h3 class="section-title">7. Legal &amp; Constitutional Framework</h3>
+
+    <div class="entry" data-tags="p2 cite" data-text="fifth schedule sixth schedule autonomous district council governor TAC tribes advisory council PESA FRA gram sabha samatha judgment">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Constitutional Provisions</p>
+          <p class="entry-title">Fifth vs Sixth Schedule — Why Northeast Fares Better</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p2">Paper 2</span><span class="tag">Fifth Schedule</span><span class="tag">Sixth Schedule</span><span class="tag">Governance</span></div>
+        <div class="findings">
+          <div class="finding"><strong>Fifth Schedule</strong> (mainland tribal areas): Governor's special powers + TAC. Xaxa finding: <strong>Governors have rarely exercised their constitutional powers</strong> to protect tribal interests.</div>
+          <div class="finding"><strong>Sixth Schedule</strong> (Assam, Meghalaya, Tripura, Mizoram): Autonomous District Councils with legislative, judicial, administrative powers.</div>
+          <div class="finding">Northeast tribes have NOT experienced displacement/land alienation at the same scale as mainland tribes — attributed significantly to Sixth Schedule protections.</div>
+          <div class="finding"><strong>Key Recommendation:</strong> Extend Sixth Schedule PATTERN to Fifth Schedule areas through Autonomous Councils.</div>
+          <div class="finding"><strong>PESA (1996):</strong> States' rules not compliant with the Act. Gram Sabha consent for land acquisition not being taken.</div>
+          <div class="finding"><strong>FRA (2006):</strong> Community Forest Rights largely unrecognised or rejected. Progressive law, poor implementation.</div>
+          <div class="finding"><strong>Samatha Judgment (1997):</strong> Private mining in Scheduled Areas = null and void. But "Fifth Schedule and Samatha could not protect tribal communities."</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"In view of these powers of political autonomy, tribal communities in the Northeast have fared much better in respect of socio-economic, educational and health status." — Xaxa Committee (2014) on Sixth Schedule.</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Fifth vs Sixth Schedule comparison is a perennial exam topic. Xaxa provides empirical evidence — Northeast's better outcomes — for why decentralised autonomous governance works better than centralised protection.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- PART II: PAPER 1 -->
+  <!-- ============================================================ -->
+  <div class="part-header" data-part="all p1">
+    <h2>Part II &mdash; Paper 1: Theoretical Anthropology</h2>
+  </div>
+
+  <div class="section" data-section="paper1">
+    <h3 class="section-title">8. Paper 1 Connections</h3>
+
+    <div class="entry" data-tags="p1 cite" data-text="political anthropology governance autonomous council self-governance decentralisation tribe state">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Political Anthropology</p>
+          <p class="entry-title">Fifth/Sixth Schedule as Models of Tribal Governance</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag">Political Anthropology</span><span class="tag">Tribe and State</span></div>
+        <div class="findings">
+          <div class="finding">Fifth Schedule = centralised protective model — Governor mediates between State and tribal community. Weak in practice.</div>
+          <div class="finding">Sixth Schedule = autonomous governance model — Councils legislate, adjudicate, administer independently. Stronger in practice.</div>
+          <div class="finding">PESA + Gram Sabha = attempt to extend participatory governance — but implementation gap shows law alone insufficient.</div>
+          <div class="finding">Xaxa: empirical test that autonomous self-governance (Northeast) outperforms centralised protection (mainland) in health, education, displacement outcomes.</div>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">For Paper 1 political anthropology: these are real-world cases of different models of tribal political organisation and their outcomes. Rare to have GoI empirical evidence at this scale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 cite" data-text="acculturation assimilation integration verrier elwin tribe civilisation contact culture change">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Culture Change</p>
+          <p class="entry-title">Acculturation, Assimilation &amp; Integration — Theory in Practice</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag">Acculturation</span><span class="tag">Culture Change</span></div>
+        <div class="findings">
+          <div class="finding">Xaxa distinguishes: <strong>assimilation</strong> (erasure of tribal identity through absorption) vs. <strong>integration</strong> (tribal identity retained while joining national mainstream).</div>
+          <div class="finding">Two intellectual traditions: Elwin (isolation/protection) vs. Nehru/mainstream (integration through development) — both influenced post-independence policy in different directions.</div>
+          <div class="finding">State pursues assimilation while claiming integration — "development framework is alien to the tribes."</div>
+          <div class="finding">Constitutional intent: integration with protection. State practice: assimilation without protection.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">"There is a need to re-orient development in tune with tribal culture and to adopt a more humane approach to tribal development." — Xaxa Committee (2014)</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Direct application to Paper 1 acculturation concepts. Xaxa provides the empirical grounding for otherwise theoretical distinctions between acculturation, assimilation and integration.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" data-tags="p1 stat cite" data-text="biological anthropology nutritional anthropometry NNMB BMI weight height sickle cell haemoglobin genetic">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Biological Anthropology</p>
+          <p class="entry-title">Nutritional Anthropometry &amp; Hereditary Diseases</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="tag-row"><span class="tag p1">Paper 1</span><span class="tag">Biological Anthropology</span><span class="tag">Nutritional Anthropometry</span><span class="tag stat">Statistics</span></div>
+        <div class="findings">
+          <div class="finding">NNMB Survey: <strong>1,15,113 individuals</strong> covered for nutritional anthropometry, clinical examination — from 40,359 households in 1032 villages across 9 states.</div>
+          <div class="finding">Measures: weight-for-age, height-for-age (stunting), weight-for-height (wasting) — compared against WHO/NCHS standards.</div>
+          <div class="finding">52% underweight, 55% stunted, 22% wasted among 1–5 year tribal children — all exceed rural averages.</div>
+          <div class="finding"><strong>Sickle Cell Disease:</strong> hereditary hemoglobinopathy specifically prevalent in tribal populations — genetic adaptation to malaria-endemic zones.</div>
+          <div class="finding">G-6PD deficiency also prevalent — another genetic variant common in tribal populations.</div>
+          <div class="finding">Nutrient intake declined from 1998–99 to 2007–08 despite economic growth — food gap remains.</div>
+        </div>
+        <div class="cite-box">
+          <p class="cite-label">📌 Cite As</p>
+          <p class="cite-text">Xaxa Committee (2014) citing NNMB (2009): "52% of 1–5 year tribal children underweight, 55% stunted, 22% wasted — all exceeding rural population rates." — survey of 1,15,113 individuals.</p>
+        </div>
+        <div class="tip-box">
+          <p class="tip-label">✍ Answer Tip</p>
+          <p class="tip-text">Mention the sample size (1.15 lakh) — it signals the largest population-level nutritional anthropometry study of tribals. Sickle Cell as genetic adaptation to malaria is a strong Paper 1 biological anthropology point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- READY PHRASES -->
+  <!-- ============================================================ -->
+  <div class="part-header" data-part="all">
+    <h2>Ready Phrases &amp; Quick Reference</h2>
+  </div>
+
+  <div class="section" data-section="phrases">
+    <h3 class="section-title">9. Ready-to-Use Sentences for Answers</h3>
+
+    <div class="entry" data-tags="p1 p2 cite" data-text="ready phrases sentences answers quotes citation deploy">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">Copy-Adapt for Answers</p>
+          <p class="entry-title">Ready Phrases — All Topics</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <div class="phrase">"As the Xaxa Committee (2014) found, tribes inhabit 60% of India's forest cover yet are treated as encroachers on their own land under colonial-era forest laws."</div>
+        <div class="phrase">"The Xaxa Report's central finding is that India is pursuing assimilation masquerading as integration — the constitutional promise of protecting tribal identity is being systematically violated."</div>
+        <div class="phrase">"The resource paradox documented by Xaxa: states with the highest mineral wealth (Jharkhand, Odisha) have the highest tribal poverty — 75.6% BPL in Odisha despite housing 80% of India's high-grade iron ore."</div>
+        <div class="phrase">"Xaxa (2014) advocates a fourth perspective on LWE — beyond security and development — that acknowledges State and corporate subversion of law as the root cause of tribal unrest."</div>
+        <div class="phrase">"The Lokur criteria — primitive traits, geographical isolation, shyness of contact — embed colonial evolutionism within post-colonial administration. As Xaxa notes, they carry paternalistic and pejorative connotations."</div>
+        <div class="phrase">"Land is not merely an economic asset for tribal communities — as Xaxa (2014) documents, it is the site of sacred groves, ancestral spirits and cosmological identity. Its alienation is therefore cultural death, not merely economic loss."</div>
+        <div class="phrase">"Of the 15.92 million unrehabilitated displaced persons, 6.42 million are tribals — development has been built on the backs of those least able to resist." (Xaxa Committee, 2014)</div>
+        <div class="phrase">"The Sixth Schedule, by providing genuine political autonomy through Autonomous District Councils, has protected Northeast tribes from displacement and land alienation — Xaxa provides empirical evidence for decentralised self-governance as superior to centralised protection."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Ref -->
+  <div class="section" data-section="quickref">
+    <h3 class="section-title">10. Quick Reference — All Key Numbers</h3>
+
+    <div class="entry" data-tags="p1 p2 stat" data-text="quick reference all statistics numbers data points summary">
+      <div class="entry-head" onclick="toggleEntry(this)">
+        <div>
+          <p class="entry-topic">All Numbers in One Place</p>
+          <p class="entry-title">Complete Statistics Table</p>
+        </div>
+        <span class="entry-toggle">▾</span>
+      </div>
+      <div class="entry-body">
+        <table class="qr-table">
+          <tr><th colspan="2">Demographics</th></tr>
+          <tr><td>ST population (2011)</td><td>10.43 crore = 8.6%</td></tr>
+          <tr><td>ST groups notified</td><td>705</td></tr>
+          <tr><td>Smallest PVTG</td><td>Birjia, Bihar — 17 persons</td></tr>
+          <tr><td>ST sex ratio</td><td>990 females/1000 males (favourable)</td></tr>
+          <tr><td>ST growth rate 2001–11</td><td>23.66% vs national 17.64%</td></tr>
+          <tr><td>ST in urban areas</td><td>Only 2.8%</td></tr>
+          <tr><th colspan="2">Economy &amp; Poverty</th></tr>
+          <tr><td>ST in primary sector</td><td>&gt;80% vs 53% national</td></tr>
+          <tr><td>ST cultivators (2001)</td><td>Declined to 45% from 68%</td></tr>
+          <tr><td>ST agricultural labourers</td><td>Rose to 37% from ~20%</td></tr>
+          <tr><td>ST BPL (1993–94)</td><td>63.7% vs national 45.7%</td></tr>
+          <tr><td>ST BPL (2004–05)</td><td>60.0% vs national 37.7%</td></tr>
+          <tr><td>Odisha tribal BPL</td><td>75.6% — highest</td></tr>
+          <tr><td>Forest in tribal areas</td><td>~60% of India's total</td></tr>
+          <tr><td>Mineral wealth (Odisha/CG/JH)</td><td>70% coal, 80% iron ore, 60% bauxite</td></tr>
+          <tr><th colspan="2">Health</th></tr>
+          <tr><td>IMR (Census 2001)</td><td>88 vs 68 national — 30% higher</td></tr>
+          <tr><td>U5MR (Census 2001)</td><td>129 vs 96 national — 35% higher</td></tr>
+          <tr><td>U5MR (NFHS-3)</td><td>95.7 (ST) — 61% higher than non-ST</td></tr>
+          <tr><td>1–4 year mortality</td><td>33.6 (ST) vs 10.3 (non-ST)</td></tr>
+          <tr><td>ST literacy (2001)</td><td>47% vs 69% national</td></tr>
+          <tr><td>Underweight children (1–5 yr)</td><td>52% (ST) vs 43% rural</td></tr>
+          <tr><td>Stunted children (1–5 yr)</td><td>55% (ST) vs 49% rural</td></tr>
+          <tr><td>Hypertension awareness</td><td>Only 8.4% tribal adults</td></tr>
+          <tr><td>Tobacco use (ST men)</td><td>72% vs 56% non-ST men</td></tr>
+          <tr><th colspan="2">Displacement</th></tr>
+          <tr><td>% dam-displaced who are ST</td><td>40% (ST = only 8.6% population)</td></tr>
+          <tr><td>Total DPs/PAPs estimate</td><td>~60 million (Fernandes)</td></tr>
+          <tr><td>% development-displaced who are ST</td><td>47% (Expert Group)</td></tr>
+          <tr><td>DPs unrehabilitated</td><td>75% (1951–1990)</td></tr>
+          <tr><td>ST in unrehab. backlog</td><td>6.42 mn of 15.92 mn total</td></tr>
+          <tr><td>Coal India: tribal land taken</td><td>13,956 ha vs 91.16 ha given in R&R</td></tr>
+          <tr><td>Unaware of land protection laws</td><td>&gt;85% tribal HHs</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-brand">The Working Aspirant</span>
+    <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;&middot;&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+  let activeFilter = 'all';
+
+  function toggleEntry(el) {
+    const entry = el.closest('.entry');
+    entry.classList.toggle('open');
+  }
+
+  function setFilter(filter, btn) {
+    activeFilter = filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filterEntries();
+  }
+
+  function filterEntries() {
+    const query = document.getElementById('searchBox').value.toLowerCase().trim();
+    let visible = 0;
+
+    document.querySelectorAll('.entry').forEach(entry => {
+      const tags = entry.dataset.tags || '';
+      const text = (entry.dataset.text || '') + ' ' + entry.innerText.toLowerCase();
+      const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+      const matchesSearch = !query || text.includes(query);
+      const show = matchesFilter && matchesSearch;
+      entry.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    // Hide sections with all entries hidden
+    document.querySelectorAll('.section').forEach(section => {
+      const hasVisible = section.querySelectorAll('.entry:not(.hidden)').length > 0;
+      section.classList.toggle('hidden', !hasVisible);
+    });
+
+    // Hide part headers with all sections hidden
+    document.querySelectorAll('.part-header').forEach(header => {
+      let next = header.nextElementSibling;
+      let hasVisible = false;
+      while (next && !next.classList.contains('part-header')) {
+        if (next.classList.contains('section') && !next.classList.contains('hidden')) {
+          hasVisible = true; break;
+        }
+        next = next.nextElementSibling;
+      }
+      header.classList.toggle('hidden', !hasVisible);
+    });
+
+    const el = document.getElementById('resultCount');
+    el.textContent = visible + ' entr' + (visible === 1 ? 'y' : 'ies');
+  }
+
+  // Init count
+  filterEntries();
+</script>
+</body>
+</html>
