@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essay Write Smart — The Working Aspirant</title>
+  <meta name="description" content="Six interchangeable structural approaches for the UPSC Essay paper, plus the universal page-by-page blueprint they all share.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23FAF7F2'/><circle cx='16' cy='16' r='6' fill='%23B8960C'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --ink: #1C1C1C;
+      --ink-muted: #5A5750;
+      --brass: #B8960C;
+      --rule: #DDD8D0;
+      --max: 1100px;
+    }
+
+    html { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body { min-height: 100vh; padding: 0 24px; }
+    .wrap { max-width: var(--max); margin: 0 auto; }
+    a { color: inherit; }
+    strong { font-weight: 500; color: var(--ink); }
+    em { font-style: italic; }
+
+    nav { padding: 36px 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.8rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 0.92rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brass); }
+
+    .rule { position: relative; height: 1px; background: var(--rule); margin: 40px 0; }
+    .rule::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 5px; height: 5px; border-radius: 50%; background: var(--brass); }
+
+    .crumb { font-size: 0.8rem; color: var(--ink-muted); font-weight: 300; margin-top: 28px; }
+    .crumb a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--rule); }
+    .crumb a:hover { color: var(--brass); border-color: var(--brass); }
+
+    /* Page header — matches vault.html exactly */
+    .page-header { padding: 32px 0 40px; }
+    .page-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.1rem, 5vw, 3rem); color: var(--ink); line-height: 1.2; margin-bottom: 16px; max-width: 17ch; }
+    .page-desc { font-size: 0.92rem; color: var(--ink-muted); font-weight: 300; max-width: 600px; border-left: 2px solid var(--brass); padding-left: 20px; line-height: 1.75; }
+
+    /* stat strip — reuses the grid + 1px gap + background bleed technique from .chapter-grid */
+    .statstrip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-top: 32px; }
+    .statstrip div { background: var(--bg); padding: 16px 18px; }
+    .statstrip .num { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); display: block; }
+    .statstrip .lab { font-size: 0.66rem; color: var(--ink-muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; display: block; }
+
+    /* anchor row — same visual language as .format-link */
+    .anchorrow { display: flex; flex-wrap: wrap; gap: 8px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin: 28px 0 44px; }
+    .anchorrow a { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 13px; border: 1px solid var(--rule); color: var(--ink-muted); text-decoration: none; transition: all 0.2s; }
+    .anchorrow a:hover, .anchorrow a.active { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+    .relnote { border-left: 2px solid var(--brass); background: rgba(184,150,12,0.04); padding: 18px 22px; margin: 0 0 48px; }
+    .relnote .label { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); display: block; margin-bottom: 8px; }
+    .relnote p { font-size: 0.92rem; color: var(--ink-muted); font-weight: 300; line-height: 1.75; }
+    .relnote a { color: var(--ink); border-bottom: 1px solid var(--brass); text-decoration: none; }
+
+    section.part { margin-bottom: 60px; scroll-margin-top: 24px; }
+    .part-eyebrow { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 8px; display: block; }
+    .part-head { margin-bottom: 26px; padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+    .part-head h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.8rem; color: var(--ink); }
+    .part-intro { font-size: 0.92rem; color: var(--ink-muted); font-weight: 300; max-width: 640px; margin-bottom: 24px; }
+
+    article.sub { margin-bottom: 32px; scroll-margin-top: 24px; }
+    article.sub h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.28rem; color: var(--ink); margin-bottom: 0.6em; }
+    article.sub h4, .microlabel { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); margin: 20px 0 8px; display: block; }
+
+    p { margin: 0 0 1em; font-weight: 300; color: var(--ink); font-size: 0.96rem; }
+    ul, ol { padding-left: 1.25em; margin: 0 0 1em; }
+    li { margin-bottom: 0.4em; font-weight: 300; font-size: 0.96rem; }
+
+    .callout { border-left: 2px solid var(--rule); background: rgba(28,28,28,0.02); padding: 16px 20px; margin: 16px 0; }
+    .callout.accent { border-left-color: var(--brass); background: rgba(184,150,12,0.04); }
+    .callout .label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); display: block; margin-bottom: 6px; }
+    .callout.accent .label { color: var(--brass); }
+    .callout p:last-child { margin-bottom: 0; }
+
+    blockquote.pull { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 1.25rem; color: var(--ink); border-left: 2px solid var(--brass); padding: 2px 0 2px 22px; margin: 22px 0; }
+
+    table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 0.88rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; font-weight: 300; }
+    th { font-size: 0.64rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); font-weight: 500; border-bottom: 1px solid var(--ink); }
+    tr:last-child td { border-bottom: none; }
+    td strong { font-weight: 500; }
+
+    /* page rail — grid-gap-background technique, informative colour coding kept minimal */
+    .rail { display: flex; flex-wrap: wrap; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 16px 0 20px; }
+    .rail .blk { flex: 1 1 auto; min-width: 78px; background: var(--bg); padding: 9px 10px; font-size: 0.7rem; line-height: 1.35; color: var(--ink-muted); font-weight: 300; }
+    .rail .blk b { display: block; font-size: 0.6rem; color: var(--brass); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 3px; font-weight: 500; }
+    .rail .blk.open { background: var(--ink); color: var(--bg); }
+    .rail .blk.open b { color: var(--brass); }
+    .rail .blk.world { background: rgba(184,150,12,0.1); }
+    .rail .blk.anti { background: rgba(28,28,28,0.05); }
+    .rail .blk.close { background: var(--ink); color: var(--bg); }
+    .rail .blk.close b { color: var(--brass); }
+
+    .budgetbar { display: flex; height: 30px; overflow: hidden; margin: 16px 0 6px; border: 1px solid var(--rule); }
+    .budgetbar div { display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 500; white-space: nowrap; overflow: hidden; letter-spacing: 0.02em; }
+    .budgetbar .b1 { background: var(--ink); color: var(--bg); flex: 1; }
+    .budgetbar .b2 { background: var(--brass); color: var(--ink); flex: 6; }
+    .budgetbar .b3 { background: #D8C27A; color: var(--ink); flex: 1; }
+    .budgetbar .b4 { background: var(--ink-muted); color: var(--bg); flex: 1; }
+    .budgetbar .b5 { background: var(--ink); color: var(--bg); flex: 1; }
+    .budgetcap { font-size: 0.78rem; color: var(--ink-muted); font-weight: 300; margin-bottom: 22px; }
+
+    /* approach blocks */
+    .approach-card { border: 1px solid var(--rule); padding: 30px 32px 10px; margin-bottom: -1px; background: var(--bg); }
+    .approach-head { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 8px; }
+    .approach-num { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.5rem; color: var(--brass); line-height: 1; flex: 0 0 auto; }
+    .approach-title h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.5rem; color: var(--ink); margin-bottom: 2px; }
+    .approach-title .alt { font-weight: 400; color: var(--ink-muted); font-size: 1.1rem; }
+    .approach-title .tag { color: var(--ink-muted); font-size: 0.85rem; font-weight: 300; }
+
+    .example-box { background: rgba(184,150,12,0.04); border-left: 2px solid var(--rule); padding: 16px 20px; margin: 14px 0; }
+    .example-box .label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass); display: block; margin-bottom: 6px; }
+    .topic-line { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.1rem; color: var(--ink); }
+
+    .use-when { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 18px 0 20px; }
+    .use-when .box { padding: 15px 17px; background: var(--bg); font-size: 0.88rem; font-weight: 300; }
+    .use-when .box .label { font-weight: 500; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); display: block; margin-bottom: 6px; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .chip { border: 1px solid var(--rule); padding: 5px 12px; font-size: 0.72rem; font-weight: 300; color: var(--ink-muted); }
+
+    .sdg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin: 14px 0 20px; }
+    .sdg-grid div { background: var(--bg); padding: 9px 11px; font-size: 0.76rem; color: var(--ink-muted); font-weight: 300; }
+    .sdg-grid b { color: var(--brass); display: block; font-size: 0.62rem; font-weight: 500; }
+
+    .quickref { overflow-x: auto; }
+    .quickref table { min-width: 720px; }
+
+    .backtotop { position: fixed; right: 24px; bottom: 24px; background: var(--ink); color: var(--bg); border: none; width: 40px; height: 40px; font-size: 1rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+    .backtotop.show { opacity: 1; pointer-events: auto; }
+    .backtotop:hover { background: var(--brass); }
+
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; display: flex; align-items: center; justify-content: space-between; margin-top: 56px; flex-wrap: wrap; gap: 10px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-weight: 400; color: var(--ink-muted); }
+    .footer-note { font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 14px; }
+      .statstrip { grid-template-columns: 1fr 1fr; }
+      .use-when { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+      .approach-card { padding: 24px 20px 8px; }
+      .approach-num { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <a class="wordmark" href="/">The Working Aspirant</a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/notes.html">Notes</a></li>
+        <li><a href="/vault.html" class="active">The Vault</a></li>
+        <li><a href="/mindmaps.html">Mind Maps</a></li>
+        <li><a href="/#subscribe">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <div class="rule"></div>
+
+    <p class="crumb"><a href="/vault.html">The Vault</a> / Essay Write Smart</p>
+
+    <div class="page-header">
+      <p class="page-label">GS Essay Paper</p>
+      <h1 class="page-title">Six ways to fill the same ten pages.</h1>
+      <p class="page-desc">A universal page-by-page blueprint for the UPSC essay, and six interchangeable structural approaches to lay across it — PESTEL, Chronological, SDG, Sectoral, Metaphor, and Contemporary-Relevance. Worked against six real past-year topics throughout.</p>
+
+      <div class="statstrip">
+        <div><span class="num">6</span><span class="lab">structural approaches</span></div>
+        <div><span class="num">10</span><span class="lab">page universal blueprint</span></div>
+        <div><span class="num">3</span><span class="lab">sessions covered</span></div>
+        <div><span class="num">1000–1200</span><span class="lab">word ceiling, either essay</span></div>
+      </div>
+    </div>
+
+    <nav class="anchorrow" id="anchorrow">
+      <a href="#blueprint">Universal Blueprint</a>
+      <a href="#a1">PESTEL</a>
+      <a href="#a2">Chronological</a>
+      <a href="#a3">SDG</a>
+      <a href="#a4">Sectoral</a>
+      <a href="#a5">Metaphor</a>
+      <a href="#a6">Contemporary-Relevance</a>
+      <a href="#selecting">Choosing an Approach</a>
+      <a href="#quickref">Quick Reference</a>
+      <a href="#closing">Closing Notes</a>
+    </nav>
+
+    <div class="relnote">
+      <span class="label">How this sits next to Essay Writing (ESSELGO)</span>
+      <p><a href="/essay-writing.html">Essay Writing — the ESSELGO Framework →</a> is a single unified algorithm: one sequence for generating and structuring any essay from a blank page. This page is a different kind of tool — six ready-made page-by-page skeletons to drop a topic into once you already know its shape. In practice they can slot together: use ESSELGO's early steps to plan, then pick one of the six approaches below to actually lay out the body pages. Where both pages touch the same idea — dimensional reading of a philosophical topic, connector phrases, fact-anchoring to the SDGs — treat them as two independent worked versions of it, not a single merged rule.</p>
+    </div>
+
+    <main>
+
+    <!-- ================= PART 1 ================= -->
+    <section class="part" id="blueprint">
+      <span class="part-eyebrow">Read This First</span>
+      <div class="part-head"><h2>The Universal Blueprint</h2></div>
+      <p class="part-intro">Every one of the six approaches below slots into the same page-by-page skeleton. Learn this once — it doesn't change no matter which approach you pick on exam day.</p>
+
+      <article class="sub" id="bp-a">
+        <h3>A. What UPSC actually rewards</h3>
+        <p>The essay syllabus names exactly three things it pays for. Almost every rule below exists to serve one of these:</p>
+        <ol>
+          <li><strong>Staying closely to the topic</strong> — not adjacent to it, not a launchpad for a memorised answer.</li>
+          <li><strong>Effective and exact expression</strong> — grammar, clarity, no ambiguity.</li>
+          <li><strong>Flow / cohesion</strong> — one page reads as the continuation of the last, not a new list item.</li>
+        </ol>
+        <blockquote class="pull">Language is not the most important thing. Flow is.</blockquote>
+      </article>
+
+      <article class="sub" id="bp-b">
+        <h3>B. The word budget, page by page</h3>
+        <ul>
+          <li>Total length: <strong>1000–1200 words</strong> — never under 1000, never over 1200.</li>
+          <li>Per page: roughly <strong>100–120 words</strong>, but this depends entirely on your own handwriting — count your own average before Mains, don't assume.</li>
+          <li>Per paragraph: <strong>never exceed 60 words</strong> (50–60 is the working range; the conclusion is the one exception — see 1G).</li>
+        </ul>
+        <div class="budgetbar">
+          <div class="b1">Pg 1</div><div class="b2">Body · Pg 2–7</div><div class="b3">World</div><div class="b4">Anti-view</div><div class="b5">Sol.+Concl.</div>
+        </div>
+        <p class="budgetcap">At ~100 words/page this lands around 10–11 handwritten pages — where the "10-page essay" framing comes from. Exact split shifts by ±1 page depending on the approach.</p>
+      </article>
+
+      <article class="sub" id="bp-c">
+        <h3>C. The 10-page skeleton</h3>
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro + History + Overview</div>
+          <div class="blk"><b>Pg 2–7/8</b>Body — one dimension per page</div>
+          <div class="blk world"><b>Pg 8/9</b>World View</div>
+          <div class="blk anti"><b>Pg 9</b>Anti-view / Limitations</div>
+          <div class="blk close"><b>Pg 10</b>Solutions + Conclusion</div>
+        </div>
+        <p>General pacing rule inside the body: change dimension roughly every 1–1.5 pages so no single idea overstays.</p>
+      </article>
+
+      <article class="sub" id="bp-d">
+        <h3>D. Page 1, line by line</h3>
+        <ul>
+          <li><strong>Introduction (≤60 words).</strong> Whichever type you choose, it must contain the topic's own keywords in the first couple of lines — not arrive at them on line five.</li>
+          <li><strong>Historical background (≤60 words).</strong> A real historical or current-affairs anchor, explicitly linked to the topic's exact wording — not a stand-alone history lesson.</li>
+          <li><strong>Essay overview (~20 words).</strong> "Let us now discuss…" — this is what tells the examiner your structure before they've read three pages guessing at it. Don't reveal every point here; keep some cards for later pages.</li>
+        </ul>
+        <span class="microlabel">Seven intro types worth having ready</span>
+        <div class="chip-row">
+          <span class="chip">Real or hypothetical anecdote</span>
+          <span class="chip">Quote-based</span>
+          <span class="chip">Thinker / context-based</span>
+          <span class="chip">Definition-based</span>
+          <span class="chip">Contextual / keyword-meaning</span>
+          <span class="chip">Prose or poem opening</span>
+          <span class="chip">Historical opening</span>
+        </div>
+        <blockquote class="pull">Treat the examiner like a five-year-old — plate everything for them.</blockquote>
+      </article>
+
+      <article class="sub" id="bp-e">
+        <h3>E. The world-view page — non-negotiable</h3>
+        <p>Even for a fully India-centric topic, one page (2–3 paragraphs) must show how the theme plays out beyond India — usually one country/region that "got it right" and one that hasn't (or should, right now).</p>
+        <div class="callout">
+          <span class="label">Why this rule exists</span>
+          <p>A first attempt scored only <strong>110</strong> in essay — a poor score — for one specific reason: the entire essay was written purely from India's perspective, with no world view at all. That single omission was expensive enough to become a permanent rule in this method.</p>
+        </div>
+      </article>
+
+      <article class="sub" id="bp-f">
+        <h3>F. The anti-view page — and when it isn't one</h3>
+        <ul>
+          <li><strong>Clear-stance topic:</strong> dedicate one page (~page 9) to genuine limitations or counter-considerations. Rough proportion: eight pages in favour, one page of limits — never flip this into an essay that argues mostly against its own topic.</li>
+          <li><strong>Genuinely debatable topic:</strong> don't squeeze both sides onto one page. Split the whole main body across both sides instead (e.g. four pages each) — a single "anti-view" page can't do justice to a topic that's contested by design.</li>
+          <li><strong>Self-contained topics:</strong> some topics already argue both extremes inside the approach itself (see the Sectoral worked example below) — in that case, don't force a redundant separate anti-view page. Decide this in the 20-minute planning phase, not mid-essay.</li>
+        </ul>
+      </article>
+
+      <article class="sub" id="bp-g">
+        <h3>G. Solutions, conclusion, and the circle of life</h3>
+        <ul>
+          <li>Never end on the anti-view's negative note — pivot to solutions before you conclude.</li>
+          <li>Two valid configurations: (1) if solutions were saved for the end, open the last page with them, then conclude; (2) if solutions were already threaded through every body page, skip straight to the conclusion.</li>
+          <li><strong>Circle of life:</strong> whatever opened your introduction — anecdote, quote, thinker, prose — must reappear in the conclusion. No loose ends.</li>
+          <li>Conclusion length is the one exception to the 60-word ceiling — stretch to 75–100 words if that's what it takes to land the punch line.</li>
+          <li>Signal phrases: "To conclude," "In a nutshell," "Finally," "Having discussed various aspects, we can conclude that…"</li>
+        </ul>
+        <div class="example-box">
+          <span class="label">Named conclusion device: The Ostrich</span>
+          <p>An ostrich buries its head in the sand rather than face trouble. Close with something like: <em>"We can either be like an ostrich and bury our heads in the sand, or tackle the challenges head-on with the solutions discussed above."</em> Works for any essay that followed limitations-on-one-page → solutions-on-the-next. A separate library of roughly fifteen conclusion themes (Ostrich is one) is referenced as living on the module's own blog under "essay strategy" — worth tracking down separately for the full set.</p>
+        </div>
+      </article>
+
+      <article class="sub" id="bp-h">
+        <h3>H. Flow beats facts beats flowery language</h3>
+        <p>The explicit hierarchy taught: <strong>cohesion &gt; factual precision &gt; ornate vocabulary.</strong> Two illustrative examples from the instructor's own attempts:</p>
+        <div class="callout accent">
+          <span class="label">Flow can survive a factual error</span>
+          <p>An essay on "competition as boon or bane for youth" was structured entirely around age-brackets from the National Youth Policy — brackets that turned out, on checking afterward, to be factually wrong. The essay still scored <strong>150</strong>, the highest of that attempt's two essays — because the structural flow held from the first line to the last.</p>
+        </div>
+        <div class="callout">
+          <span class="label">But flow can't rescue a missing dimension</span>
+          <p>Contrast this with 1E above: strong flow saved an essay with a wrong fact, but no amount of flow saved the essay that skipped the world-view page entirely. Structure protects against small slips; it doesn't excuse skipped requirements.</p>
+        </div>
+        <p>Practical fix for weak English: read newspaper editorial pages daily (the left-hand column, specifically) rather than chase vocabulary lists.</p>
+      </article>
+
+      <article class="sub" id="bp-i">
+        <h3>I. View + example, not just view</h3>
+        <p>Pure opinion has too many lossy translation steps: you think it, mentally translate it, commit it to paper — and then the examiner interprets it their own way. By the end, several rounds of drift can leave the examiner reading something you never quite meant, and even a well-understood view might just not match theirs.</p>
+        <div class="callout accent">
+          <span class="label">The fix — split every paragraph roughly in half</span>
+          <p>~30 words of view + ~30 words of a concrete example, data point, scheme, or report. Across seven body pages at two examples per page, that's <strong>14 examples backing 14 views</strong>. Even if the examiner disagrees with four or five views, the rest — and the evidence itself — still earns marks.</p>
+        </div>
+        <ul>
+          <li>Good data anchors by theme: surveys / Budget announcements (general), IPCC (environment), UN / UNDP (world view), ARC (polity / administration).</li>
+          <li>For philosophical topics specifically: alternate ~30 words philosophy → GS-grounded example → philosophy → another example. This keeps a philosophical essay from drifting into pure opinion.</li>
+          <li><strong>Avoid political figures as examples</strong>, anywhere in Essay or Ethics — the examiner's own leanings are unknown, and both papers reward demonstrated neutrality.</li>
+          <li>Vary <em>where solutions come from</em> page to page — don't let every page's solution read like recycled Ethics language. Pull from the GS paper that actually owns that dimension (GS-1 society vocabulary for a family page, GS-2 governance tools for a polity page, and so on) so eight pages don't all sound like the same answer restated.</li>
+        </ul>
+      </article>
+
+      <article class="sub" id="bp-j">
+        <h3>J. Presentation &amp; expression — the non-negotiables</h3>
+        <ul>
+          <li><strong>No cuttings or strike-throughs</strong> — signals an unclear thought process to the examiner.</li>
+          <li><strong>No unintroduced short forms</strong> — spell the full term out once, then abbreviate. <em>Sustainable Development Goals</em>, then <em>SDGs</em> from there on.</li>
+          <li><strong>Zero grammar and spelling errors</strong> — non-negotiable precisely because the word budget is tight; fix through daily editorial reading, not a vocabulary drive.</li>
+          <li><strong>Indent every paragraph</strong>; leave visible white space between paragraphs.</li>
+          <li><strong>Underline at most one line per paragraph</strong> — whichever line you instinctively feel is strongest (a fact, a scheme name, a phrase). Underlining everything cancels the effect.</li>
+          <li><strong>Blue pen</strong> for the essay body; <strong>black or gel pen</strong> for underlining.</li>
+          <li><strong>No headings, no diagrams inside the essay</strong> — a personal-preference rule from this method (nicknamed after <em>Aviral Ganga</em>, the "uninterrupted flow" theme of Namami Gange), followed for unbroken cohesion. Not a universal UPSC requirement — plenty of topper copies do use headings. Your call.</li>
+          <li><strong>Time budget:</strong> ~20 minutes to plan structure, ~70 minutes to write ~10 pages ≈ 7 minutes/page — roughly double the per-page time available on a GS answer. None of the above is optional given that much time.</li>
+        </ul>
+      </article>
+
+      <article class="sub" id="bp-k">
+        <h3>K. Connectors — implicit vs explicit</h3>
+        <p>Every page break needs a bridge or the "cohesion" criterion suffers.</p>
+        <div class="use-when">
+          <div class="box">
+            <span class="label">Implicit (harder, more elegant)</span>
+            <p>End a paragraph on a word or idea that naturally becomes the next paragraph's subject — e.g. end on <em>"women"</em>, open the next on the gender pay gap; end on <em>"policy"</em>, open the next page as Polity/Administration.</p>
+          </div>
+          <div class="box">
+            <span class="label">Explicit (easier, always safe)</span>
+            <p>A short linking sentence: <em>"Having discussed the sociological dimension, let us now move to the economic…"</em> or <em>"Expanding our view to the technological dimension, we observe that…"</em></p>
+          </div>
+        </div>
+        <p>Rule of thumb: reach for the implicit link first. The moment it feels forced, just write the explicit sentence — don't burn brainstorm time hunting for a clever bridge.</p>
+      </article>
+    </section>
+
+    <!-- ================= PART 2 ================= -->
+    <section class="part" id="approaches">
+      <span class="part-eyebrow">Writing the Essay</span>
+      <div class="part-head"><h2>The Six Approaches</h2></div>
+      <p class="part-intro">Pick the topic's own logic, not the other way around. You don't need all six in your working toolkit — most aspirants land on 3–4 they're genuinely comfortable with (see Part 3).</p>
+
+      <!-- APPROACH 1: PESTEL -->
+      <div class="approach-card" id="a1">
+        <div class="approach-head">
+          <span class="approach-num">I</span>
+          <div class="approach-title">
+            <h3>PESTEL <span class="alt">(a.k.a. STABLE)</span></h3>
+            <div class="tag">One dimension per page — the default everyone already knows</div>
+          </div>
+        </div>
+        <p>Sociological → Economic → Political → Technological → Environmental → Legal, one per page. The first three are fixed in order; the last three get reordered to fit the topic.</p>
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro/Hist/Overview</div>
+          <div class="blk"><b>Pg 2</b>Sociological</div>
+          <div class="blk"><b>Pg 3</b>Economic</div>
+          <div class="blk"><b>Pg 4</b>Political</div>
+          <div class="blk"><b>Pg 5</b>Technological</div>
+          <div class="blk"><b>Pg 6</b>Environmental</div>
+          <div class="blk"><b>Pg 7</b>Legal</div>
+          <div class="blk world"><b>Pg 8</b>World View</div>
+          <div class="blk anti"><b>Pg 9</b>Anti-view</div>
+          <div class="blk close"><b>Pg 10</b>Solutions+Concl.</div>
+        </div>
+
+        <span class="microlabel">Worked example</span>
+        <div class="example-box">
+          <span class="label">Topic</span>
+          <p class="topic-line">"Dreams which should not let India sleep"</p>
+          <p><strong>Sub-dimension chaining</strong> inside the Sociological page: Child → Girl Child → Women → Youth — each paragraph seeds the next one's subject, which is what makes a page feel connected rather than listy.</p>
+          <p><strong>Full connector chain</strong> demonstrated across the body: Women <em>(gender pay gap)</em> → Economic <em>(job creation, gig economy)</em> → ends on "policy" → Political/Administration <em>(policy formulation, bureaucratic execution)</em> → ends on "e-governance" → Technological → tech's environmental fallout → Environmental → ends on "climate justice" → Legal.</p>
+          <p><strong>World view:</strong> Africa — resource-rich, potential-rich, currently "sleeping." <strong>Anti-view:</strong> genuine limitations/challenges (no true opposing case for this topic). <strong>Conclusion:</strong> the Ostrich theme fits directly, since limitations sit on page 9 and solutions on page 10.</p>
+        </div>
+
+        <div class="callout">
+          <span class="label">Use with caution</span>
+          <p>Flagged as the single most over-used, "exhausted" approach among the six. Treat it as the fallback once the other five genuinely don't fit a topic — not the default you reach for first.</p>
+        </div>
+      </div>
+
+      <!-- APPROACH 2: CHRONOLOGICAL -->
+      <div class="approach-card" id="a2">
+        <div class="approach-head">
+          <span class="approach-num">II</span>
+          <div class="approach-title">
+            <h3>Chronological <span class="alt">(Level Approach)</span></h3>
+            <div class="tag">Widen the topic across levels of scale</div>
+          </div>
+        </div>
+        <p>Individual → Family → Private-sector Organisation → Public-sector/Government → Society → Nation → World. A level can run to 1.5 pages if it needs to — nothing is fixed to exactly one page.</p>
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro/Hist/Overview</div>
+          <div class="blk"><b>Pg 2</b>Individual</div>
+          <div class="blk"><b>Pg 3</b>Family</div>
+          <div class="blk"><b>Pg 4</b>Private Org.</div>
+          <div class="blk"><b>Pg 5</b>Public/Govt.</div>
+          <div class="blk"><b>Pg 6</b>Society</div>
+          <div class="blk"><b>Pg 7</b>Nation</div>
+          <div class="blk world"><b>Pg 8</b>World View</div>
+          <div class="blk anti"><b>Pg 9</b>Anti-view</div>
+          <div class="blk close"><b>Pg 10</b>Conclusion*</div>
+        </div>
+
+        <span class="microlabel">Worked example</span>
+        <div class="example-box">
+          <span class="label">Topic — UPSC 2018</span>
+          <p class="topic-line">"A people that values its privileges above its principles loses both."</p>
+          <p><strong>Per-page theme</strong> (this approach needs an explicit theme layered on top of the level, unlike PESTEL where the dimension itself is the theme): Para 1 = the issue this level faces when privilege eclipses principle, backed by a real example, not just a view; Para 2 = the resulting loss + level-specific solutions.</p>
+          <p><strong>Family-level nuance worth remembering:</strong> the same thing — emotional or financial support, say — is a <em>principle</em> when it's mutual, and a misused <em>privilege</em> when it curdles into one-sided over-dependence.</p>
+          <p><strong>Solutions varied by level</strong> (never recycled Ethics language): Individual → values / madhyam marg; Family → GS-1 society vocabulary (interdependence, kinship, no gendered roles); Private sector → shared organisational purpose, e.g. a Tata-style common-goal culture (deliberately avoiding Ethics jargon like "ends" here); Government → GS-2 governance tools (Citizen's Charter, social audit, MGNREGA as example).</p>
+          <p><strong>Anti-view:</strong> legitimate cases where upholding a privilege actually serves a principle — sovereignty, parliamentary privilege, a bureaucrat's administrative discretion.</p>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-muted);">*Since solutions are already distributed across every level's page, page 10 opens straight into the conclusion — no separate solutions section needed.</p>
+
+        <div class="callout">
+          <span class="label">Explicitly not taught here</span>
+          <p>The thesis–antithesis structure is flagged as a trap for this kind of topic — candidates get tangled, repeat themselves, and can't sustain the justification. Not part of this toolkit.</p>
+        </div>
+      </div>
+
+      <!-- APPROACH 3: SDG -->
+      <div class="approach-card" id="a3">
+        <div class="approach-head">
+          <span class="approach-num">III</span>
+          <div class="approach-title">
+            <h3>SDG Approach</h3>
+            <div class="tag">One Sustainable Development Goal per page</div>
+          </div>
+        </div>
+        <p>Built on a simple observation: a typical multi-dimensional essay already uses ~14–16 "dimensions," and there are exactly 17 SDGs. Each page follows a fixed two-part theme — <strong>Issue → Solution</strong> — explicitly tied back to the topic's own core phrase every single time.</p>
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro/Hist/Overview</div>
+          <div class="blk"><b>Pg 2</b>SDG 1</div>
+          <div class="blk"><b>Pg 3</b>SDG 5</div>
+          <div class="blk"><b>Pg 4–7</b>SDGs (your pick)</div>
+          <div class="blk world"><b>Pg 8</b>World View</div>
+          <div class="blk anti"><b>Pg 9</b>Anti-view</div>
+          <div class="blk close"><b>Pg 10/11</b>Solutions+Concl.</div>
+        </div>
+
+        <span class="microlabel">The 17 SDGs — quick reference</span>
+        <div class="sdg-grid">
+          <div><b>1</b>No Poverty</div><div><b>2</b>Zero Hunger</div><div><b>3</b>Good Health &amp; Well-being</div><div><b>4</b>Quality Education</div>
+          <div><b>5</b>Gender Equality</div><div><b>6</b>Clean Water &amp; Sanitation</div><div><b>7</b>Affordable &amp; Clean Energy</div><div><b>8</b>Decent Work &amp; Economic Growth</div>
+          <div><b>9</b>Industry, Innovation &amp; Infrastructure</div><div><b>10</b>Reduced Inequalities</div><div><b>11</b>Sustainable Cities &amp; Communities</div><div><b>12</b>Responsible Consumption &amp; Production</div>
+          <div><b>13</b>Climate Action</div><div><b>14</b>Life Below Water</div><div><b>15</b>Life on Land</div><div><b>16</b>Peace, Justice &amp; Strong Institutions</div>
+          <div><b>17</b>Partnerships for the Goals</div>
+        </div>
+
+        <span class="microlabel">Worked example</span>
+        <div class="example-box">
+          <span class="label">Topic — UPSC 2017</span>
+          <p class="topic-line">"The destiny of a nation is shaped in its classrooms."</p>
+          <p><strong>Reading tip baked into the topic itself:</strong> "classroom" is deliberately broad — school, college, university, vocational/skill centres, even civil-service training academies all count.</p>
+          <p><strong>SDG 1 (No Poverty) page</strong> — Issue: poverty as a persistent, structural drag on national potential (a strong response linked it to Preamble ideals and the Multidimensional Poverty Index). Solution: classrooms (widely defined) breaking the inter-generational poverty cycle — cite Samagra Shiksha, PM SHRI, Mid-Day Meal/PM POSHAN, Mudra loans, MSME schemes, NSQF, NEP 2020, and Amartya Sen's Capability Approach as a concept-anchor.</p>
+          <p><strong>SDG 5 (Gender Equality) page</strong> — connected with an explicit connector ("Let us now discuss the topic with respect to the issue of gender equality"). Strong data anchors: Iceland/Finland's HDI–gender-equality correlation, India's Child Sex Ratio (919 per 1000 boys, Census 2011) even in well-educated states, WEF Gender Gap Index (India 64.1% vs. global average 68.8%) — plus a note to include the third-gender dimension, not just the binary.</p>
+          <p><strong>World view:</strong> Japan (education visibly shaping national discipline/character) vs. under-resourced systems generally, e.g. Pakistan/Afghanistan (education "treated like a beggar," no functioning system). <strong>Anti-view options:</strong> real constraints teachers/schools face (from a Value Education–style session, or the GS-2 education chapter) — or the broader point that it's never only the classroom: peers, social media, family values, and cultural/linguistic gaps all compete with what a classroom teaches.</p>
+        </div>
+
+        <div class="callout accent">
+          <span class="label">Best use-case</span>
+          <p>The "rescue" approach. If you're 3–4 pages into an essay built on another approach (say Socio → Economic → Polity) and run out of natural dimensions, switching into SDG-per-page for the remaining pages is a legitimate, even recommended, mid-essay pivot.</p>
+        </div>
+      </div>
+
+      <!-- APPROACH 4: SECTORAL -->
+      <div class="approach-card" id="a4">
+        <div class="approach-head">
+          <span class="approach-num">IV</span>
+          <div class="approach-title">
+            <h3>Sectoral Approach</h3>
+            <div class="tag">Build each page on a GS-syllabus sector</div>
+          </div>
+        </div>
+        <p>Each page is built directly on a sector you've already studied in GS, rather than an abstract dimension — which forces the essay to stay example-driven and GS-grounded. This is the direct fix for philosophical topics where a pure "view-based" essay risks not matching the examiner's own view.</p>
+
+        <span class="microlabel">Sector bank, by GS paper</span>
+        <table>
+          <tr><th>GS-I</th><td>Art &amp; culture, religion, architecture/design, health, education, geo-politics/geography, sports, media &amp; journalism, population/social sector</td></tr>
+          <tr><th>GS-II</th><td>Legal, administrative, political, policy, media, tourism</td></tr>
+          <tr><th>GS-III</th><td>Economy, agriculture, science &amp; tech, security, space, defence</td></tr>
+        </table>
+
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro/Hist/Overview</div>
+          <div class="blk"><b>Pg 2</b>Sector 1</div>
+          <div class="blk"><b>Pg 3–5</b>3–4 more sectors</div>
+          <div class="blk world"><b>Pg 6</b>World View</div>
+          <div class="blk close"><b>Pg 7</b>Solutions+Concl.</div>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-muted);">Trade-off to know going in: sectoral essays cover fewer dimensions than SDG essays in the same page count — roughly 4–5 sectors (each needs three paragraphs, ~1.5 pages) vs. 6–7 SDGs (two paragraphs each).</p>
+
+        <span class="microlabel">Worked example</span>
+        <div class="example-box">
+          <span class="label">Topic</span>
+          <p class="topic-line">"Philosophy of wantlessness is utopian, while materialism is a chimera"</p>
+          <p><strong>Unpacking the topic</strong> (a reusable model for opening any philosophical topic): wantlessness = total absence of desire = an impractical ideal; materialism = unchecked consumerism = an illusion that never actually satisfies; the real answer sits in the middle — Aristotle's Golden Mean, or the Buddhist Madhyam Marg.</p>
+          <p><strong>Per-sector theme</strong> (three paragraphs, 40–50 words each): Para 1 wantlessness-as-issue, Para 2 materialism-as-issue, Para 3 the middle path as solution.</p>
+          <p><strong>Tourism sector, fully worked:</strong> wantlessness taken literally = no tourism at all, to preserve pristine spaces (Lakshadweep vs. a heavily commercialised Andaman &amp; Nicobar) — impractical. Materialism unchecked = over-commercialisation (overcrowding, waste mismanagement, fishery decline) — an illusion, unsustainable. Middle path = eco-tourism, tied back to the Rigvedic idea of <em>Rita</em> (cosmic order/harmony between nature and humanity).</p>
+          <p><strong>Connector technique specific to this approach:</strong> end a paragraph on a word that pivots the sector — ending on "policy" naturally opens an administrative/political sector next; ending on "scientific solutions" opens a technological sector next. Described as a practiced skill, not a knowledge one.</p>
+          <p><strong>World view:</strong> Bhutan (wantlessness-driven) vs. USA (materialism-driven), then a middle-path read for countries generally.</p>
+        </div>
+        <div class="callout">
+          <span class="label">On the anti-view page here</span>
+          <p>Topics like this one already argue both extremes inside the main body by design — so there may be no separate anti-view page needed at all. Recognise this during the planning phase, and let the body run through to wherever it naturally ends (here, page 7–8).</p>
+        </div>
+      </div>
+
+      <!-- APPROACH 5: METAPHOR -->
+      <div class="approach-card" id="a5">
+        <div class="approach-head">
+          <span class="approach-num">V</span>
+          <div class="approach-title">
+            <h3>Metaphor Approach</h3>
+            <div class="tag">Read one word in the topic as a symbol, then "type" it</div>
+          </div>
+        </div>
+        <p>Some topics contain a word that's meant to be read as a metaphor, not literally — e.g. <em>"Ships do not sink because of the water around them; ships sink because of the water that enters them"</em> (ship, water), or <em>"The time to repair the roof is when the sun is shining"</em> (roof). Once you've spotted the metaphor, invent categories/"types" of it to structure the essay.</p>
+
+        <span class="microlabel">Two tiers of categories</span>
+        <div class="use-when">
+          <div class="box">
+            <span class="label">Easy tier</span>
+            <p>Sectoral-flavoured types — economic roof, education roof, defence roof, health roof, unemployment roof, corruption roof. Usable, but unremarkable.</p>
+          </div>
+          <div class="box">
+            <span class="label">Fresh tier (what this module pushes for)</span>
+            <p>Emotional/mental-health, familial-ties, mutual-interdependence, cultural, character, diplomatic, internal-security, urbanisation, demographic-dividend. Pick 5–7 that genuinely fit; you don't need all nine.</p>
+          </div>
+        </div>
+        <p style="font-size:.86rem;color:var(--ink-muted);">Why "emotional/mental health" is a strong current pick: it keeps surfacing in the Budget, the Economic Survey, and Parliament, and in high-profile public cases — and UPSC's last direct mental-health ask was a 2020 workplace case study, so it's considered due for a return.</p>
+
+        <div class="rail">
+          <div class="blk open"><b>Pg 1</b>Intro/Hist/Overview</div>
+          <div class="blk"><b>Pg 2–8</b>One "type" per page (5–7)</div>
+          <div class="blk world"><b>Pg 9</b>World View</div>
+          <div class="blk anti"><b>Pg 10</b>Anti-view</div>
+          <div class="blk close"><b>Pg 11</b>Conclusion*</div>
+        </div>
+
+        <span class="microlabel">Page 1, live-drafted model (the "roof" topic)</span>
+        <div class="example-box">
+          <span class="label">Overview line modelled in class</span>
+          <p>"Let us now discuss the topic and see how various 'roofs' need to be repaired while the sun is shining." (~20 words)</p>
+          <p><strong>A strong anecdote structure:</strong> a short hypothetical story — a place facing a slow-building problem, someone acting early, and the exact metaphor line landing in their mouth or the narration. Story + example + explicit link to the metaphor phrase, inside ~65–70 words (treated as an acceptable stretch beyond the usual 60-word ceiling, for an anecdote intro specifically).</p>
+        </div>
+
+        <span class="microlabel">One page, fully worked — Emotional Roof</span>
+        <div class="example-box">
+          <p><strong>Para 1:</strong> the issue, pitched as "not yet grave" — a strain building quietly.<br>
+          <strong>Para 2:</strong> consequences if left unaddressed, in a deliberately clock-is-ticking register (stress, family breakdown, productivity loss, suicide risk) — <em>immediately</em> followed by the pivot to government solutions (ManoDarpan, Tele-MANAS). Skipping the "what happens if you don't fix this" half and jumping straight to solutions was flagged as a common, avoidable miss.</p>
+        </div>
+
+        <span class="microlabel">Connector chain across a full body</span>
+        <p>Emotional <em>(ends on "contentment at home")</em> → Family <em>(ends on "value education for children")</em> → Cultural <em>(Westernisation eroding tradition)</em> → Character → <em>[switch to an explicit connector here — the implicit link stops flowing naturally]</em> → Diplomacy → Security → Demographic Dividend → Urbanisation.</p>
+
+        <p><strong>World view</strong> (three paragraphs this time): a country that repaired its roof in time (Japan/Scandinavia/Singapore), one that never did (Pakistan), one that should start now (Africa). <strong>Anti-view:</strong> "reform is continuous," not a single moment you either catch or miss — illustrated with COVID-19 (India's health system was unprepared, yet strengthened reactively mid-crisis) and 1991 (crisis-as-opportunity, <em>Aapda ko Avsar</em>).</p>
+        <p style="font-size:.82rem;color:var(--ink-muted);">*Solutions are already threaded through every page, so skip straight to the conclusion — loop back to the Page 1 anecdote.</p>
+
+        <div class="callout">
+          <span class="label">The one hard rule specific to this approach</span>
+          <p>Exactly one "type" per page. This topic-shape tempts you to over-write a single dimension (mental health especially) — resist it, or the other 5–6 roofs won't fit inside the 1000–1200 word budget.</p>
+        </div>
+      </div>
+
+      <!-- APPROACH 6: CONTEMPORARY RELEVANCE -->
+      <div class="approach-card" id="a6">
+        <div class="approach-head">
+          <span class="approach-num">VI</span>
+          <div class="approach-title">
+            <h3>Contemporary-Relevance Approach</h3>
+            <div class="tag">Zoom to named, current Indian issues</div>
+          </div>
+        </div>
+        <p>Zoom from macro dimensions down to specific, named, current issues — which deliberately forces an example into every paragraph. Built for anyone who tends to drift into pure opinion. The narrowest-use approach of the six: a last-resort tool for when you're stuck 3–4 pages in, not a default.</p>
+
+        <span class="microlabel">Standing issue-list</span>
+        <div class="chip-row">
+          <span class="chip">Urbanisation</span><span class="chip">Unemployment</span><span class="chip">Cyber-fraud</span><span class="chip">Pollution</span>
+          <span class="chip">Terrorism</span><span class="chip">AI</span><span class="chip">Inequality</span><span class="chip">Tariffs &amp; taxation</span>
+          <span class="chip">Farmers' issues</span><span class="chip">Communalism</span><span class="chip">Linguistic issues</span><span class="chip">Corruption</span>
+          <span class="chip">Criminalisation of politics</span><span class="chip">Women's safety</span><span class="chip">Marriage-law debates (498A, live-in, UCC)</span>
+        </div>
+        <p style="font-size:.86rem;color:var(--ink-muted);">Several of these double as likely Ethics case-study material too — worth keeping as a standing shortlist for both papers.</p>
+
+        <span class="microlabel">Worked example</span>
+        <div class="example-box">
+          <span class="label">Topic</span>
+          <p class="topic-line">"Crises faced in India: Moral and Economic"</p>
+          <p>The topic's own wording supplies the structure: <strong>Moral / Economic / Both / Other</strong> — and the "Other" bucket doubles as the anti-view, since it proves the topic can't be reduced to just the two named categories.</p>
+          <div class="rail">
+            <div class="blk open"><b>Pg 1</b>Intro</div>
+            <div class="blk"><b>Pg 2–3</b>Moral</div>
+            <div class="blk"><b>Pg 4–5</b>Economic</div>
+            <div class="blk"><b>Pg 6–7</b>Moral+Economic</div>
+            <div class="blk anti"><b>Pg 8–9</b>Other (=anti-view)</div>
+            <div class="blk close"><b>Pg 10</b>Solutions+Concl.</div>
+          </div>
+          <p><strong>Classification:</strong> Moral → communalism, marriage/values debates, women's safety. Economic → urbanisation, unemployment. Moral + Economic → cyber-fraud, pollution (both a values angle and a monetary cost). Other → terrorism, tariffs/taxation, diplomatic or linguistic conflict.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= PART 3 ================= -->
+    <section class="part" id="selecting">
+      <span class="part-eyebrow">Before the Exam</span>
+      <div class="part-head"><h2>Choosing an Approach in the Exam Hall</h2></div>
+
+      <div class="callout accent">
+        <span class="label">The core reframe</span>
+        <p>You don't choose an approach <em>in</em> the exam — you pre-choose, through practice, which 3–4 of these six actually suit your own writing style, and drill only those beforehand. In the exam hall the only live decision left is which <strong>topic</strong> fits one of your pre-chosen approaches. A well-practiced candidate should be able to fit at least one of their chosen approaches onto virtually any topic on the paper — being stuck on structure shouldn't happen if this prep is done properly.</p>
+      </div>
+
+      <span class="microlabel">Topic selection is the harder skill</span>
+      <p>A cautionary example: one candidate committed to a topic, wrote two to three pages, realised mid-essay he couldn't sustain it, crossed it all out, and restarted on a new topic — and scored very low. The crossed-out attempt itself told the examiner the candidate lacked clarity, before a single new word was even read.</p>
+
+      <span class="microlabel">Two essays, two different approaches</span>
+      <ul>
+        <li>Never reuse the same approach for both essays in one sitting — it reads as a single memorised template rather than genuine range.</li>
+        <li>Vary the intro style too — don't run an anecdotal intro in both essays; pair it with a quote-based, keyword-based, or contextual intro in the second.</li>
+        <li>Approaches can be mixed <em>within</em> a single essay: open with Socio → Economic → Polity, then pivot into SDG-per-page once the natural PESTEL dimensions run dry. Several body pages can quietly change methodology as long as the flow holds.</li>
+      </ul>
+
+      <div class="callout accent">
+        <span class="label">Why this paper is worth the effort</span>
+        <p>Cited as evidence of how much this paper can move a rank: Harshita Goyal (AIR 2 that year) scored the all-India-highest <strong>144</strong> in Essay as this faculty's student, and the same year's Rank 1 scored <strong>141</strong> in Ethics. Essay and Ethics are framed as two of the highest-leverage papers for a candidate willing to invest in structure.</p>
+      </div>
+    </section>
+
+    <!-- ================= PART 4 ================= -->
+    <section class="part quickref" id="quickref">
+      <span class="part-eyebrow">At a Glance</span>
+      <div class="part-head"><h2>Quick Reference Table</h2></div>
+      <table>
+        <tr><th>Approach</th><th>Structure</th><th>Body length</th><th>Best for</th><th>Caution</th></tr>
+        <tr>
+          <td><strong>I · PESTEL</strong></td>
+          <td>One PESTEL dimension per page; Socio→Economic→Political fixed, rest flexible</td>
+          <td>~6 pages</td>
+          <td>Any topic, especially under time pressure — the safety net</td>
+          <td>Most over-used approach; last resort, not default</td>
+        </tr>
+        <tr>
+          <td><strong>II · Chronological</strong></td>
+          <td>Individual→Family→Org→Govt→Society→Nation→World</td>
+          <td>~6 pages</td>
+          <td>Topics about values, behaviour, or a quality that scales across levels</td>
+          <td>Needs an explicit theme layered on top — the level alone isn't enough</td>
+        </tr>
+        <tr>
+          <td><strong>III · SDG</strong></td>
+          <td>One SDG per page, Issue→Solution theme</td>
+          <td>~6–8 pages</td>
+          <td>Development/policy topics; the mid-essay rescue when another approach runs dry</td>
+          <td>Requires fluency with all 17 SDGs</td>
+        </tr>
+        <tr>
+          <td><strong>IV · Sectoral</strong></td>
+          <td>One GS-syllabus sector per page, 3-paragraph theme</td>
+          <td>~4–5 pages</td>
+          <td>Philosophical topics at risk of becoming pure opinion</td>
+          <td>Covers fewer dimensions per page-budget than SDG</td>
+        </tr>
+        <tr>
+          <td><strong>V · Metaphor</strong></td>
+          <td>Read a topic word as symbol, then "type" it — one type per page</td>
+          <td>~7 pages</td>
+          <td>Topics built on a proverb/metaphor line</td>
+          <td>Easy to over-write one dimension; strictly one type per page</td>
+        </tr>
+        <tr>
+          <td><strong>VI · Contemporary-Relevance</strong></td>
+          <td>Macro→micro; named current issues classified by the topic's own wording</td>
+          <td>~8 pages</td>
+          <td>Forcing examples when you keep drifting into opinion</td>
+          <td>Narrowest fit of the six; last resort only</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- ================= PART 5 ================= -->
+    <section class="part" id="closing">
+      <span class="part-eyebrow">Closing the Loop</span>
+      <div class="part-head"><h2>Closing Craft Notes</h2></div>
+      <ul>
+        <li><strong>Paragraph count per page isn't fixed by any UPSC rule.</strong> Two paragraphs on one page, three on the next is fine as long as the flow holds. Personal preference in this method is to not break a chosen theme mid-essay — but that's a preference, not a rule.</li>
+        <li><strong>Don't walk in with pre-written, topic-agnostic notes</strong> on favourite subjects (education, women's issues, etc.) and force every topic to fit them. Let the topic's actual demand pull from memory — not the reverse.</li>
+        <li><strong>Don't second-guess the topic by imagining what everyone else in the hall might write.</strong> Pick the one you're personally most comfortable executing.</li>
+        <li><strong>Avoid clichéd, overused examples</strong> in both Essay and Ethics — the module's own example is reaching for Gandhi or Ashok Khemka on every third page. Fresher examples read as more genuine.</li>
+        <li><strong>Practice volume is confidence-dependent, not fixed.</strong> The instructor's own account: just one full essay written across two entire prep cycles, on the strength of confidence in the method. Standing advice for someone newer to this: 5–6 full essays, roughly one a week, in the run-up to Mains.</li>
+        <li><strong>Topper copies are worth reading for structure, not content.</strong> Harshita Goyal's copies were the one named reference point — read them for how she built pages, not what she wrote on them.</li>
+        <li><strong>Mining a historical-background paragraph on demand</strong> — a reusable model for almost any "repair it before it's too late" topic: the interwar years between WWI and WWII, where unaddressed crises (rising dictatorships among them) fed directly into the next war. A reminder that GS/History content already on hand is almost always enough — the remaining task is just pointing it at the topic's exact wording.</li>
+      </ul>
+    </section>
+
+    </main>
+
+    <footer>
+      <span class="footer-brand">The Working Aspirant</span>
+      <span class="footer-note">Independent. Unaffiliated. Unsponsored. &nbsp;·&nbsp; © 2026 The Working Aspirant. All rights reserved.</span>
+    </footer>
+
+  </div>
+
+  <button class="backtotop" id="backtotop" aria-label="Back to top">↑</button>
+
+  <script>
+    var sections = Array.from(document.querySelectorAll('main [id]'));
+    var links = Array.from(document.querySelectorAll('#anchorrow a'));
+    function onScroll(){
+      var pos = window.scrollY + 110;
+      var current = null;
+      sections.forEach(function(s){ if(s.offsetTop <= pos) current = s.id; });
+      links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+      document.getElementById('backtotop').classList.toggle('show', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+    document.getElementById('backtotop').addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  </script>
+
+</body>
+</html>
